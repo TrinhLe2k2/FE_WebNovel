@@ -51,10 +51,29 @@ input.outline-none { /* start Shared css */
     top: 100% !important;
     left: 50% !important;
     transform: translateX(-50%) !important;
-    width: 500% !important;
+    width: 200%;
     box-shadow: 0 0 8px #000;
     margin-top: 8px !important;
     transition: all ease .5s;
+}
+
+#Header .Dropdown-Menu .container {
+    opacity: 0;
+    transition: all ease .5s;
+}
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) { 
+    #Header .Dropdown-Menu {
+        width: 400%;
+    }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) { 
+    #Header .Dropdown-Menu {
+        width: 500%;
+    }
 }
 
 #Header .Category .Category-Link {

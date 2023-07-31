@@ -16,3 +16,10 @@ navItemCollapse.forEach(element => {
 });
 // end js click nav
 
+// open dropMenu
+btnTheLoai = document.querySelector('#Header .nav .dropdown');
+var dropMenu = document.querySelector('#Header .nav .dropdown .Dropdown-Menu .container');
+console.log(dropMenu)
+btnTheLoai.addEventListener("click", function() {
+    dropMenu.classList.add("opacity-100");
+})
