@@ -8,25 +8,15 @@
     color: black;
 }
 
-.box-avater {
-    width: 10%;
-}
-
-.avater {
-    position: relative;
-    padding-bottom: 100%;
-    overflow: hidden;
-    border-radius: 50%;
-}
-
-#Main .card .box-poster {
+#Main .FilterResults .Results .Box-Poster .Poster {
     position: relative;
     padding-bottom: 133.33%;
     overflow: hidden;
+    cursor: pointer;
 }
 
-.box-avater img,
-#Main .card .box-poster img {
+#Main .FilterResults .Results .InformationNovel .Avater img,
+#Main .FilterResults .Results .Box-Poster .Poster img {
     position: absolute;
     top: 0;
     left: 0;
@@ -36,12 +26,49 @@
     transition: transform 0.5s ease; /* Thêm hiệu ứng transition cho hiệu ứng zoom */
 }
 
-#Main .card .card-text {
-    /* white-space: nowrap; */
+#Main .FilterResults .Results .Box-Poster .Poster:hover img {
+    transform: scale(1.1);
+}
+
+#Main .FilterResults .Results .Box-Poster .Poster .Action {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    color: #fff;
+    font-weight: 700;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+#Main .FilterResults .Results .Box-Poster .Poster:hover .Action {
+    display: flex;
+}
+
+#Main .FilterResults .Results .InformationNovel .Avater {
+    position: relative;
+    width: 28px;
+    padding-bottom: 28px;
+    overflow: hidden;
+    border-radius: 50%;
+}
+
+#Main .FilterResults .Results .InformationNovel p.Description-Novel {
     display: -webkit-box;
     -webkit-line-clamp: 2; /* Số dòng tối đa muốn hiển thị */
     -webkit-box-orient: vertical;
     max-height: 3.2em;
     overflow: hidden;
     text-overflow: ellipsis;
+}
+
+#Main .FilterResults .Results .InformationNovel nav.nav {
+    max-height: 4em;
+    overflow: hidden;
+}
+
+#Main .FilterResults .Results .InformationNovel .Link-Detail-Novel:hover,
+#Main .FilterResults .Results .InformationNovel .nav-link:hover {
+    font-weight: 700;
 }

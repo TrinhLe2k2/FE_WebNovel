@@ -20,7 +20,7 @@
         <div class="container bg-white">
             <div class="row my-2">
                 <div class="col-4 d-flex">
-                    <a class="navbar-brand d-flex align-items-center Logo" href="#">
+                    <a class="navbar-brand d-flex align-items-center Logo" href="./index.html">
                         <img class="" src="https://ncomics.vercel.app/_nuxt/logo.83be12af.svg" alt="NComics">
                         <h3 class="">Refresh</h3>
                     </a>
@@ -52,8 +52,8 @@
             </div>
             <div class="row my-2">
                 <ul class="nav justify-content-center">
-                    <li class="nav-item active">
-                        <a class="nav-link active" aria-current="page" href="#">
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="./index.html">
                             <i class="fa-solid fa-house"></i>
                             <span>Home</span>
                         </a>
@@ -144,7 +144,7 @@
                         </ul>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">
+                        <a class="nav-link active" href="./BoLoc.html">
                             <i class="fa-solid fa-filter"></i>
                             <span>Bộ Lọc</span>
                         </a>
@@ -155,9 +155,9 @@
     </section>
 
     <section id="Main" class="my-5">
-        <div class="container">
+        <div class="container FilterResults">
             <div class="row">
-                <div class="col-4">
+                <div class="Filter col-4 d-none d-lg-block">
                     <div class="accordion" id="accordionPanelsStayOpenExample">
                         <div class="accordion-item">
                             <h2 class="accordion-header">
@@ -303,103 +303,195 @@
                         <input type="submit" class="btn btn-primary my-2" value="Hoàn Thành">
                     </div>
                 </div>
-                <div class="col-8">
-                    <div class="card mb-3">
-                        <div class="row g-0">
-                            <div class="col-md-2">
-                                <div class="box-poster">
+                <div class="Results col-12 col-lg-8">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="Box-Poster col-2 col-sm-2 p-0">
+                                <div class="Poster">
                                     <img src="./Content/assets/img/truyen1.jpg" class="rounded-start" alt="...">
+                                    <a class="Action" href="#">
+                                        Xem Ngay
+                                    </a>
                                 </div>
                             </div>
-                            <div class="col-md-10">
-                                <div class="card-body">
-                                    <h5 class="card-title">Cổ Chân Nhân</h5>
-                                    <div class="Information-Novel row">
-                                        <div class="User col-3 d-flex">
-                                            <div class="box-avater">
-                                                <div class="avater">
-                                                    <img src="./Content/assets/img/truyen1.jpg" alt="">
-                                                </div>
-                                            </div>
-                                            Cổ Chân Nhân
-                                        </div>
-                                        <div class="Categories col-9">
-                                            123
-                                        </div>
-                                        <p>1277 Chương</p>
+                            <div class="col-10 col-sm-10 InformationNovel">
+                                <h5 class="">Cổ Chân Nhân</h5>
+                                <a class="px-2 py-1 d-flex Link-User d-none d-md-flex" aria-current="page" href="#">
+                                    <div class="Avater">
+                                        <img src="./Content/assets/img/truyen1.jpg" alt="">
                                     </div>
-                                    <p class="card-text">
-                                        "Con người là linh hồn vạn vật, cổ là tinh hoa của trời đất
-                                    
-                                        Tam quan bất chính, ma đầu hồi sinh.
-                                    
-                                        Chuyện xưa về một người xuyên không được sống lại.
-                                    
-                                        Một thế giới kì lạ của người nuôi cổ, dùng cổ, luyện cổ.
-                                    
-                                        Xuân Thu Thiền, Nguyệt Quang cổ, Tửu Trùng, Nhất Khí Kim Quang Trùng, Thanh Ti cổ, Hi Vọng cổ... ...
-                                    
-                                        Còn có một tuyệt thế ma đầu tung hoành!"
-                                        
-                                    </p>
-                                    <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
-                                </div>
+                                    <span class="m-0 ms-2">Cổ Chân Nhân</span>
+                                </a>
+                                <nav class="nav">
+                                    <a class="nav-link px-2 py-1" href="#">Huyền Huyễn</a>
+                                    <a class="nav-link px-2 py-1" href="#">Tiên Hiệp</a>
+                                    <a class="nav-link px-2 py-1" href="#">Trùng Sinh</a>
+                                    <a class="nav-link px-2 py-1" href="#">Trùng Sinh</a>
+                                    <a class="nav-link px-2 py-1" href="#">Xuyên Không</a>
+                                </nav>
+                                <a class="px-2 py-1 Link-Detail-Novel" href="#">2333 Chương</a>
+                                <a class="px-2 py-1 disabled" href="#">
+                                    <small class="text-body-secondary">Last updated 3 mins ago</small>
+                                </a>
+                            
+                                <p class="m-0 Description-Novel">
+                                    "Con người là linh hồn vạn vật, cổ là tinh hoa của trời đất
+                            
+                                    Tam quan bất chính, ma đầu hồi sinh.
+                            
+                                    Chuyện xưa về một người xuyên không được sống lại.
+                            
+                                    Một thế giới kì lạ của người nuôi cổ, dùng cổ, luyện cổ.
+                            
+                                    Xuân Thu Thiền, Nguyệt Quang cổ, Tửu Trùng, Nhất Khí Kim Quang Trùng, Thanh Ti cổ, Hi Vọng cổ... ...
+                            
+                                    Còn có một tuyệt thế ma đầu tung hoành!"
+                            
+                                </p>
                             </div>
-                        </div>
-                    </div>
-                    <div class="card mb-3">
-                        <div class="row g-0">
-                            <div class="col-md-2">
-                                <div class="box-poster">
+                        </div><hr>
+                        <div class="row">
+                            <div class="Box-Poster col-2 col-sm-2 p-0">
+                                <div class="Poster">
                                     <img src="./Content/assets/img/truyen1.jpg" class="rounded-start" alt="...">
+                                    <a class="Action" href="#">
+                                        Xem Ngay
+                                    </a>
                                 </div>
                             </div>
-                            <div class="col-md-10">
-                                <div class="card-body">
-                                    <h5 class="card-title">Cổ Chân Nhân</h5>
-                                    <div class="Information-Novel row">
-                                        <div class="User col-3 d-flex">
-                                            <div class="box-avater">
-                                                <div class="avater">
-                                                    <img src="./Content/assets/img/truyen1.jpg" alt="">
-                                                </div>
-                                            </div>
-                                            Cổ Chân Nhân
-                                        </div>
-                                        <div class="Categories col-9">
-                                            123
-                                        </div>
-                                        <p>1277 Chương</p>
+                            <div class="col-10 col-sm-10 InformationNovel">
+                                <h5 class="">Cổ Chân Nhân</h5>
+                                <a class="px-2 py-1 d-flex Link-User d-none d-md-flex" aria-current="page" href="#">
+                                    <div class="Avater">
+                                        <img src="./Content/assets/img/truyen1.jpg" alt="">
                                     </div>
-                                    <p class="card-text">
-                                        "Con người là linh hồn vạn vật, cổ là tinh hoa của trời đất
-                                    
-                                        Tam quan bất chính, ma đầu hồi sinh.
-                                    
-                                        Chuyện xưa về một người xuyên không được sống lại.
-                                    
-                                        Một thế giới kì lạ của người nuôi cổ, dùng cổ, luyện cổ.
-                                    
-                                        Xuân Thu Thiền, Nguyệt Quang cổ, Tửu Trùng, Nhất Khí Kim Quang Trùng, Thanh Ti cổ, Hi Vọng cổ... ...
-                                    
-                                        Còn có một tuyệt thế ma đầu tung hoành!"
-                                        
-                                    </p>
-                                    <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
+                                    <span class="m-0 ms-2">Cổ Chân Nhân</span>
+                                </a>
+                                <nav class="nav">
+                                    <a class="nav-link px-2 py-1" href="#">Huyền Huyễn</a>
+                                    <a class="nav-link px-2 py-1" href="#">Tiên Hiệp</a>
+                                    <a class="nav-link px-2 py-1" href="#">Trùng Sinh</a>
+                                    <a class="nav-link px-2 py-1" href="#">Trùng Sinh</a>
+                                    <a class="nav-link px-2 py-1" href="#">Xuyên Không</a>
+                                </nav>
+                                <a class="px-2 py-1 Link-Detail-Novel" href="#">2333 Chương</a>
+                                <a class="px-2 py-1 disabled" href="#">
+                                    <small class="text-body-secondary">Last updated 3 mins ago</small>
+                                </a>
+                            
+                                <p class="m-0 Description-Novel">
+                                    "Con người là linh hồn vạn vật, cổ là tinh hoa của trời đất
+                            
+                                    Tam quan bất chính, ma đầu hồi sinh.
+                            
+                                    Chuyện xưa về một người xuyên không được sống lại.
+                            
+                                    Một thế giới kì lạ của người nuôi cổ, dùng cổ, luyện cổ.
+                            
+                                    Xuân Thu Thiền, Nguyệt Quang cổ, Tửu Trùng, Nhất Khí Kim Quang Trùng, Thanh Ti cổ, Hi Vọng cổ... ...
+                            
+                                    Còn có một tuyệt thế ma đầu tung hoành!"
+                            
+                                </p>
+                            </div>
+                        </div><hr>
+                        <div class="row">
+                            <div class="Box-Poster col-2 col-sm-2 p-0">
+                                <div class="Poster">
+                                    <img src="./Content/assets/img/truyen1.jpg" class="rounded-start" alt="...">
+                                    <a class="Action" href="#">
+                                        Xem Ngay
+                                    </a>
                                 </div>
                             </div>
-                        </div>
+                            <div class="col-10 col-sm-10 InformationNovel">
+                                <h5 class="">Cổ Chân Nhân</h5>
+                                <a class="px-2 py-1 d-flex Link-User d-none d-md-flex" aria-current="page" href="#">
+                                    <div class="Avater">
+                                        <img src="./Content/assets/img/truyen1.jpg" alt="">
+                                    </div>
+                                    <span class="m-0 ms-2">Cổ Chân Nhân</span>
+                                </a>
+                                <nav class="nav">
+                                    <a class="nav-link px-2 py-1" href="#">Huyền Huyễn</a>
+                                    <a class="nav-link px-2 py-1" href="#">Tiên Hiệp</a>
+                                    <a class="nav-link px-2 py-1" href="#">Trùng Sinh</a>
+                                    <a class="nav-link px-2 py-1" href="#">Trùng Sinh</a>
+                                    <a class="nav-link px-2 py-1" href="#">Xuyên Không</a>
+                                </nav>
+                                <a class="px-2 py-1 Link-Detail-Novel" href="#">2333 Chương</a>
+                                <a class="px-2 py-1 disabled" href="#">
+                                    <small class="text-body-secondary">Last updated 3 mins ago</small>
+                                </a>
+                            
+                                <p class="m-0 Description-Novel">
+                                    "Con người là linh hồn vạn vật, cổ là tinh hoa của trời đất
+                            
+                                    Tam quan bất chính, ma đầu hồi sinh.
+                            
+                                    Chuyện xưa về một người xuyên không được sống lại.
+                            
+                                    Một thế giới kì lạ của người nuôi cổ, dùng cổ, luyện cổ.
+                            
+                                    Xuân Thu Thiền, Nguyệt Quang cổ, Tửu Trùng, Nhất Khí Kim Quang Trùng, Thanh Ti cổ, Hi Vọng cổ... ...
+                            
+                                    Còn có một tuyệt thế ma đầu tung hoành!"
+                            
+                                </p>
+                            </div>
+                        </div><hr>
+                        <div class="row">
+                            <div class="Box-Poster col-2 col-sm-2 p-0">
+                                <div class="Poster">
+                                    <img src="./Content/assets/img/truyen1.jpg" class="rounded-start" alt="...">
+                                    <a class="Action" href="#">
+                                        Xem Ngay
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-10 col-sm-10 InformationNovel">
+                                <h5 class="">Cổ Chân Nhân</h5>
+                                <a class="px-2 py-1 d-flex Link-User d-none d-md-flex" aria-current="page" href="#">
+                                    <div class="Avater">
+                                        <img src="./Content/assets/img/truyen1.jpg" alt="">
+                                    </div>
+                                    <span class="m-0 ms-2">Cổ Chân Nhân</span>
+                                </a>
+                                <nav class="nav">
+                                    <a class="nav-link px-2 py-1" href="#">Huyền Huyễn</a>
+                                    <a class="nav-link px-2 py-1" href="#">Tiên Hiệp</a>
+                                    <a class="nav-link px-2 py-1" href="#">Trùng Sinh</a>
+                                    <a class="nav-link px-2 py-1" href="#">Trùng Sinh</a>
+                                    <a class="nav-link px-2 py-1" href="#">Xuyên Không</a>
+                                </nav>
+                                <a class="px-2 py-1 Link-Detail-Novel" href="#">2333 Chương</a>
+                                <a class="px-2 py-1 disabled" href="#">
+                                    <small class="text-body-secondary">Last updated 3 mins ago</small>
+                                </a>
+                            
+                                <p class="m-0 Description-Novel">
+                                    "Con người là linh hồn vạn vật, cổ là tinh hoa của trời đất
+                            
+                                    Tam quan bất chính, ma đầu hồi sinh.
+                            
+                                    Chuyện xưa về một người xuyên không được sống lại.
+                            
+                                    Một thế giới kì lạ của người nuôi cổ, dùng cổ, luyện cổ.
+                            
+                                    Xuân Thu Thiền, Nguyệt Quang cổ, Tửu Trùng, Nhất Khí Kim Quang Trùng, Thanh Ti cổ, Hi Vọng cổ... ...
+                            
+                                    Còn có một tuyệt thế ma đầu tung hoành!"
+                            
+                                </p>
+                            </div>
+                        </div><hr>
                     </div>
                 </div>
             </div>
         </div>
 
     </section>
-
-
-
-
-
+    
     <section id="Modal">
         <section> <!-- Login/Register -->
             <div class="modal fade" id="AccountModal" aria-hidden="true" aria-labelledby="AccountModalLabel"
