@@ -1,3 +1,9 @@
+:root {
+    --primaty-color: #00dc82;
+    --text-bg: #fff;
+    --text-color: #000;
+}
+
 #Main .accordion .accordion-item
 .accordion-body .form-check-label:hover {
     color: blue;
@@ -6,6 +12,14 @@
 
 #Main a {
     color: black;
+}
+
+.CustomCssFilter { /*Custom #Main .FilterResults .Results*/
+    z-index: 1;
+    position: absolute;
+    background-color: #fff;
+    padding: 0;
+    box-shadow: 0 0 5px #000;
 }
 
 #Main .FilterResults .Results .Box-Poster .Poster {
