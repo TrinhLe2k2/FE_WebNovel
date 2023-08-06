@@ -9,7 +9,6 @@
     <link rel="stylesheet" href="./Content/assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="./Content/assets/font/fontawesome-free-6.4.0-web/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
-
     <link rel="stylesheet" href="./Content/assets/css/style.css">
 
     <style>
@@ -20,8 +19,8 @@
             --text-color: #000;
         }
 
-        #Header {
-            
+        * {
+            user-select: none;
         }
 
         body {
@@ -32,9 +31,10 @@
             color: #000;
         }
 
-        #Main {
-            /* border-top: 1px solid #000; */
-            /* background-image: linear-gradient( #00dc8035, #fff); */
+        #Main .InformationNovel {
+            border: solid 4px #fff;
+            border-radius: 8px;
+            padding: 8px;
         }
 
         #Main .InformationNovel .Poster {
@@ -56,7 +56,16 @@
             font-weight: 500;
         }
 
+        #Main .InformationNovel .Introduction .Category-List {
+            display: -webkit-box;
+            -webkit-line-clamp: 1; /* Số dòng tối đa muốn hiển thị */
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
         #Main .InformationNovel .Introduction .nav-link {
+            display: inline-block;
             margin: 0 4px;
             border: solid 2px var(--primaty-color);
             font-weight: 500;
@@ -70,6 +79,14 @@
 
         #Main .InformationNovel .Introduction .FeedbackWrapper {
             font-weight: 500;
+        }
+
+        #Main .InformationNovel .Introduction .Description-Novel {
+            display: -webkit-box;
+            -webkit-line-clamp: 3; /* Số dòng tối đa muốn hiển thị */
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            text-overflow: ellipsis;
         }
 
         #Main .InformationNovel .Introduction .Action a {
@@ -91,12 +108,117 @@
             color: var(--primaty-color);
         }
 
+        #Main .ActionNovel .nav-tabs .nav-item .nav-link {
+            font-size: 1.1rem;
+            font-weight: 500;
+            color: #333;
+        }
+
+        #Main .ActionNovel .nav-tabs .nav-item .nav-link.active {
+            color: #00dc82;
+            background-color: transparent;
+            border: none;
+        }
+
+        
+
+        #Main .ActionNovel .tab-content .UserProfile .Information .Action .nav-item a:hover {
+            background-color: var(--primaty-color);
+            color: #fff;
+            border-radius: var(--bs-border-radius-pill)
+        }
+
+        #Main .ActionNovel .tab-content .UserProfile {
+            border: solid 1px #00dc82;
+        }
+
+        #Main .ActionNovel .tab-content .UserProfile .Avatar {
+            padding-bottom: 75%;
+        }
+
+        #Main .ActionNovel .tab-content .UserProfile .Avatar img {
+            object-fit: cover;
+        }
+
+        
+
+        #Main .ActionNovel .tab-content .paginationjs {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        #Main .ActionNovel .tab-content .paginationjs .paginationjs-pages ul {
+            list-style: none;
+            display: flex;
+            padding-left: 0;
+            margin-bottom: 0;
+        }
+
+        #Main .ActionNovel .tab-content .paginationjs .paginationjs-pages li>a {
+            display: block;
+            padding: 4px 24px;
+            border: solid 1px #33333340;
+            cursor: pointer;
+        }
+
+        #Main .ActionNovel .tab-content .paginationjs .paginationjs-pages li>a:hover {
+            background-color: var(--primaty-color);
+        }
+
+        #Main .ActionNovel .tab-content .paginationjs .paginationjs-pages li.active a {
+            background-color: var(--primaty-color);
+            border: solid 1px var(--primaty-color);
+            color: #fff;
+        }
+
+        #Main .ActionNovel .tab-content .Box-Chapter-Link {
+            border: solid 1px #33333340;
+        }
+
+        #Main .ActionNovel .tab-content .Box-Chapter-Link:hover {
+            background-color: #00dc803f;
+        }
+
+        #Main .ActionNovel .tab-content .Chapter-Link {
+            display: -webkit-box;
+            -webkit-line-clamp: 2; /* Số dòng tối đa muốn hiển thị */
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        #Main .ActionNovel .tab-content .paginationjs .paginationjs-go-input {
+            margin: 0 8px;
+            min-width: 59px;
+            max-width: 60px;
+        }
+
+        #Main .ActionNovel .tab-content .paginationjs .paginationjs-go-input input {
+            height: 100%;
+            width: 100%;
+        }
+
+        #Main .ActionNovel .tab-content .paginationjs .paginationjs-go-button input {
+            height: 100%;
+            padding: 0 16px;
+        }
+
+        #Main .ActionNovel .tab-content #Comment-tab-pane .list-group-item {
+            background-color: transparent;
+        }
+
+        #Main .ActionNovel .tab-content #Comment-tab-pane .Comment-List .Comment-Child .Action .nav-link.active,
+        #Main .ActionNovel .tab-content #Comment-tab-pane .Comment-List .Comment-Parent .Action .nav-link.active {
+            color: var(--primaty-color);
+        }
+
     </style>
+    
 </head>
 <body>
     
     <section id="Header">
-        <div class="container bg-white">
+        <div class="container">
             <div class="row my-2">
                 <div class="col-4 d-flex">
                     <a class="navbar-brand d-flex align-items-center Logo" href="./index.html">
@@ -105,7 +227,7 @@
                     </a>
                 </div>
                 <div class="col-sm-4 d-flex order-1 order-sm-0">
-                    <form data-v-eb07a472="a123" class="d-flex align-items-stretch rounded-pill m-2 w-100 custom-form">
+                    <form data-v-eb07a472="a123" class="d-flex align-items-stretch rounded-pill m-2 w-100 custom-form bg-white">
                         <input type="text" list="datalistOptions"
                             class="w-100 py-1 border-0 ps-3 rounded-pill flex-fill" placeholder="Search"
                             style="outline: none;">
@@ -234,90 +356,600 @@
     </section>
 
 
-    <section id="Main" class="py-5">
-        <div class="container px-5">
-            <div class="row px-5 InformationNovel">
-                <div class="col-3">
-                    <div class="Poster position-relative">
-                        <img src="./Content/assets/img/truyen1.jpg" class="rounded position-absolute w-100 h-100" alt="...">
-                        <a class="Action d-none" href="#">
-                            Xem Ngay
+    <section id="Main" class="py-3">
+        <div class="container px-lg-5">
+            <div class="px-lg-5">
+                <div class="row g-0 InformationNovel">
+                    <div class="col-sm-3 col-4 mx-auto">
+                        <div class="Poster position-relative">
+                            <img src="./Content/assets/img/truyen1.jpg" class="rounded position-absolute w-100 h-100" alt="...">
+                            <a class="Action d-none" href="#">
+                                Xem Ngay
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-sm-9 ps-4 Introduction">
+                        <div class="d-flex">
+                            <h2 class="text-center text-sm-start my-2">Cổ Chân Nhân</h2>
+                            <span class="mx-2">Ngừng viết</span>
+                        </div>
+                        <a class="p-2 mb-2 d-flex Link-User d-none d-md-flex" aria-current="page" href="#">
+                            <div class="Avater position-relative rounded-pill">
+                                <img src="./Content/assets/img/truyen1.jpg" class="position-absolute w-100 h-100 rounded-circle" alt="...">
+                            </div>
+                            <span class="m-0 ms-2 UserName">Cổ Chân Nhân</span>
                         </a>
+                        <nav class="nav Category-List">
+                            <a class="nav-link px-2 py-1 mb-2" href="#">Huyền Huyễn</a>
+                            <a class="nav-link px-2 py-1 mb-2" href="#">Tiên Hiệp</a>
+                            <a class="nav-link px-2 py-1 mb-2" href="#">Trùng Sinh</a>
+                            <a class="nav-link px-2 py-1 mb-2" href="#">Xuyên Không</a>
+                            <a class="nav-link px-2 py-1 mb-2" href="#">Xuyên Không</a>
+                            <a class="nav-link px-2 py-1 mb-2" href="#">Xuyên Không</a>
+                            <a class="nav-link px-2 py-1 mb-2" href="#">Xuyên Không</a>
+                            <a class="nav-link px-2 py-1 mb-2" href="#">Xuyên Không</a>
+                            <a class="nav-link px-2 py-1 mb-2" href="#">Xuyên Không</a>
+                            <a class="nav-link px-2 py-1 mb-2" href="#">Xuyên Không</a>
+                            <a class="nav-link px-2 py-1 mb-2" href="#">Xuyên Không</a>
+                            <a class="nav-link px-2 py-1 mb-2" href="#">Xuyên Không</a>
+                            <a class="nav-link px-2 py-1 mb-2" href="#">Xuyên Không</a>
+                            <a class="nav-link px-2 py-1 mb-2" href="#">Xuyên Không</a>
+                            <a class="nav-link px-2 py-1 mb-2" href="#">Xuyên Không</a>
+                            <a class="nav-link px-2 py-1 mb-2" href="#">Xuyên Không</a>
+                            <a class="nav-link px-2 py-1 mb-2" href="#">Xuyên Không</a>
+                            <a class="nav-link px-2 py-1 mb-2" href="#">Xuyên Không</a>
+                        </nav>
+                        <div class="FeedbackWrapper d-flex">
+                            <div class="m-2 py-1 px-2 View">
+                                <i class="fa-solid fa-eye" style="color: #0ea5e9;"></i> 999M
+                            </div>
+                            <div class="m-2 py-1 px-2 Follow">
+                                <i class="fa-solid fa-heart" style="color: #f43f5e;"></i> 999M
+                            </div>
+                            <div class="m-2 py-1 px-2 Rating">
+                                <i class="fa-solid fa-star" style="color: #facc15;"></i> 5/5
+                            </div>
+                        </div>
+                        <p class="m-0 Description-Novel">
+                            "Con người là linh hồn vạn vật, cổ là tinh hoa của trời đất
+                            Tam quan bất chính, ma đầu hồi sinh.
+                            Chuyện xưa về một người xuyên không được sống lại.
+                            Một thế giới kì lạ của người nuôi cổ, dùng cổ, luyện cổ.
+                            Xuân Thu Thiền, Nguyệt Quang cổ, Tửu Trùng, Nhất Khí Kim Quang Trùng, Thanh Ti cổ, Hi Vọng cổ... 
+                            "Con người là linh hồn vạn vật, cổ là tinh hoa của trời đất
+                            Tam quan bất chính, ma đầu hồi sinh.
+                            Chuyện xưa về một người xuyên không được sống lại.
+                            Một thế giới kì lạ của người nuôi cổ, dùng cổ, luyện cổ.
+                            Xuân Thu Thiền, Nguyệt Quang cổ, Tửu Trùng, Nhất Khí Kim Quang Trùng, Thanh Ti cổ, Hi Vọng cổ...
+                        </p>
+                        <div class="Action mt-4 d-flex">
+                            <div class="Following me-2 ">
+                                <a class="py-2 px-3 d-block" href="#"><i class="fa-solid fa-bookmark me-1"></i> Theo Dõi Truyện</a>
+                            </div>
+                            <div class="Reading me-2">
+                                <a class="py-2 px-3 d-block" href="#"><i class="fa-solid fa-book-open me-1"></i> Đọc Ngay</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="col-9 Introduction">
-                    <h2 class="">Cổ Chân Nhân</h2>
-                    <a class="p-2 mb-2 d-flex Link-User d-none d-md-flex" aria-current="page" href="#">
-                        <div class="Avater position-relative rounded-pill">
-                            <img src="./Content/assets/img/truyen1.jpg" class="position-absolute w-100 h-100 rounded-pill" alt="...">
+                <div class="row ActionNovel my-5">
+                    <ul class="nav nav-tabs mb-4" id="myTab" role="tablist">
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link active" id="infomation-tab" data-bs-toggle="tab" data-bs-target="#infomation-tab-pane" type="button"
+                                role="tab" aria-controls="infomation-tab-pane" aria-selected="true"><i class="fa-solid fa-circle-info"></i> Thông Tin Chi Tiết</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="Chapter-tab" data-bs-toggle="tab" data-bs-target="#Chapter-tab-pane" type="button"
+                                role="tab" aria-controls="Chapter-tab-pane" aria-selected="true"><i class="fa-solid fa-list"></i> Danh Sách Chương</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="Comment-tab" data-bs-toggle="tab" data-bs-target="#Comment-tab-pane" type="button"
+                                role="tab" aria-controls="Comment-tab-pane" aria-selected="false"><i class="fa-solid fa-comments"></i> Bình Luận</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="Rate-tab" data-bs-toggle="tab" data-bs-target="#Rate-tab-pane" type="button"
+                                role="tab" aria-controls="Rate-tab-pane" aria-selected="false"><i class="fa-solid fa-star"></i> Đánh Giá</button>
+                        </li>
+                    </ul>
+                    <div class="tab-content " id="myTabContent">
+                        <div class="tab-pane fade" id="infomation-tab-pane" role="tabpanel" aria-labelledby="infomation-tab" tabindex="0">
+                            <div class="container-fluid">
+                                <div class="row">
+                                    <div class="col-8 my-auto Description-Novel">
+                                        <p class="lh-lg">
+                                            Trong đêm không ánh sáng, nhưng có tiếng trống trận cùng hò hét. Thiếu niên cẩn thận lắng nghe, là nhịp tim của hắn cùng
+                                            huyết dịch chảy xuôi.
+                                            
+                                            Phía trước trong bóng tối ẩn giấu lấy cái gì? Là người là Thần vẫn là... Quái vật?
+                                            
+                                            Không có đường không còn gì tốt hơn, dưới chân liền vô hạn hành trình!
+                                            
+                                            Trong đêm không ánh sáng, nhưng có tiếng trống trận cùng hò hét. Thiếu niên cẩn thận lắng nghe, là nhịp tim của hắn cùng
+                                            huyết dịch chảy xuôi.
+                                            
+                                            Phía trước trong bóng tối ẩn giấu lấy cái gì? Là người là Thần vẫn là... Quái vật?
+                                            
+                                            Không có đường không còn gì tốt hơn, dưới chân liền vô hạn hành trình!
+                                            Trong đêm không ánh sáng, nhưng có tiếng trống trận cùng hò hét. Thiếu niên cẩn thận lắng nghe, là nhịp tim của hắn cùng
+                                            huyết dịch chảy xuôi.
+                                            
+                                            Phía trước trong bóng tối ẩn giấu lấy cái gì? Là người là Thần vẫn là... Quái vật?
+                                            
+                                            Không có đường không còn gì tốt hơn, dưới chân liền vô hạn hành trình!
+                                            
+                                            ---
+                                            Tài khoản momo 0348357188 - Nguyễn Nội Pháp
+                                            TCB 19033858504011 - Nguyễn Nội Pháp
+                                            Tuy donate không đáng là bao so với công sức bỏ ra nhưng cũng là một động lực cho converter cố gắng làm hơn nha ^^
+                                        </p>
+                                    </div>
+                                    <div class="col-4">
+                                        <div class="UserProfile p-4 rounded-start rounded-end">
+                                            <div class="Avatar w-75 position-relative mx-auto">
+                                                <img class="w-100 h-100 position-absolute rounded-pill" src="./Content/assets/img/CoverImgae/solo-leveling-dau-la-linh-bong-toi-manh-nhat.jpg" alt="">
+                                            </div>
+                                            <div class="Information">
+                                                <h4 class="UserName text-center my-2">
+                                                    Chu-Gong
+                                                </h4>
+                                                <div class="Action">
+                                                    <ul class="nav justify-content-center">
+                                                        <li class="nav-item">
+                                                            <a class="nav-link disabled" tabindex="-1">
+                                                                <span>Lượt Theo Dõi: 2000</span>
+                                                            </a>
+                                                        </li>
+                                                        <li class="nav-item">
+                                                            <a class="nav-link" href="#" tabindex="-1">
+                                                                <i class="fa-solid fa-heart"></i>
+                                                                <span>Theo Dõi</span>
+                                                            </a>
+                                                        </li>
+                                                        <li class="nav-item">
+                                                            <a class="nav-link" href="#" tabindex="-1">
+                                                                <i class="fa-solid fa-swatchbook"></i>
+                                                                <span>Truyện Đã Đăng: 231</span>
+                                                            </a>
+                                                        </li>
+                                                        <li class="nav-item">
+                                                            <a class="nav-link" href="#" tabindex="-1">
+                                                                <i class="fa-solid fa-up-right-from-square"></i>
+                                                                <span>Truy Cập Trang Cá Nhân</span>
+                                                            </a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <span class="m-0 ms-2 UserName">Cổ Chân Nhân</span>
-                    </a>
-                    <nav class="nav">
-                        <a class="nav-link px-2 py-1 mb-2" href="#">Huyền Huyễn</a>
-                        <a class="nav-link px-2 py-1 mb-2" href="#">Tiên Hiệp</a>
-                        <a class="nav-link px-2 py-1 mb-2" href="#">Trùng Sinh</a>
-                        <a class="nav-link px-2 py-1 mb-2" href="#">Xuyên Không</a>
-                    </nav>
-                    <div class="FeedbackWrapper d-flex">
-                        <div class="m-2 py-1 px-2 View">
-                            <i class="fa-solid fa-eye" style="color: #0ea5e9;"></i> 999M
+                        <div class="tab-pane fade" id="Chapter-tab-pane" role="tabpanel" aria-labelledby="Chapter-tab" tabindex="0">
+                            <div id="wrapperPages">
+                                <div class="data-container"></div>
+                                <div id="pagination-paginationForChapter" class="my-3"></div>
+                            </div>
                         </div>
-                        <div class="m-2 py-1 px-2 Follow">
-                            <i class="fa-solid fa-heart" style="color: #f43f5e;"></i> 999M
+                        <div class="tab-pane fade show active" id="Comment-tab-pane" role="tabpanel" aria-labelledby="Comment-tab" tabindex="0">
+                            <div class="container">
+                                <form class="d-flex flex-column">
+                                    <textarea class="form-control" id="comment" rows="4" placeholder="Nhập bình luận của bạn"></textarea>
+                                    <button type="button" class="btn btn-primary my-2 align-self-end">Bình Luận</button>
+                                </form>
+                                <div class="Comment-List">
+                                    <ul class="list-group list-group-flush" id="commentList">
+                                        <!-- <li class="list-group-item">
+                                            <div class="Comment">
+                                                <div class="Comment-Parent">
+                                                    <div class="User mt-3 d-flex align-items-center">
+                                                        <img class="Avatar rounded-circle" src="./Content/assets/img/truyen1.jpg" alt="Avatar"
+                                                            style="width: 40px; height: 40px; object-fit: cover;">
+                                                        <h5 class="mb-0 ms-2">User Name</h5>
+                                                    </div>
+                                                    <p class="Comment-content my-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vel lorem at
+                                                        massa facilisis malesuada.</p>
+                                                    <div class="Action d-flex">
+                                                        <ul class="nav">
+                                                            <li class="nav-item">
+                                                                <a href="#" class="nav-link">
+                                                                    <i class="fa-solid fa-book"></i> Chương 23
+                                                                </a>
+                                                            </li>
+                                                            <li class="nav-item">
+                                                                <a  class="nav-link Nav-Like">
+                                                                    <input type="checkbox" hidden id="CheckLike${comment.id}">
+                                                                    <label for="CheckLike${comment.id}" style="cursor: pointer;">
+                                                                        <i class="fa-solid fa-thumbs-up p-1"></i> 999M
+                                                                    </label>
+                                                                </a>
+                                                            </li>
+                                                            <li class="nav-item">
+                                                                <a class="nav-link Nav-Reply">
+                                                                    <input type="checkbox" hidden id="CheckReply${comment.id}">
+                                                                    <label for="CheckReply${comment.id}" style="cursor: pointer;">
+                                                                        <i class="fa-solid fa-reply p-1"></i> 2 Trả lời
+                                                                    </label>
+                                                                </a>
+                                                            </li>
+                                                            <li class="nav-item">
+                                                                <a href="#" class="nav-link disabled">
+                                                                    <i class="fa-solid fa-clock"></i> 1 phút trước
+                                                                </a>
+                                                            </li>
+                                                        </ul>
+                                                        
+                                                    </div>
+                                                </div>
+                                                <div class="Comment-Child ms-5 d-none">
+                                                    <ul class="list-group list-group-flush" id="commentChildList">
+                                                        <li class="list-group-item">
+                                                            <div class="User mt-3 d-flex align-items-center">
+                                                                <img class="Avatar rounded-circle" src="./Content/assets/img/truyen1.jpg" alt="Avatar"
+                                                                    style="width: 40px; height: 40px; object-fit: cover;">
+                                                                <h5 class="mb-0 ms-2">User Name</h5>
+                                                            </div>
+                                                            <p class="Comment-content my-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vel lorem at
+                                                                massa facilisis malesuada.</p>
+                                                            <div class="Action d-flex">
+                                                                <span class="mx-3"><i class="fa-solid fa-book"></i> Chương 23</span>
+                                                                <span class="mx-3">
+                                                                    <a href="#">
+                                                                        <i class="fa-solid fa-thumbs-up p-1"></i> 999M
+                                                                    </a> 
+                                                                </span>
+                                                                <div class="Reply mx-3">
+                                                                    <a href="#">
+                                                                        <i class="fa-solid fa-reply p-1"></i> Nhắc đến
+                                                                    </a> 
+                                                                </div>
+                                                                <span class="mx-3"><i class="fa-solid fa-clock"></i> 1 phút trước</span>
+                                                            </div>
+                                                        </li>
+                                                        <li class="list-group-item">
+                                                            <div class="User mt-3 d-flex align-items-center">
+                                                                <img class="Avatar rounded-circle" src="./Content/assets/img/truyen1.jpg" alt="Avatar"
+                                                                    style="width: 40px; height: 40px; object-fit: cover;">
+                                                                <h5 class="mb-0 ms-2">User Name</h5>
+                                                            </div>
+                                                            <p class="Comment-content my-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vel lorem at
+                                                                massa facilisis malesuada.</p>
+                                                            <div class="Action d-flex">
+                                                                <span class="mx-3"><i class="fa-solid fa-book"></i> Chương 23</span>
+                                                                <span class="mx-3">
+                                                                    <a href="#">
+                                                                        <i class="fa-solid fa-thumbs-up p-1"></i> 999M
+                                                                    </a> 
+                                                                </span>
+                                                                <div class="Reply mx-3">
+                                                                    <a href="#">
+                                                                        <i class="fa-solid fa-reply p-1"></i> Nhắc đến
+                                                                    </a> 
+                                                                </div>
+                                                                <span class="mx-3"><i class="fa-solid fa-clock"></i> 1 phút trước</span>
+                                                            </div>
+                                                        </li>
+                                                    </ul>
+                                                    <form class="d-flex flex-column my-3">
+                                                        <textarea class="form-control" id="comment" rows="4" placeholder="Nhập bình luận của bạn"></textarea>
+                                                        <button type="button" class="btn btn-primary my-2 align-self-end">Trả Lời</button>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </li> -->
+                                        <!-- <li class="list-group-item">
+                                            <div class="Comment">
+                                                <div class="Comment-Parent">
+                                                    <div class="User mt-3 d-flex align-items-center">
+                                                        <img class="Avatar rounded-circle" src="./Content/assets/img/truyen1.jpg" alt="Avatar"
+                                                            style="width: 40px; height: 40px; object-fit: cover;">
+                                                        <h5 class="mb-0 ms-2">User Name</h5>
+                                                    </div>
+                                                    <p class="Comment-content my-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vel lorem at
+                                                        massa facilisis malesuada.</p>
+                                                    <div class="Action d-flex">
+                                                        <ul class="nav">
+                                                            <li class="nav-item">
+                                                                <a href="#" class="nav-link">
+                                                                    <i class="fa-solid fa-book"></i> Chương 23
+                                                                </a>
+                                                            </li>
+                                                            <li class="nav-item">
+                                                                <a  class="nav-link Nav-Like">
+                                                                    <input type="checkbox" hidden id="CheckLike0">
+                                                                    <label for="CheckLike0" style="cursor: pointer;">
+                                                                        <i class="fa-solid fa-thumbs-up p-1"></i> 999M
+                                                                    </label>
+                                                                </a>
+                                                            </li>
+                                                            <li class="nav-item">
+                                                                <a class="nav-link Nav-Reply">
+                                                                    <input type="checkbox" hidden id="CheckReply0">
+                                                                    <label for="CheckReply0" style="cursor: pointer;">
+                                                                        <i class="fa-solid fa-reply p-1"></i> 2 Trả lời
+                                                                    </label>
+                                                                </a>
+                                                            </li>
+                                                            <li class="nav-item">
+                                                                <a href="#" class="nav-link disabled">
+                                                                    <i class="fa-solid fa-clock"></i> 1 phút trước
+                                                                </a>
+                                                            </li>
+                                                        </ul>
+                                                        
+                                                    </div>
+                                                </div>
+                                                <div class="Comment-Child ms-5 d-none">
+                                                    <ul class="list-group list-group-flush">
+                                                        <li class="list-group-item">
+                                                            <div class="User mt-3 d-flex align-items-center">
+                                                                <img class="Avatar rounded-circle" src="./Content/assets/img/truyen1.jpg" alt="Avatar"
+                                                                    style="width: 40px; height: 40px; object-fit: cover;">
+                                                                <h5 class="mb-0 ms-2">User Name</h5>
+                                                            </div>
+                                                            <p class="Comment-content my-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vel lorem at
+                                                                massa facilisis malesuada.</p>
+                                                            <div class="Action d-flex">
+                                                                <span class="mx-3"><i class="fa-solid fa-book"></i> Chương 23</span>
+                                                                <span class="mx-3">
+                                                                    <a href="#">
+                                                                        <i class="fa-solid fa-thumbs-up p-1"></i> 999M
+                                                                    </a> 
+                                                                </span>
+                                                                <div class="Reply mx-3">
+                                                                    <a href="#">
+                                                                        <i class="fa-solid fa-reply p-1"></i> Nhắc đến
+                                                                    </a> 
+                                                                </div>
+                                                                <span class="mx-3"><i class="fa-solid fa-clock"></i> 1 phút trước</span>
+                                                            </div>
+                                                        </li>
+                                                        <li class="list-group-item">
+                                                            <div class="User mt-3 d-flex align-items-center">
+                                                                <img class="Avatar rounded-circle" src="./Content/assets/img/truyen1.jpg" alt="Avatar"
+                                                                    style="width: 40px; height: 40px; object-fit: cover;">
+                                                                <h5 class="mb-0 ms-2">User Name</h5>
+                                                            </div>
+                                                            <p class="Comment-content my-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vel lorem at
+                                                                massa facilisis malesuada.</p>
+                                                            <div class="Action d-flex">
+                                                                <span class="mx-3"><i class="fa-solid fa-book"></i> Chương 23</span>
+                                                                <span class="mx-3">
+                                                                    <a href="#">
+                                                                        <i class="fa-solid fa-thumbs-up p-1"></i> 999M
+                                                                    </a> 
+                                                                </span>
+                                                                <div class="Reply mx-3">
+                                                                    <a href="#">
+                                                                        <i class="fa-solid fa-reply p-1"></i> Nhắc đến
+                                                                    </a> 
+                                                                </div>
+                                                                <span class="mx-3"><i class="fa-solid fa-clock"></i> 1 phút trước</span>
+                                                            </div>
+                                                        </li>
+                                                    </ul>
+                                                    <form class="d-flex flex-column my-3">
+                                                        <textarea class="form-control" id="comment" rows="4" placeholder="Nhập bình luận của bạn"></textarea>
+                                                        <button type="button" class="btn btn-primary my-2 align-self-end">Trả Lời</button>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="list-group-item">
+                                            <div class="Comment">
+                                                <div class="Comment-Parent">
+                                                    <div class="User mt-3 d-flex align-items-center">
+                                                        <img class="Avatar rounded-circle" src="./Content/assets/img/truyen1.jpg" alt="Avatar"
+                                                            style="width: 40px; height: 40px; object-fit: cover;">
+                                                        <h5 class="mb-0 ms-2">User Name</h5>
+                                                    </div>
+                                                    <p class="Comment-content my-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vel lorem at
+                                                        massa facilisis malesuada.</p>
+                                                    <div class="Action d-flex">
+                                                        <ul class="nav">
+                                                            <li class="nav-item">
+                                                                <a href="#" class="nav-link">
+                                                                    <i class="fa-solid fa-book"></i> Chương 23
+                                                                </a>
+                                                            </li>
+                                                            <li class="nav-item">
+                                                                <a  class="nav-link Nav-Like">
+                                                                    <input type="checkbox" hidden id="CheckLike1">
+                                                                    <label for="CheckLike1" style="cursor: pointer;">
+                                                                        <i class="fa-solid fa-thumbs-up p-1"></i> 999M
+                                                                    </label>
+                                                                </a>
+                                                            </li>
+                                                            <li class="nav-item">
+                                                                <a class="nav-link Nav-Reply">
+                                                                    <input type="checkbox" hidden id="CheckReply1">
+                                                                    <label for="CheckReply1" style="cursor: pointer;">
+                                                                        <i class="fa-solid fa-reply p-1"></i> 2 Trả lời
+                                                                    </label>
+                                                                </a>
+                                                            </li>
+                                                            <li class="nav-item">
+                                                                <a href="#" class="nav-link disabled">
+                                                                    <i class="fa-solid fa-clock"></i> 1 phút trước
+                                                                </a>
+                                                            </li>
+                                                        </ul>
+                                                        
+                                                    </div>
+                                                </div>
+                                                <div class="Comment-Child ms-5 d-none">
+                                                    <ul class="list-group list-group-flush">
+                                                        <li class="list-group-item">
+                                                            <div class="User mt-3 d-flex align-items-center">
+                                                                <img class="Avatar rounded-circle" src="./Content/assets/img/truyen1.jpg" alt="Avatar"
+                                                                    style="width: 40px; height: 40px; object-fit: cover;">
+                                                                <h5 class="mb-0 ms-2">User Name</h5>
+                                                            </div>
+                                                            <p class="Comment-content my-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vel lorem at
+                                                                massa facilisis malesuada.</p>
+                                                            <div class="Action d-flex">
+                                                                <span class="mx-3"><i class="fa-solid fa-book"></i> Chương 23</span>
+                                                                <span class="mx-3">
+                                                                    <a href="#">
+                                                                        <i class="fa-solid fa-thumbs-up p-1"></i> 999M
+                                                                    </a> 
+                                                                </span>
+                                                                <div class="Reply mx-3">
+                                                                    <a href="#">
+                                                                        <i class="fa-solid fa-reply p-1"></i> Nhắc đến
+                                                                    </a> 
+                                                                </div>
+                                                                <span class="mx-3"><i class="fa-solid fa-clock"></i> 1 phút trước</span>
+                                                            </div>
+                                                        </li>
+                                                        <li class="list-group-item">
+                                                            <div class="User mt-3 d-flex align-items-center">
+                                                                <img class="Avatar rounded-circle" src="./Content/assets/img/truyen1.jpg" alt="Avatar"
+                                                                    style="width: 40px; height: 40px; object-fit: cover;">
+                                                                <h5 class="mb-0 ms-2">User Name</h5>
+                                                            </div>
+                                                            <p class="Comment-content my-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vel lorem at
+                                                                massa facilisis malesuada.</p>
+                                                            <div class="Action d-flex">
+                                                                <span class="mx-3"><i class="fa-solid fa-book"></i> Chương 23</span>
+                                                                <span class="mx-3">
+                                                                    <a href="#">
+                                                                        <i class="fa-solid fa-thumbs-up p-1"></i> 999M
+                                                                    </a> 
+                                                                </span>
+                                                                <div class="Reply mx-3">
+                                                                    <a href="#">
+                                                                        <i class="fa-solid fa-reply p-1"></i> Nhắc đến
+                                                                    </a> 
+                                                                </div>
+                                                                <span class="mx-3"><i class="fa-solid fa-clock"></i> 1 phút trước</span>
+                                                            </div>
+                                                        </li>
+                                                    </ul>
+                                                    <form class="d-flex flex-column my-3">
+                                                        <textarea class="form-control" id="comment" rows="4" placeholder="Nhập bình luận của bạn"></textarea>
+                                                        <button type="button" class="btn btn-primary my-2 align-self-end">Trả Lời</button>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="list-group-item">
+                                            <div class="Comment">
+                                                <div class="Comment-Parent">
+                                                    <div class="User mt-3 d-flex align-items-center">
+                                                        <img class="Avatar rounded-circle" src="./Content/assets/img/truyen1.jpg" alt="Avatar"
+                                                            style="width: 40px; height: 40px; object-fit: cover;">
+                                                        <h5 class="mb-0 ms-2">User Name</h5>
+                                                    </div>
+                                                    <p class="Comment-content my-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vel lorem at
+                                                        massa facilisis malesuada.</p>
+                                                    <div class="Action d-flex">
+                                                        <ul class="nav">
+                                                            <li class="nav-item">
+                                                                <a href="#" class="nav-link">
+                                                                    <i class="fa-solid fa-book"></i> Chương 23
+                                                                </a>
+                                                            </li>
+                                                            <li class="nav-item">
+                                                                <a  class="nav-link Nav-Like">
+                                                                    <input type="checkbox" hidden id="CheckLike2">
+                                                                    <label for="CheckLike2" style="cursor: pointer;">
+                                                                        <i class="fa-solid fa-thumbs-up p-1"></i> 999M
+                                                                    </label>
+                                                                </a>
+                                                            </li>
+                                                            <li class="nav-item">
+                                                                <a class="nav-link Nav-Reply">
+                                                                    <input type="checkbox" hidden id="CheckReply2">
+                                                                    <label for="CheckReply2" style="cursor: pointer;">
+                                                                        <i class="fa-solid fa-reply p-1"></i> 2 Trả lời
+                                                                    </label>
+                                                                </a>
+                                                            </li>
+                                                            <li class="nav-item">
+                                                                <a href="#" class="nav-link disabled">
+                                                                    <i class="fa-solid fa-clock"></i> 1 phút trước
+                                                                </a>
+                                                            </li>
+                                                        </ul>
+                                                        
+                                                        
+                                                    </div>
+                                                </div>
+                                                <div class="Comment-Child ms-5 d-none">
+                                                    <ul class="list-group list-group-flush">
+                                                        <li class="list-group-item">
+                                                            <div class="User mt-3 d-flex align-items-center">
+                                                                <img class="Avatar rounded-circle" src="./Content/assets/img/truyen1.jpg" alt="Avatar"
+                                                                    style="width: 40px; height: 40px; object-fit: cover;">
+                                                                <h5 class="mb-0 ms-2">User Name</h5>
+                                                            </div>
+                                                            <p class="Comment-content my-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vel lorem at
+                                                                massa facilisis malesuada.</p>
+                                                            <div class="Action d-flex">
+                                                                <span class="mx-3"><i class="fa-solid fa-book"></i> Chương 23</span>
+                                                                <span class="mx-3">
+                                                                    <a href="#">
+                                                                        <i class="fa-solid fa-thumbs-up p-1"></i> 999M
+                                                                    </a> 
+                                                                </span>
+                                                                <div class="Reply mx-3">
+                                                                    <a href="#">
+                                                                        <i class="fa-solid fa-reply p-1"></i> Nhắc đến
+                                                                    </a> 
+                                                                </div>
+                                                                <span class="mx-3"><i class="fa-solid fa-clock"></i> 1 phút trước</span>
+                                                            </div>
+                                                        </li>
+                                                        <li class="list-group-item">
+                                                            <div class="User mt-3 d-flex align-items-center">
+                                                                <img class="Avatar rounded-circle" src="./Content/assets/img/truyen1.jpg" alt="Avatar"
+                                                                    style="width: 40px; height: 40px; object-fit: cover;">
+                                                                <h5 class="mb-0 ms-2">User Name</h5>
+                                                            </div>
+                                                            <p class="Comment-content my-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vel lorem at
+                                                                massa facilisis malesuada.</p>
+                                                            <div class="Action d-flex">
+                                                                <span class="mx-3"><i class="fa-solid fa-book"></i> Chương 23</span>
+                                                                <span class="mx-3">
+                                                                    <a href="#">
+                                                                        <i class="fa-solid fa-thumbs-up p-1"></i> 999M
+                                                                    </a> 
+                                                                </span>
+                                                                <div class="Reply mx-3">
+                                                                    <a href="#">
+                                                                        <i class="fa-solid fa-reply p-1"></i> Nhắc đến
+                                                                    </a> 
+                                                                </div>
+                                                                <span class="mx-3"><i class="fa-solid fa-clock"></i> 1 phút trước</span>
+                                                            </div>
+                                                        </li>
+                                                    </ul>
+                                                    <form class="d-flex flex-column my-3">
+                                                        <textarea class="form-control" id="comment" rows="4" placeholder="Nhập bình luận của bạn"></textarea>
+                                                        <button type="button" class="btn btn-primary my-2 align-self-end">Trả Lời</button>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </li> -->
+                                    </ul>
+                                    <div id="loadingSpinner" class="d-flex justify-content-center d-none">
+                                        <div class="spinner-border text-primary mx-auto" role="status">
+                                            <span class="visually-hidden">Loading...</span>
+                                        </div>
+                                    </div>
+                                    <input type="button" value="Xem thêm" id="loadMoreBtn" class="w-100 mt-4">
+                                </div>
+                            </div>
                         </div>
-                        <div class="m-2 py-1 px-2 Rating">
-                            <i class="fa-solid fa-star" style="color: #facc15;"></i> 5/5
-                        </div>
-                    </div>
-                    <p class="m-0 Description-Novel">
-                        "Con người là linh hồn vạn vật, cổ là tinh hoa của trời đất
-                        Tam quan bất chính, ma đầu hồi sinh.
-                        Chuyện xưa về một người xuyên không được sống lại.
-                        Một thế giới kì lạ của người nuôi cổ, dùng cổ, luyện cổ.
-                        Xuân Thu Thiền, Nguyệt Quang cổ, Tửu Trùng, Nhất Khí Kim Quang Trùng, Thanh Ti cổ, Hi Vọng cổ... 
-                        Còn có một tuyệt thế ma đầu tung hoành!"
-                    </p>
-                    <div class="Action mt-4 d-flex">
-                        <div class="Following me-2 ">
-                            <a class="py-2 px-3" href="#"><i class="fa-solid fa-bookmark me-1"></i> Theo Dõi Truyện</a>
-                        </div>
-                        <div class="Reading me-2">
-                            <a class="py-2 px-3" href="#"><i class="fa-solid fa-book-open me-1"></i> Đọc Ngay</a>
+                        <div class="tab-pane fade" id="Rate-tab-pane" role="tabpanel" aria-labelledby="Rate-tab" tabindex="0">Đánh Giá
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="row ActionNovel px-5 my-5">
-                <ul class="nav nav-tabs" id="myTab" role="tablist">
-                    <li class="nav-item" role="presentation">
-                        <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home-tab-pane" type="button"
-                            role="tab" aria-controls="home-tab-pane" aria-selected="true"><i class="fa-solid fa-list"></i> Danh Sách Chương</button>
-                    </li>
-                    <li class="nav-item" role="presentation">
-                        <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile-tab-pane" type="button"
-                            role="tab" aria-controls="profile-tab-pane" aria-selected="false"><i class="fa-solid fa-comments"></i> Bình Luận</button>
-                    </li>
-                    <li class="nav-item" role="presentation">
-                        <button class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#contact-tab-pane" type="button"
-                            role="tab" aria-controls="contact-tab-pane" aria-selected="false"><i class="fa-solid fa-star"></i> Đánh Giá</button>
-                    </li>
-                </ul>
-                <div class="tab-content" id="myTabContent">
-                    <div class="tab-pane fade show active" id="home-tab-pane" role="tabpanel" aria-labelledby="home-tab" tabindex="0">
-                        ...</div>
-                    <div class="tab-pane fade" id="profile-tab-pane" role="tabpanel" aria-labelledby="profile-tab" tabindex="0">...
-                    </div>
-                    <div class="tab-pane fade" id="contact-tab-pane" role="tabpanel" aria-labelledby="contact-tab" tabindex="0">...
-                    </div>
-                    <div class="tab-pane fade" id="disabled-tab-pane" role="tabpanel" aria-labelledby="disabled-tab" tabindex="0">...
-                    </div>
-                </div>
-            </div>
+            
         </div>
     </section>
-
-
 
 
 
@@ -454,10 +1086,279 @@
     <script src="./Content/assets/js/bootstrap.bundle.min.js"></script>
     <script src="./Content/assets/ckeditor/ckeditor.js"></script>
     <script src="./Content/assets/js/jquery-3.6.0.min.js"></script>
+    <script src="./Content/assets/js/pagination.js"></script>
     <script src="./Content/assets/js/app.js"></script>
 
     <script>
+        (function (name) {
+            var container = $('#pagination-' + name);
+            if (!container.length) return;
+            var sources = function () {
+                var result = [];
+
+                for (var i = 1; i < 2002; i++) {
+                    result.push(i);
+                }
+
+                return result;
+            }();
+
+            var options = {
+                dataSource: sources,
+                pageSize: 50,
+                showSizeChanger: false,
+                showGoInput: true,
+                showGoButton: true,
+                autoHidePrevious: true,
+                autoHideNext: true,
+                callback: function (response, pagination) {
+                    window.console && console.log(response, pagination);
+
+                    var dataHtml = '<div class="row g-3">';
+
+                    $.each(response, function (index, item) {
+                        dataHtml += 
+                        '<div class="col-3">' +
+                            '<div class="p-2 Box-Chapter-Link"><a href="#" class="Chapter-Link">' +
+                                'Chương ' + item + ': Dù bỏ mình ma tâm vẫn không hối hận' +
+                            '</a></div>' +
+                        '</div>';    
+                    });
+
+                    dataHtml += '</div>';
+
+                    container.prev().html(dataHtml);
+                }
+            };
+
+            //$.pagination(container, options);
+
+            container.addHook('beforeInit', function () {
+                window.console && console.log('beforeInit...');
+            });
+            container.pagination(options);
+
+            container.addHook('beforePageOnClick', function () {
+                window.console && console.log('beforePageOnClick...');
+                //return false
+            });
+        })('paginationForChapter');
 
     </script>
-</body>
+
+<!-- js cmt -->
+    <script>
+        // Dữ liệu bình luận mẫu (thay thế cho việc gửi yêu cầu tới máy chủ)
+        const comments = [
+            { id: 1, name: "bình luận 1" },
+            { id: 2, name: "bình luận 2" },
+            { id: 3, name: "bình luận 3" },
+            { id: 4, name: "bình luận 4" },
+            { id: 5, name: "bình luận 5" },
+            { id: 6, name: "bình luận 6" },
+            { id: 7, name: "bình luận 7" },
+            { id: 8, name: "bình luận 8" },
+            { id: 9, name: "bình luận 9" },
+            { id: 10, name: "bình luận 10" },
+            { id: 11, name: "bình luận 11" },
+            { id: 12, name: "bình luận 12" },
+            { id: 13, name: "bình luận 13" },
+            { id: 14, name: "bình luận 14" },
+            // Các bình luận tiếp theo ...
+        ];
+
+        let page = 1;
+        const commentsPerPage = 5; // Số bình luận hiển thị trên mỗi lần tải thêm
+
+        function displayComments(comments) {
+            const commentList = $("#commentList");
+            comments.forEach((comment) => {
+                var commentElement = `<li class="list-group-item"> <div class="Comment"> <div class="Comment-Parent"> <div class="User mt-3 d-flex align-items-center"> <img class="Avatar rounded-circle" src="./Content/assets/img/truyen1.jpg" alt="Avatar" style="width: 40px; height: 40px; object-fit: cover;"> <h5 class="mb-0 ms-2">User Name</h5> </div> <p class="Comment-content my-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vel lorem at massa facilisis malesuada.</p> <div class="Action d-flex"> <ul class="nav"> <li class="nav-item"> <a href="#" class="nav-link"> <i class="fa-solid fa-book"></i> Chương 23 </a> </li> <li class="nav-item"> <a  class="nav-link Nav-Like${comment.id}"> <input type="checkbox" hidden id="CheckLike${comment.id}"> <label for="CheckLike${comment.id}" style="cursor: pointer;"> <i class="fa-solid fa-thumbs-up p-1"></i> 999M </label> </a> </li> <li class="nav-item"> <a class="nav-link Nav-Reply${comment.id}"> <input type="checkbox" hidden id="CheckReply${comment.id}"> <label for="CheckReply${comment.id}" style="cursor: pointer;"> <i class="fa-solid fa-reply p-1"></i> 2 Trả lời </label> </a> </li> <li class="nav-item"> <a href="#" class="nav-link disabled"> <i class="fa-solid fa-clock"></i> 1 phút trước </a> </li> </ul> </div> </div> <div class="Comment-Child${comment.id} ms-5 d-none"> <ul class="list-group list-group-flush"> <li class="list-group-item"> <div class="User mt-3 d-flex align-items-center"> <img class="Avatar rounded-circle" src="./Content/assets/img/truyen1.jpg" alt="Avatar" style="width: 40px; height: 40px; object-fit: cover;"> <h5 class="mb-0 ms-2">User Name</h5> </div> <p class="Comment-content my-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vel lorem at massa facilisis malesuada.</p> <div class="Action d-flex"> <span class="mx-3"><i class="fa-solid fa-book"></i> Chương 23</span> <span class="mx-3"> <a href="#"> <i class="fa-solid fa-thumbs-up p-1"></i> 999M </a> </span> <div class="Reply mx-3"> <a href="#"> <i class="fa-solid fa-reply p-1"></i> Nhắc đến </a> </div> <span class="mx-3"><i class="fa-solid fa-clock"></i> 1 phút trước</span> </div> </li> <li class="list-group-item"> <div class="User mt-3 d-flex align-items-center"> <img class="Avatar rounded-circle" src="./Content/assets/img/truyen1.jpg" alt="Avatar" style="width: 40px; height: 40px; object-fit: cover;"> <h5 class="mb-0 ms-2">User Name</h5> </div> <p class="Comment-content my-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vel lorem at massa facilisis malesuada.</p> <div class="Action d-flex"> <span class="mx-3"><i class="fa-solid fa-book"></i> Chương 23</span> <span class="mx-3"> <a href="#"> <i class="fa-solid fa-thumbs-up p-1"></i> 999M </a> </span> <div class="Reply mx-3"> <a href="#"> <i class="fa-solid fa-reply p-1"></i> Nhắc đến </a> </div> <span class="mx-3"><i class="fa-solid fa-clock"></i> 1 phút trước</span> </div> </li> </ul> <form class="d-flex flex-column my-3"> <textarea class="form-control" id="comment" rows="4" placeholder="Nhập bình luận của bạn"></textarea> <button type="button" class="btn btn-primary my-2 align-self-end">Trả Lời</button> </form> </div> </div> </li>`
+                commentList.append(commentElement);
+
+                // js like
+                var clike = document.querySelector('#Main .ActionNovel .tab-content .Comment-List .Comment .Comment-Parent .Action #CheckLike' + comment.id);
+                var likeLink = document.querySelector('#Main .ActionNovel .tab-content .Comment-List .Comment .Comment-Parent .Action .Nav-Like' + comment.id);
+                clike.addEventListener('change', function () {
+                    if (this.checked) {
+                        likeLink.classList.add('active');
+                    } else {
+                        likeLink.classList.remove('active');
+                    }
+                });
+                // js cmt child
+                var crep = document.querySelector('#Main .ActionNovel .tab-content .Comment-List .Comment .Comment-Parent .Action #CheckReply' + comment.id);
+                var child = document.querySelector('#Main .ActionNovel .tab-content .Comment-List .Comment .Comment-Child' + comment.id);
+                var navReply = document.querySelector('#Main .ActionNovel .tab-content .Comment-List .Comment .Comment-Parent .Action .Nav-Reply' + comment.id);
+                crep.addEventListener('change', function () {
+                    if (this.checked) {
+                        navReply.classList.add('active');
+                        child.classList.remove('d-none');
+                    } else {
+                        navReply.classList.remove('active');
+                        child.classList.add('d-none');
+                    }
+                });
+            });
+        }
+
+        function loadMoreComments() {
+            $("#loadMoreBtn").hide(); // Ẩn nút tải thêm
+
+            // Hiển thị spinner trong 1 giây trước khi tải dữ liệu
+            $("#loadingSpinner").removeClass("d-none");
+            setTimeout(() => {
+                $("#loadingSpinner").addClass("d-none"); // Ẩn spinner sau 1 giây
+                $("#loadMoreBtn").show(); // Hiển thị lại nút tải thêm
+
+                // Sử dụng slice để lấy số bình luận cần hiển thị trong lần tải thêm
+                const startIndex = (page - 1) * commentsPerPage;
+                const endIndex = startIndex + commentsPerPage;
+                const commentsToShow = comments.slice(startIndex, endIndex);
+
+                if (commentsToShow.length > 0) {
+                    displayComments(commentsToShow);
+
+                    page++; // Tăng số trang lên để chuẩn bị cho lần tải thêm tiếp theo
+                }
+
+                // Ẩn nút tải thêm và hiển thị thông báo khi hết bình luận
+                if (startIndex + commentsToShow.length >= comments.length) {
+                    $("#loadMoreBtn").hide();
+                    $("#commentList").append("<p class='text-muted'>Không còn bình luận nào khác</p>");
+                }
+            }, 500);
+        }
+
+        $(document).ready(function () {
+            // Xử lý sự kiện khi nhấn nút tải thêm
+            $("#loadMoreBtn").on("click", function () {
+                loadMoreComments();
+            });
+
+            // Hiển thị bình luận ban đầu khi trang tải
+            loadMoreComments();
+            
+        });
+    </script>
+    <!-- js comment, like -->
+    <!-- <script>
+        var cmts = document.querySelectorAll('#Main .ActionNovel .tab-content .Comment-List .Comment');
+        cmts.forEach((element, index) => {
+            var clike = element.querySelector('.Comment-Parent .Action #CheckLike' + index+1);
+            var likeLink = element.querySelector('.Comment-Parent .Action .Nav-Like');
+            clike.addEventListener('change', function () {
+                if (this.checked) {
+                    likeLink.classList.add('active');
+                } else {
+                    likeLink.classList.remove('active');
+                }
+            });
+        });
+    </script>
+
+    <script>
+        var cmts = document.querySelectorAll('#Main .ActionNovel .tab-content .Comment-List .Comment');
+        cmts.forEach((element, index) => {
+            var crep = element.querySelector('.Comment-Parent .Action #CheckReply'+index+1);
+            var child = element.querySelector('.Comment-Child');
+            crep.addEventListener('change', function () {
+                if (this.checked) {
+                    element.querySelector('.Comment-Parent .Action .Nav-Reply').classList.add('active');
+                    child.classList.remove('d-none');
+                } else {
+                    element.querySelector('.Comment-Parent .Action .Nav-Reply').classList.remove('active');
+                    child.classList.add('d-none');
+                }
+            });
+        });
+    </script> -->
+
+    <!-- cmt child -->
+    <!-- <script> 
+        // Dữ liệu bình luận mẫu (thay thế cho việc gửi yêu cầu tới máy chủ)
+        const commentsChild = [
+            { id: 1, name: "bình luận 1" },
+            { id: 2, name: "bình luận 2" },
+            { id: 3, name: "bình luận 3" },
+            { id: 4, name: "bình luận 4" },
+            { id: 5, name: "bình luận 5" },
+            { id: 6, name: "bình luận 6" },
+            { id: 7, name: "bình luận 7" },
+            { id: 8, name: "bình luận 8" },
+            { id: 9, name: "bình luận 9" },
+            { id: 10, name: "bình luận 10" },
+            { id: 11, name: "bình luận 11" },
+            { id: 12, name: "bình luận 12" },
+            { id: 13, name: "bình luận 13" },
+            { id: 14, name: "bình luận 14" },
+            // Các bình luận tiếp theo ...
+        ];
+
+        let pageChild = 1;
+        const commentsChildPerPage = 5; // Số bình luận hiển thị trên mỗi lần tải thêm
+
+        commentsChild.forEach(element => {
+                function displayCommentsChild(commentsChild) {
+                    const commentList = $("#commentChildList" + element.id);
+                    commentsChild.forEach((comment) => {
+                        var commentElement = `<li class="list-group-item"> <div class="Comment"> <div class="Comment-Parent"> <div class="User mt-3 d-flex align-items-center"> <img class="Avatar rounded-circle" src="./Content/assets/img/truyen1.jpg" alt="Avatar" style="width: 40px; height: 40px; object-fit: cover;"> <h5 class="mb-0 ms-2">User Name</h5> </div> <p class="Comment-content my-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vel lorem at massa facilisis malesuada.</p> <div class="Action d-flex"> <ul class="nav"> <li class="nav-item"> <a href="#" class="nav-link"> <i class="fa-solid fa-book"></i> Chương 23 </a> </li> <li class="nav-item"> <a  class="nav-link Nav-Like${comment.id}"> <input type="checkbox" hidden id="CheckLike${comment.id}"> <label for="CheckLike${comment.id}" style="cursor: pointer;"> <i class="fa-solid fa-thumbs-up p-1"></i> 999M </label> </a> </li> <li class="nav-item"> <a class="nav-link Nav-Reply${comment.id}"> <input type="checkbox" hidden id="CheckReply${comment.id}"> <label for="CheckReply${comment.id}" style="cursor: pointer;"> <i class="fa-solid fa-reply p-1"></i> 2 Trả lời </label> </a> </li> <li class="nav-item"> <a href="#" class="nav-link disabled"> <i class="fa-solid fa-clock"></i> 1 phút trước </a> </li> </ul> </div> </div> <div class="Comment-Child${comment.id} ms-5 d-none"> <ul class="list-group list-group-flush"> <li class="list-group-item"> <div class="User mt-3 d-flex align-items-center"> <img class="Avatar rounded-circle" src="./Content/assets/img/truyen1.jpg" alt="Avatar" style="width: 40px; height: 40px; object-fit: cover;"> <h5 class="mb-0 ms-2">User Name</h5> </div> <p class="Comment-content my-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vel lorem at massa facilisis malesuada.</p> <div class="Action d-flex"> <span class="mx-3"><i class="fa-solid fa-book"></i> Chương 23</span> <span class="mx-3"> <a href="#"> <i class="fa-solid fa-thumbs-up p-1"></i> 999M </a> </span> <div class="Reply mx-3"> <a href="#"> <i class="fa-solid fa-reply p-1"></i> Nhắc đến </a> </div> <span class="mx-3"><i class="fa-solid fa-clock"></i> 1 phút trước</span> </div> </li> <li class="list-group-item"> <div class="User mt-3 d-flex align-items-center"> <img class="Avatar rounded-circle" src="./Content/assets/img/truyen1.jpg" alt="Avatar" style="width: 40px; height: 40px; object-fit: cover;"> <h5 class="mb-0 ms-2">User Name</h5> </div> <p class="Comment-content my-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vel lorem at massa facilisis malesuada.</p> <div class="Action d-flex"> <span class="mx-3"><i class="fa-solid fa-book"></i> Chương 23</span> <span class="mx-3"> <a href="#"> <i class="fa-solid fa-thumbs-up p-1"></i> 999M </a> </span> <div class="Reply mx-3"> <a href="#"> <i class="fa-solid fa-reply p-1"></i> Nhắc đến </a> </div> <span class="mx-3"><i class="fa-solid fa-clock"></i> 1 phút trước</span> </div> </li> </ul> <form class="d-flex flex-column my-3"> <textarea class="form-control" id="comment" rows="4" placeholder="Nhập bình luận của bạn"></textarea> <button type="button" class="btn btn-primary my-2 align-self-end">Trả Lời</button> </form> </div> </div> </li>`
+                        commentList.append(commentElement);
+
+                        // js like
+                        var clike = document.querySelector('#Main .ActionNovel .tab-content .Comment-List .Comment .Comment-Parent .Action #CheckLike' + comment.id);
+                        var likeLink = document.querySelector('#Main .ActionNovel .tab-content .Comment-List .Comment .Comment-Parent .Action .Nav-Like' + comment.id);
+                        clike.addEventListener('change', function () {
+                            if (this.checked) {
+                                likeLink.classList.add('active');
+                            } else {
+                                likeLink.classList.remove('active');
+                            }
+                        });
+                    });
+                }
+
+                function loadMoreCommentsChild() {
+                    $("#loadMoreBtnCmtChild").hide(); // Ẩn nút tải thêm
+
+                    // Hiển thị spinner trong 1 giây trước khi tải dữ liệu
+                    $("#loadingSpinnerChild").removeClass("d-none");
+                    setTimeout(() => {
+                        $("#loadingSpinnerChild").addClass("d-none"); // Ẩn spinner sau 1 giây
+                        $("#loadMoreBtnCmtChild").show(); // Hiển thị lại nút tải thêm
+
+                        // Sử dụng slice để lấy số bình luận cần hiển thị trong lần tải thêm
+                        const startIndex = (pageChild - 1) * commentsChildPerPage;
+                        const endIndex = startIndex + commentsChildPerPage;
+                        const commentsChildToShow = commentsChild.slice(startIndex, endIndex);
+
+                        if (commentsChildToShow.length > 0) {
+                            displayCommentsChild(commentsChildToShow);
+
+                            pageChild++; // Tăng số trang lên để chuẩn bị cho lần tải thêm tiếp theo
+                        }
+
+                        // Ẩn nút tải thêm và hiển thị thông báo khi hết bình luận
+                        if (startIndex + commentsChildToShow.length >= commentsChild.length) {
+                            $("#loadMoreBtnCmtChild").hide();
+                            $("#commentList").append("<p class='text-muted'>Không còn bình luận nào khác</p>");
+                        }
+                    }, 500);
+                }
+
+                $(document).ready(function () {
+                    // Xử lý sự kiện khi nhấn nút tải thêm
+                    $("#loadMoreBtnCmtChild").on("click", function () {
+                        loadMoreCommentsChild();
+                    });
+
+                    // Hiển thị bình luận ban đầu khi trang tải
+                    loadMoreCommentsChild();
+
+                });
+            });
+        
+    </script> -->
+
+    </body>
 </html>
