@@ -20,7 +20,7 @@
         }
 
         * {
-            user-select: none;
+            /* user-select: none; */
         }
 
         body {
@@ -210,6 +210,41 @@
         #Main .ActionNovel .tab-content #Comment-tab-pane .Comment-List .Comment-Child .Action .nav-link.active,
         #Main .ActionNovel .tab-content #Comment-tab-pane .Comment-List .Comment-Parent .Action .nav-link.active {
             color: var(--primaty-color);
+        }
+
+  /* rate */
+        .rating-container {
+            text-align: center;
+        }
+        .stars {
+            font-size: 30px;
+            display: inline-block;
+            cursor: pointer;
+        }
+        .star {
+            color: #ddd;
+            transition: color 0.3s;
+        }
+        .star.active,
+        .star:hover {
+            color: gold;
+        }
+        
+        .rating-text {
+            font-size: 16px;
+            margin-top: 10px;
+        }
+
+
+        /* Tab action */
+
+        #Tab-Action .Item-Link {
+
+        }
+
+        #Tab-Action .Item-Link:hover {
+            background-color: #00dc82;
+            color: #fff;
         }
 
     </style>
@@ -451,10 +486,44 @@
                         </li>
                     </ul>
                     <div class="tab-content " id="myTabContent">
-                        <div class="tab-pane fade" id="infomation-tab-pane" role="tabpanel" aria-labelledby="infomation-tab" tabindex="0">
+                        <div class="tab-pane fade show active" id="infomation-tab-pane" role="tabpanel" aria-labelledby="infomation-tab" tabindex="0">
                             <div class="container-fluid">
                                 <div class="row">
                                     <div class="col-8 my-auto Description-Novel">
+                                        <h6>Thể Loại</h6>
+                                        <ul class="nav">
+                                            <li class="nav-item">
+                                                <a href="#" class="nav-link">Huyền Huyễn</a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a href="#" class="nav-link">Huyền Huyễn</a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a href="#" class="nav-link">Huyền Huyễn</a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a href="#" class="nav-link">Huyền Huyễn</a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a href="#" class="nav-link">Huyền Huyễn</a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a href="#" class="nav-link">Xuyên Không</a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a href="#" class="nav-link">Huyền Huyễn</a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a href="#" class="nav-link">Đô Thị</a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a href="#" class="nav-link">Ngôn Tình</a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a href="#" class="nav-link">Huyền Huyễn</a>
+                                            </li>
+                                        </ul>
+                                        <h6 class="mt-3">Mô tả</h6>
                                         <p class="lh-lg">
                                             Trong đêm không ánh sáng, nhưng có tiếng trống trận cùng hò hét. Thiếu niên cẩn thận lắng nghe, là nhịp tim của hắn cùng
                                             huyết dịch chảy xuôi.
@@ -530,7 +599,7 @@
                                 <div id="pagination-paginationForChapter" class="my-3"></div>
                             </div>
                         </div>
-                        <div class="tab-pane fade show active" id="Comment-tab-pane" role="tabpanel" aria-labelledby="Comment-tab" tabindex="0">
+                        <div class="tab-pane fade" id="Comment-tab-pane" role="tabpanel" aria-labelledby="Comment-tab" tabindex="0">
                             <div class="container">
                                 <form class="d-flex flex-column">
                                     <textarea class="form-control" id="comment" rows="4" placeholder="Nhập bình luận của bạn"></textarea>
@@ -538,13 +607,25 @@
                                 </form>
                                 <div class="Comment-List">
                                     <ul class="list-group list-group-flush" id="commentList">
-                                        <!-- <li class="list-group-item">
+                                        <li class="list-group-item">
                                             <div class="Comment">
                                                 <div class="Comment-Parent">
                                                     <div class="User mt-3 d-flex align-items-center">
                                                         <img class="Avatar rounded-circle" src="./Content/assets/img/truyen1.jpg" alt="Avatar"
                                                             style="width: 40px; height: 40px; object-fit: cover;">
                                                         <h5 class="mb-0 ms-2">User Name</h5>
+                                                        <div class="ms-auto position-relative" id="Tab-Action">
+                                                            <input type="checkbox" hidden id="ellipsis-vertical">
+                                                            <label for="ellipsis-vertical" style="cursor: pointer;"><i class="fa-solid fa-ellipsis-vertical p-2"></i></label>
+                                                            <ul class="list-group position-absolute d-none flex-column align-items-start" id="ActionList" style="width: 500%; border: solid 1px #333; background-color: #fff;">
+                                                                <li class="list-group-item p-0 w-100">
+                                                                    <a href="#" class="Item-Link p-2 d-block w-100 text-start">Chỉnh sửa</a>
+                                                                </li>
+                                                                <li class="list-group-item p-0 w-100">
+                                                                    <a href="#" class="Item-Link p-2 d-block w-100 text-start">Xóa</a>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
                                                     </div>
                                                     <p class="Comment-content my-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vel lorem at
                                                         massa facilisis malesuada.</p>
@@ -587,104 +668,18 @@
                                                                 <img class="Avatar rounded-circle" src="./Content/assets/img/truyen1.jpg" alt="Avatar"
                                                                     style="width: 40px; height: 40px; object-fit: cover;">
                                                                 <h5 class="mb-0 ms-2">User Name</h5>
-                                                            </div>
-                                                            <p class="Comment-content my-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vel lorem at
-                                                                massa facilisis malesuada.</p>
-                                                            <div class="Action d-flex">
-                                                                <span class="mx-3"><i class="fa-solid fa-book"></i> Chương 23</span>
-                                                                <span class="mx-3">
-                                                                    <a href="#">
-                                                                        <i class="fa-solid fa-thumbs-up p-1"></i> 999M
-                                                                    </a> 
-                                                                </span>
-                                                                <div class="Reply mx-3">
-                                                                    <a href="#">
-                                                                        <i class="fa-solid fa-reply p-1"></i> Nhắc đến
-                                                                    </a> 
+                                                                <div class="ms-auto position-relative" id="Tab-Action">
+                                                                    <input type="checkbox" hidden id="ellipsis-vertical">
+                                                                    <label for="ellipsis-vertical" style="cursor: pointer;"><i class="fa-solid fa-ellipsis-vertical p-2"></i></label>
+                                                                    <ul class="list-group position-absolute d-none flex-column align-items-start" id="ActionList" style="width: 500%; border: solid 1px #333; background-color: #fff;">
+                                                                        <li class="list-group-item p-0 w-100">
+                                                                            <a href="#" class="Item-Link p-2 d-block w-100 text-start">Chỉnh sửa</a>
+                                                                        </li>
+                                                                        <li class="list-group-item p-0 w-100">
+                                                                            <a href="#" class="Item-Link p-2 d-block w-100 text-start">Xóa</a>
+                                                                        </li>
+                                                                    </ul>
                                                                 </div>
-                                                                <span class="mx-3"><i class="fa-solid fa-clock"></i> 1 phút trước</span>
-                                                            </div>
-                                                        </li>
-                                                        <li class="list-group-item">
-                                                            <div class="User mt-3 d-flex align-items-center">
-                                                                <img class="Avatar rounded-circle" src="./Content/assets/img/truyen1.jpg" alt="Avatar"
-                                                                    style="width: 40px; height: 40px; object-fit: cover;">
-                                                                <h5 class="mb-0 ms-2">User Name</h5>
-                                                            </div>
-                                                            <p class="Comment-content my-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vel lorem at
-                                                                massa facilisis malesuada.</p>
-                                                            <div class="Action d-flex">
-                                                                <span class="mx-3"><i class="fa-solid fa-book"></i> Chương 23</span>
-                                                                <span class="mx-3">
-                                                                    <a href="#">
-                                                                        <i class="fa-solid fa-thumbs-up p-1"></i> 999M
-                                                                    </a> 
-                                                                </span>
-                                                                <div class="Reply mx-3">
-                                                                    <a href="#">
-                                                                        <i class="fa-solid fa-reply p-1"></i> Nhắc đến
-                                                                    </a> 
-                                                                </div>
-                                                                <span class="mx-3"><i class="fa-solid fa-clock"></i> 1 phút trước</span>
-                                                            </div>
-                                                        </li>
-                                                    </ul>
-                                                    <form class="d-flex flex-column my-3">
-                                                        <textarea class="form-control" id="comment" rows="4" placeholder="Nhập bình luận của bạn"></textarea>
-                                                        <button type="button" class="btn btn-primary my-2 align-self-end">Trả Lời</button>
-                                                    </form>
-                                                </div>
-                                            </div>
-                                        </li> -->
-                                        <!-- <li class="list-group-item">
-                                            <div class="Comment">
-                                                <div class="Comment-Parent">
-                                                    <div class="User mt-3 d-flex align-items-center">
-                                                        <img class="Avatar rounded-circle" src="./Content/assets/img/truyen1.jpg" alt="Avatar"
-                                                            style="width: 40px; height: 40px; object-fit: cover;">
-                                                        <h5 class="mb-0 ms-2">User Name</h5>
-                                                    </div>
-                                                    <p class="Comment-content my-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vel lorem at
-                                                        massa facilisis malesuada.</p>
-                                                    <div class="Action d-flex">
-                                                        <ul class="nav">
-                                                            <li class="nav-item">
-                                                                <a href="#" class="nav-link">
-                                                                    <i class="fa-solid fa-book"></i> Chương 23
-                                                                </a>
-                                                            </li>
-                                                            <li class="nav-item">
-                                                                <a  class="nav-link Nav-Like">
-                                                                    <input type="checkbox" hidden id="CheckLike0">
-                                                                    <label for="CheckLike0" style="cursor: pointer;">
-                                                                        <i class="fa-solid fa-thumbs-up p-1"></i> 999M
-                                                                    </label>
-                                                                </a>
-                                                            </li>
-                                                            <li class="nav-item">
-                                                                <a class="nav-link Nav-Reply">
-                                                                    <input type="checkbox" hidden id="CheckReply0">
-                                                                    <label for="CheckReply0" style="cursor: pointer;">
-                                                                        <i class="fa-solid fa-reply p-1"></i> 2 Trả lời
-                                                                    </label>
-                                                                </a>
-                                                            </li>
-                                                            <li class="nav-item">
-                                                                <a href="#" class="nav-link disabled">
-                                                                    <i class="fa-solid fa-clock"></i> 1 phút trước
-                                                                </a>
-                                                            </li>
-                                                        </ul>
-                                                        
-                                                    </div>
-                                                </div>
-                                                <div class="Comment-Child ms-5 d-none">
-                                                    <ul class="list-group list-group-flush">
-                                                        <li class="list-group-item">
-                                                            <div class="User mt-3 d-flex align-items-center">
-                                                                <img class="Avatar rounded-circle" src="./Content/assets/img/truyen1.jpg" alt="Avatar"
-                                                                    style="width: 40px; height: 40px; object-fit: cover;">
-                                                                <h5 class="mb-0 ms-2">User Name</h5>
                                                             </div>
                                                             <p class="Comment-content my-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vel lorem at
                                                                 massa facilisis malesuada.</p>
@@ -734,203 +729,6 @@
                                                 </div>
                                             </div>
                                         </li>
-                                        <li class="list-group-item">
-                                            <div class="Comment">
-                                                <div class="Comment-Parent">
-                                                    <div class="User mt-3 d-flex align-items-center">
-                                                        <img class="Avatar rounded-circle" src="./Content/assets/img/truyen1.jpg" alt="Avatar"
-                                                            style="width: 40px; height: 40px; object-fit: cover;">
-                                                        <h5 class="mb-0 ms-2">User Name</h5>
-                                                    </div>
-                                                    <p class="Comment-content my-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vel lorem at
-                                                        massa facilisis malesuada.</p>
-                                                    <div class="Action d-flex">
-                                                        <ul class="nav">
-                                                            <li class="nav-item">
-                                                                <a href="#" class="nav-link">
-                                                                    <i class="fa-solid fa-book"></i> Chương 23
-                                                                </a>
-                                                            </li>
-                                                            <li class="nav-item">
-                                                                <a  class="nav-link Nav-Like">
-                                                                    <input type="checkbox" hidden id="CheckLike1">
-                                                                    <label for="CheckLike1" style="cursor: pointer;">
-                                                                        <i class="fa-solid fa-thumbs-up p-1"></i> 999M
-                                                                    </label>
-                                                                </a>
-                                                            </li>
-                                                            <li class="nav-item">
-                                                                <a class="nav-link Nav-Reply">
-                                                                    <input type="checkbox" hidden id="CheckReply1">
-                                                                    <label for="CheckReply1" style="cursor: pointer;">
-                                                                        <i class="fa-solid fa-reply p-1"></i> 2 Trả lời
-                                                                    </label>
-                                                                </a>
-                                                            </li>
-                                                            <li class="nav-item">
-                                                                <a href="#" class="nav-link disabled">
-                                                                    <i class="fa-solid fa-clock"></i> 1 phút trước
-                                                                </a>
-                                                            </li>
-                                                        </ul>
-                                                        
-                                                    </div>
-                                                </div>
-                                                <div class="Comment-Child ms-5 d-none">
-                                                    <ul class="list-group list-group-flush">
-                                                        <li class="list-group-item">
-                                                            <div class="User mt-3 d-flex align-items-center">
-                                                                <img class="Avatar rounded-circle" src="./Content/assets/img/truyen1.jpg" alt="Avatar"
-                                                                    style="width: 40px; height: 40px; object-fit: cover;">
-                                                                <h5 class="mb-0 ms-2">User Name</h5>
-                                                            </div>
-                                                            <p class="Comment-content my-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vel lorem at
-                                                                massa facilisis malesuada.</p>
-                                                            <div class="Action d-flex">
-                                                                <span class="mx-3"><i class="fa-solid fa-book"></i> Chương 23</span>
-                                                                <span class="mx-3">
-                                                                    <a href="#">
-                                                                        <i class="fa-solid fa-thumbs-up p-1"></i> 999M
-                                                                    </a> 
-                                                                </span>
-                                                                <div class="Reply mx-3">
-                                                                    <a href="#">
-                                                                        <i class="fa-solid fa-reply p-1"></i> Nhắc đến
-                                                                    </a> 
-                                                                </div>
-                                                                <span class="mx-3"><i class="fa-solid fa-clock"></i> 1 phút trước</span>
-                                                            </div>
-                                                        </li>
-                                                        <li class="list-group-item">
-                                                            <div class="User mt-3 d-flex align-items-center">
-                                                                <img class="Avatar rounded-circle" src="./Content/assets/img/truyen1.jpg" alt="Avatar"
-                                                                    style="width: 40px; height: 40px; object-fit: cover;">
-                                                                <h5 class="mb-0 ms-2">User Name</h5>
-                                                            </div>
-                                                            <p class="Comment-content my-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vel lorem at
-                                                                massa facilisis malesuada.</p>
-                                                            <div class="Action d-flex">
-                                                                <span class="mx-3"><i class="fa-solid fa-book"></i> Chương 23</span>
-                                                                <span class="mx-3">
-                                                                    <a href="#">
-                                                                        <i class="fa-solid fa-thumbs-up p-1"></i> 999M
-                                                                    </a> 
-                                                                </span>
-                                                                <div class="Reply mx-3">
-                                                                    <a href="#">
-                                                                        <i class="fa-solid fa-reply p-1"></i> Nhắc đến
-                                                                    </a> 
-                                                                </div>
-                                                                <span class="mx-3"><i class="fa-solid fa-clock"></i> 1 phút trước</span>
-                                                            </div>
-                                                        </li>
-                                                    </ul>
-                                                    <form class="d-flex flex-column my-3">
-                                                        <textarea class="form-control" id="comment" rows="4" placeholder="Nhập bình luận của bạn"></textarea>
-                                                        <button type="button" class="btn btn-primary my-2 align-self-end">Trả Lời</button>
-                                                    </form>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li class="list-group-item">
-                                            <div class="Comment">
-                                                <div class="Comment-Parent">
-                                                    <div class="User mt-3 d-flex align-items-center">
-                                                        <img class="Avatar rounded-circle" src="./Content/assets/img/truyen1.jpg" alt="Avatar"
-                                                            style="width: 40px; height: 40px; object-fit: cover;">
-                                                        <h5 class="mb-0 ms-2">User Name</h5>
-                                                    </div>
-                                                    <p class="Comment-content my-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vel lorem at
-                                                        massa facilisis malesuada.</p>
-                                                    <div class="Action d-flex">
-                                                        <ul class="nav">
-                                                            <li class="nav-item">
-                                                                <a href="#" class="nav-link">
-                                                                    <i class="fa-solid fa-book"></i> Chương 23
-                                                                </a>
-                                                            </li>
-                                                            <li class="nav-item">
-                                                                <a  class="nav-link Nav-Like">
-                                                                    <input type="checkbox" hidden id="CheckLike2">
-                                                                    <label for="CheckLike2" style="cursor: pointer;">
-                                                                        <i class="fa-solid fa-thumbs-up p-1"></i> 999M
-                                                                    </label>
-                                                                </a>
-                                                            </li>
-                                                            <li class="nav-item">
-                                                                <a class="nav-link Nav-Reply">
-                                                                    <input type="checkbox" hidden id="CheckReply2">
-                                                                    <label for="CheckReply2" style="cursor: pointer;">
-                                                                        <i class="fa-solid fa-reply p-1"></i> 2 Trả lời
-                                                                    </label>
-                                                                </a>
-                                                            </li>
-                                                            <li class="nav-item">
-                                                                <a href="#" class="nav-link disabled">
-                                                                    <i class="fa-solid fa-clock"></i> 1 phút trước
-                                                                </a>
-                                                            </li>
-                                                        </ul>
-                                                        
-                                                        
-                                                    </div>
-                                                </div>
-                                                <div class="Comment-Child ms-5 d-none">
-                                                    <ul class="list-group list-group-flush">
-                                                        <li class="list-group-item">
-                                                            <div class="User mt-3 d-flex align-items-center">
-                                                                <img class="Avatar rounded-circle" src="./Content/assets/img/truyen1.jpg" alt="Avatar"
-                                                                    style="width: 40px; height: 40px; object-fit: cover;">
-                                                                <h5 class="mb-0 ms-2">User Name</h5>
-                                                            </div>
-                                                            <p class="Comment-content my-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vel lorem at
-                                                                massa facilisis malesuada.</p>
-                                                            <div class="Action d-flex">
-                                                                <span class="mx-3"><i class="fa-solid fa-book"></i> Chương 23</span>
-                                                                <span class="mx-3">
-                                                                    <a href="#">
-                                                                        <i class="fa-solid fa-thumbs-up p-1"></i> 999M
-                                                                    </a> 
-                                                                </span>
-                                                                <div class="Reply mx-3">
-                                                                    <a href="#">
-                                                                        <i class="fa-solid fa-reply p-1"></i> Nhắc đến
-                                                                    </a> 
-                                                                </div>
-                                                                <span class="mx-3"><i class="fa-solid fa-clock"></i> 1 phút trước</span>
-                                                            </div>
-                                                        </li>
-                                                        <li class="list-group-item">
-                                                            <div class="User mt-3 d-flex align-items-center">
-                                                                <img class="Avatar rounded-circle" src="./Content/assets/img/truyen1.jpg" alt="Avatar"
-                                                                    style="width: 40px; height: 40px; object-fit: cover;">
-                                                                <h5 class="mb-0 ms-2">User Name</h5>
-                                                            </div>
-                                                            <p class="Comment-content my-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vel lorem at
-                                                                massa facilisis malesuada.</p>
-                                                            <div class="Action d-flex">
-                                                                <span class="mx-3"><i class="fa-solid fa-book"></i> Chương 23</span>
-                                                                <span class="mx-3">
-                                                                    <a href="#">
-                                                                        <i class="fa-solid fa-thumbs-up p-1"></i> 999M
-                                                                    </a> 
-                                                                </span>
-                                                                <div class="Reply mx-3">
-                                                                    <a href="#">
-                                                                        <i class="fa-solid fa-reply p-1"></i> Nhắc đến
-                                                                    </a> 
-                                                                </div>
-                                                                <span class="mx-3"><i class="fa-solid fa-clock"></i> 1 phút trước</span>
-                                                            </div>
-                                                        </li>
-                                                    </ul>
-                                                    <form class="d-flex flex-column my-3">
-                                                        <textarea class="form-control" id="comment" rows="4" placeholder="Nhập bình luận của bạn"></textarea>
-                                                        <button type="button" class="btn btn-primary my-2 align-self-end">Trả Lời</button>
-                                                    </form>
-                                                </div>
-                                            </div>
-                                        </li> -->
                                     </ul>
                                     <div id="loadingSpinner" class="d-flex justify-content-center d-none">
                                         <div class="spinner-border text-primary mx-auto" role="status">
@@ -941,7 +739,120 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="tab-pane fade" id="Rate-tab-pane" role="tabpanel" aria-labelledby="Rate-tab" tabindex="0">Đánh Giá
+                        <div class="tab-pane fade" id="Rate-tab-pane" role="tabpanel" aria-labelledby="Rate-tab" tabindex="0">
+                        
+                            <div class="container">
+                                <div class="rating-container">
+                                    <div class="stars">
+                                        <span class="star" data-rating="1">&#9733;</span>
+                                        <span class="star" data-rating="2">&#9733;</span>
+                                        <span class="star" data-rating="3">&#9733;</span>
+                                        <span class="star" data-rating="4">&#9733;</span>
+                                        <span class="star" data-rating="5">&#9733;</span>
+                                    </div>
+                                    <div class="rating-description ms-3"></div>
+                                    <div class="rating-text">Hãy đánh giá truyện của chúng tôi:</div>
+                                    <form class="d-flex flex-column mt-3">
+                                        <textarea class="form-control" id="Rate" rows="4" placeholder="Nhập đánh giá của bạn"></textarea>
+                                        <button type="button" class="btn btn-primary my-2 align-self-end">Đánh Giá</button>
+                                    </form>
+                                    <div class="RateList">
+                                        <ul class="list-group list-group-flush" id="rateList">
+                                            <li class="list-group-item bg-transparent">
+                                                <div class="Rate">
+                                                    <div class="User mt-3 d-flex align-items-center">
+                                                        <img class="Avatar rounded-circle" src="./Content/assets/img/truyen1.jpg" alt="Avatar"
+                                                            style="width: 40px; height: 40px; object-fit: cover;">
+                                                        <h5 class="mb-0 ms-2">User Name</h5>
+                                                        <div class="ms-3 starss">
+                                                            <span class="star active">&#9733;</span>
+                                                            <span class="star active">&#9733;</span>
+                                                            <span class="star active">&#9733;</span>
+                                                            <span class="star active">&#9733;</span>
+                                                            <span class="star">&#9733;</span>
+                                                        </div>
+                                                        <div class="ms-auto position-relative" id="Tab-Action">
+                                                            <input type="checkbox" hidden id="ellipsis-vertical">
+                                                            <label for="ellipsis-vertical" style="cursor: pointer;"><i class="fa-solid fa-ellipsis-vertical p-2"></i></label>
+                                                            <ul class="list-group position-absolute d-none flex-column align-items-start" id="ActionList" style="width: 500%; border: solid 1px #333; background-color: #fff;">
+                                                                <li class="list-group-item p-0 w-100">
+                                                                    <a href="#" class="Item-Link p-2 d-block w-100 text-start">Chỉnh sửa</a>
+                                                                </li>
+                                                                <li class="list-group-item p-0 w-100">
+                                                                    <a href="#" class="Item-Link p-2 d-block w-100 text-start">Xóa</a>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                    <p class="Rate-content my-3 text-start">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vel lorem at
+                                                        massa facilisis malesuada.</p>
+                                                </div>
+                                            </li>
+                                            <!-- js ellipsis-vertical -->
+                                            <script>
+                                                var ellipsisVerticalChk = document.getElementById('ellipsis-vertical');
+                                                var actionList = document.getElementById('ActionList');
+                                                ellipsisVerticalChk.addEventListener('change', function () {
+                                                    if (this.checked) {
+                                                        actionList.classList.remove('d-none');
+                                                    } else {
+                                                        actionList.classList.add('d-none');
+                                                    }
+                                                });
+                                            </script>
+                                        </ul>
+                                        <div id="rateLoadingSpinner" class="d-flex justify-content-center d-none">
+                                            <div class="spinner-border text-primary mx-auto" role="status">
+                                                <span class="visually-hidden">Loading...</span>
+                                            </div>
+                                        </div>
+                                        <input type="button" value="Xem thêm" id="loadMoreRateBtn" class="w-100 mt-4">
+                                    </div>
+                                </div>
+                            </div>
+                            <script>
+                                const starDescriptions = {
+                                    1: "Quá tệ",
+                                    2: "Không hay lắm",
+                                    3: "Cũng được",
+                                    4: "Khá hay",
+                                    5: "Rất hay",
+                                };
+
+                                const stars = document.querySelectorAll(".star");
+                                const ratingDescription = document.querySelector(".rating-description");
+                                const starsContainer = document.querySelector(".stars");
+
+                                starsContainer.addEventListener("mouseover", () => {
+                                    starsContainer.classList.add("hovered");
+                                });
+
+                                starsContainer.addEventListener("mouseout", () => {
+                                    starsContainer.classList.remove("hovered");
+                                });
+
+                                stars.forEach((star) => {
+
+                                    star.addEventListener("click", () => {
+                                        ratingDescription.innerText = "";
+                                    });
+
+                                    star.addEventListener("click", (event) => {
+                                        const rating = event.target.getAttribute("data-rating");
+                                        ratingDescription.innerText = starDescriptions[rating];
+                                        stars.forEach((s, index) => {
+                                            if (index < rating) {
+                                                s.classList.add("active");
+                                            } else {
+                                                s.classList.remove("active");
+                                            }
+                                        });
+                                    });
+                                });
+                            </script>
+
+                            
+
                         </div>
                     </div>
                 </div>
@@ -1172,7 +1083,7 @@
         function displayComments(comments) {
             const commentList = $("#commentList");
             comments.forEach((comment) => {
-                var commentElement = `<li class="list-group-item"> <div class="Comment"> <div class="Comment-Parent"> <div class="User mt-3 d-flex align-items-center"> <img class="Avatar rounded-circle" src="./Content/assets/img/truyen1.jpg" alt="Avatar" style="width: 40px; height: 40px; object-fit: cover;"> <h5 class="mb-0 ms-2">User Name</h5> </div> <p class="Comment-content my-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vel lorem at massa facilisis malesuada.</p> <div class="Action d-flex"> <ul class="nav"> <li class="nav-item"> <a href="#" class="nav-link"> <i class="fa-solid fa-book"></i> Chương 23 </a> </li> <li class="nav-item"> <a  class="nav-link Nav-Like${comment.id}"> <input type="checkbox" hidden id="CheckLike${comment.id}"> <label for="CheckLike${comment.id}" style="cursor: pointer;"> <i class="fa-solid fa-thumbs-up p-1"></i> 999M </label> </a> </li> <li class="nav-item"> <a class="nav-link Nav-Reply${comment.id}"> <input type="checkbox" hidden id="CheckReply${comment.id}"> <label for="CheckReply${comment.id}" style="cursor: pointer;"> <i class="fa-solid fa-reply p-1"></i> 2 Trả lời </label> </a> </li> <li class="nav-item"> <a href="#" class="nav-link disabled"> <i class="fa-solid fa-clock"></i> 1 phút trước </a> </li> </ul> </div> </div> <div class="Comment-Child${comment.id} ms-5 d-none"> <ul class="list-group list-group-flush"> <li class="list-group-item"> <div class="User mt-3 d-flex align-items-center"> <img class="Avatar rounded-circle" src="./Content/assets/img/truyen1.jpg" alt="Avatar" style="width: 40px; height: 40px; object-fit: cover;"> <h5 class="mb-0 ms-2">User Name</h5> </div> <p class="Comment-content my-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vel lorem at massa facilisis malesuada.</p> <div class="Action d-flex"> <span class="mx-3"><i class="fa-solid fa-book"></i> Chương 23</span> <span class="mx-3"> <a href="#"> <i class="fa-solid fa-thumbs-up p-1"></i> 999M </a> </span> <div class="Reply mx-3"> <a href="#"> <i class="fa-solid fa-reply p-1"></i> Nhắc đến </a> </div> <span class="mx-3"><i class="fa-solid fa-clock"></i> 1 phút trước</span> </div> </li> <li class="list-group-item"> <div class="User mt-3 d-flex align-items-center"> <img class="Avatar rounded-circle" src="./Content/assets/img/truyen1.jpg" alt="Avatar" style="width: 40px; height: 40px; object-fit: cover;"> <h5 class="mb-0 ms-2">User Name</h5> </div> <p class="Comment-content my-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vel lorem at massa facilisis malesuada.</p> <div class="Action d-flex"> <span class="mx-3"><i class="fa-solid fa-book"></i> Chương 23</span> <span class="mx-3"> <a href="#"> <i class="fa-solid fa-thumbs-up p-1"></i> 999M </a> </span> <div class="Reply mx-3"> <a href="#"> <i class="fa-solid fa-reply p-1"></i> Nhắc đến </a> </div> <span class="mx-3"><i class="fa-solid fa-clock"></i> 1 phút trước</span> </div> </li> </ul> <form class="d-flex flex-column my-3"> <textarea class="form-control" id="comment" rows="4" placeholder="Nhập bình luận của bạn"></textarea> <button type="button" class="btn btn-primary my-2 align-self-end">Trả Lời</button> </form> </div> </div> </li>`
+                var commentElement = `<li class="list-group-item"> <div class="Comment"> <div class="Comment-Parent"> <div class="User mt-3 d-flex align-items-center"> <img class="Avatar rounded-circle" src="./Content/assets/img/truyen1.jpg" alt="Avatar" style="width: 40px; height: 40px; object-fit: cover;"> <h5 class="mb-0 ms-2">User Name</h5> <div class="ms-auto position-relative" id="Tab-Action"> <input type="checkbox" hidden id="Cmt_ellipsis-vertical${comment.id}"> <label for="Cmt_ellipsis-vertical${comment.id}" style="cursor: pointer;"><i class="fa-solid fa-ellipsis-vertical p-2"></i></label> <ul class="list-group position-absolute d-none flex-column align-items-start" id="ActionListCmt${comment.id}" style="width: 500%; border: solid 1px #333; background-color: #fff;"> <li class="list-group-item p-0 w-100"> <a href="#" class="Item-Link p-2 d-block w-100 text-start">Chỉnh sửa</a> </li> <li class="list-group-item p-0 w-100"> <a href="#" class="Item-Link p-2 d-block w-100 text-start">Xóa</a> </li> </ul> </div> </div> <p class="Comment-content my-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vel lorem at massa facilisis malesuada.</p> <div class="Action d-flex"> <ul class="nav"> <li class="nav-item"> <a href="#" class="nav-link"> <i class="fa-solid fa-book"></i> Chương 23 </a> </li> <li class="nav-item"> <a class="nav-link Nav-Like${comment.id}"> <input type="checkbox" hidden id="CheckLike${comment.id}"> <label for="CheckLike${comment.id}" style="cursor: pointer;"> <i class="fa-solid fa-thumbs-up p-1"></i> 999M </label> </a> </li> <li class="nav-item"> <a class="nav-link Nav-Reply${comment.id}"> <input type="checkbox" hidden id="CheckReply${comment.id}"> <label for="CheckReply${comment.id}" style="cursor: pointer;"> <i class="fa-solid fa-reply p-1"></i> 2 Trả lời </label> </a> </li> <li class="nav-item"> <a href="#" class="nav-link disabled"> <i class="fa-solid fa-clock"></i> 1 phút trước </a> </li> </ul> </div> </div> <div class="Comment-Child${comment.id} ms-5 d-none"> <ul class="list-group list-group-flush"> <li class="list-group-item"> <div class="User mt-3 d-flex align-items-center"> <img class="Avatar rounded-circle" src="./Content/assets/img/truyen1.jpg" alt="Avatar" style="width: 40px; height: 40px; object-fit: cover;"> <h5 class="mb-0 ms-2">User Name</h5> </div> <p class="Comment-content my-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vel lorem at massa facilisis malesuada.</p> <div class="Action d-flex"> <span class="mx-3"><i class="fa-solid fa-book"></i> Chương 23</span> <span class="mx-3"> <a href="#"> <i class="fa-solid fa-thumbs-up p-1"></i> 999M </a> </span> <div class="Reply mx-3"> <a href="#"> <i class="fa-solid fa-reply p-1"></i> Nhắc đến </a> </div> <span class="mx-3"><i class="fa-solid fa-clock"></i> 1 phút trước</span> </div> </li> <li class="list-group-item"> <div class="User mt-3 d-flex align-items-center"> <img class="Avatar rounded-circle" src="./Content/assets/img/truyen1.jpg" alt="Avatar" style="width: 40px; height: 40px; object-fit: cover;"> <h5 class="mb-0 ms-2">User Name</h5> </div> <p class="Comment-content my-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vel lorem at massa facilisis malesuada.</p> <div class="Action d-flex"> <span class="mx-3"><i class="fa-solid fa-book"></i> Chương 23</span> <span class="mx-3"> <a href="#"> <i class="fa-solid fa-thumbs-up p-1"></i> 999M </a> </span> <div class="Reply mx-3"> <a href="#"> <i class="fa-solid fa-reply p-1"></i> Nhắc đến </a> </div> <span class="mx-3"><i class="fa-solid fa-clock"></i> 1 phút trước</span> </div> </li> </ul> <form class="d-flex flex-column my-3"> <textarea class="form-control" id="comment" rows="4" placeholder="Nhập bình luận của bạn"></textarea> <button type="button" class="btn btn-primary my-2 align-self-end">Trả Lời</button> </form> </div> </div> </li>`
                 commentList.append(commentElement);
 
                 // js like
@@ -1196,6 +1107,20 @@
                     } else {
                         navReply.classList.remove('active');
                         child.classList.add('d-none');
+                    }
+                });
+            });
+            
+
+            // js chỉnh sửa, xóa
+            comments.forEach(element => {
+                var ellipsisVerticalChk = document.getElementById('Cmt_ellipsis-vertical' + element.id);
+                var actionList = document.getElementById('ActionListCmt' + element.id);
+                ellipsisVerticalChk.addEventListener('change', function () {
+                    if (this.checked) {
+                        actionList.classList.remove('d-none');
+                    } else {
+                        actionList.classList.add('d-none');
                     }
                 });
             });
@@ -1273,91 +1198,90 @@
         });
     </script> -->
 
-    <!-- cmt child -->
-    <!-- <script> 
-        // Dữ liệu bình luận mẫu (thay thế cho việc gửi yêu cầu tới máy chủ)
-        const commentsChild = [
-            { id: 1, name: "bình luận 1" },
-            { id: 2, name: "bình luận 2" },
-            { id: 3, name: "bình luận 3" },
-            { id: 4, name: "bình luận 4" },
-            { id: 5, name: "bình luận 5" },
-            { id: 6, name: "bình luận 6" },
-            { id: 7, name: "bình luận 7" },
-            { id: 8, name: "bình luận 8" },
-            { id: 9, name: "bình luận 9" },
-            { id: 10, name: "bình luận 10" },
-            { id: 11, name: "bình luận 11" },
-            { id: 12, name: "bình luận 12" },
-            { id: 13, name: "bình luận 13" },
-            { id: 14, name: "bình luận 14" },
-            // Các bình luận tiếp theo ...
+<!-- js rate -->
+    <script>
+        // Dữ liệu đánh giá mẫu (thay thế cho việc gửi yêu cầu tới máy chủ)
+        const Rates = [
+            { id: 1, name: "Rate 1" },
+            { id: 2, name: "Rate 2" },
+            { id: 3, name: "Rate 3" },
+            { id: 4, name: "Rate 4" },
+            { id: 5, name: "Rate 5" },
+            { id: 6, name: "Rate 6" },
+            { id: 7, name: "Rate 7" },
+            { id: 8, name: "Rate 8" },
+            { id: 9, name: "Rate 9" },
+            { id: 10, name: "Rate 10" },
+            { id: 11, name: "Rate 11" },
+            { id: 12, name: "Rate 12" },
+            { id: 13, name: "Rate 13" },
+            { id: 14, name: "Rate 14" }
         ];
 
-        let pageChild = 1;
-        const commentsChildPerPage = 5; // Số bình luận hiển thị trên mỗi lần tải thêm
+        let PageRate = 1;
+        const RatesPerPageRate = 5; // Số đánh giá hiển thị trên mỗi lần tải thêm
 
-        commentsChild.forEach(element => {
-                function displayCommentsChild(commentsChild) {
-                    const commentList = $("#commentChildList" + element.id);
-                    commentsChild.forEach((comment) => {
-                        var commentElement = `<li class="list-group-item"> <div class="Comment"> <div class="Comment-Parent"> <div class="User mt-3 d-flex align-items-center"> <img class="Avatar rounded-circle" src="./Content/assets/img/truyen1.jpg" alt="Avatar" style="width: 40px; height: 40px; object-fit: cover;"> <h5 class="mb-0 ms-2">User Name</h5> </div> <p class="Comment-content my-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vel lorem at massa facilisis malesuada.</p> <div class="Action d-flex"> <ul class="nav"> <li class="nav-item"> <a href="#" class="nav-link"> <i class="fa-solid fa-book"></i> Chương 23 </a> </li> <li class="nav-item"> <a  class="nav-link Nav-Like${comment.id}"> <input type="checkbox" hidden id="CheckLike${comment.id}"> <label for="CheckLike${comment.id}" style="cursor: pointer;"> <i class="fa-solid fa-thumbs-up p-1"></i> 999M </label> </a> </li> <li class="nav-item"> <a class="nav-link Nav-Reply${comment.id}"> <input type="checkbox" hidden id="CheckReply${comment.id}"> <label for="CheckReply${comment.id}" style="cursor: pointer;"> <i class="fa-solid fa-reply p-1"></i> 2 Trả lời </label> </a> </li> <li class="nav-item"> <a href="#" class="nav-link disabled"> <i class="fa-solid fa-clock"></i> 1 phút trước </a> </li> </ul> </div> </div> <div class="Comment-Child${comment.id} ms-5 d-none"> <ul class="list-group list-group-flush"> <li class="list-group-item"> <div class="User mt-3 d-flex align-items-center"> <img class="Avatar rounded-circle" src="./Content/assets/img/truyen1.jpg" alt="Avatar" style="width: 40px; height: 40px; object-fit: cover;"> <h5 class="mb-0 ms-2">User Name</h5> </div> <p class="Comment-content my-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vel lorem at massa facilisis malesuada.</p> <div class="Action d-flex"> <span class="mx-3"><i class="fa-solid fa-book"></i> Chương 23</span> <span class="mx-3"> <a href="#"> <i class="fa-solid fa-thumbs-up p-1"></i> 999M </a> </span> <div class="Reply mx-3"> <a href="#"> <i class="fa-solid fa-reply p-1"></i> Nhắc đến </a> </div> <span class="mx-3"><i class="fa-solid fa-clock"></i> 1 phút trước</span> </div> </li> <li class="list-group-item"> <div class="User mt-3 d-flex align-items-center"> <img class="Avatar rounded-circle" src="./Content/assets/img/truyen1.jpg" alt="Avatar" style="width: 40px; height: 40px; object-fit: cover;"> <h5 class="mb-0 ms-2">User Name</h5> </div> <p class="Comment-content my-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vel lorem at massa facilisis malesuada.</p> <div class="Action d-flex"> <span class="mx-3"><i class="fa-solid fa-book"></i> Chương 23</span> <span class="mx-3"> <a href="#"> <i class="fa-solid fa-thumbs-up p-1"></i> 999M </a> </span> <div class="Reply mx-3"> <a href="#"> <i class="fa-solid fa-reply p-1"></i> Nhắc đến </a> </div> <span class="mx-3"><i class="fa-solid fa-clock"></i> 1 phút trước</span> </div> </li> </ul> <form class="d-flex flex-column my-3"> <textarea class="form-control" id="comment" rows="4" placeholder="Nhập bình luận của bạn"></textarea> <button type="button" class="btn btn-primary my-2 align-self-end">Trả Lời</button> </form> </div> </div> </li>`
-                        commentList.append(commentElement);
+        function displayRates(Rates) {
+            const rateList = $("#rateList");
+            Rates.forEach((rate) => {
+                var rateElement = `<li class="list-group-item bg-transparent"> <div class="Rate"> <div class="User mt-3 d-flex align-items-center"> <img class="Avatar rounded-circle" src="./Content/assets/img/truyen1.jpg" alt="Avatar" style="width: 40px; height: 40px; object-fit: cover;"> <h5 class="mb-0 ms-2">User Name</h5> <div class="ms-3 starss"> <span class="star active">&#9733;</span> <span class="star active">&#9733;</span> <span class="star active">&#9733;</span> <span class="star active">&#9733;</span> <span class="star">&#9733;</span> </div> <div class="ms-auto position-relative" id="Tab-Action"> <input type="checkbox" hidden id="ellipsis-vertical${rate.id}"> <label for="ellipsis-vertical${rate.id}" style="cursor: pointer;"><i class="fa-solid fa-ellipsis-vertical p-2"></i></label> <ul class="list-group position-absolute d-none flex-column align-items-start" id="ActionList${rate.id}" style="width: 500%; border: solid 1px #333; background-color: #fff;"> <li class="list-group-item p-0 w-100"> <a href="#" class="Item-Link p-2 d-block w-100 text-start">Chỉnh sửa</a> </li> <li class="list-group-item p-0 w-100"> <a href="#" class="Item-Link p-2 d-block w-100 text-start">Xóa</a> </li> </ul> </div> </div> <p class="Rate-content my-3 text-start">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vel lorem at massa facilisis malesuada.</p> </div> </li>`
+                rateList.append(rateElement);
+            });
 
-                        // js like
-                        var clike = document.querySelector('#Main .ActionNovel .tab-content .Comment-List .Comment .Comment-Parent .Action #CheckLike' + comment.id);
-                        var likeLink = document.querySelector('#Main .ActionNovel .tab-content .Comment-List .Comment .Comment-Parent .Action .Nav-Like' + comment.id);
-                        clike.addEventListener('change', function () {
-                            if (this.checked) {
-                                likeLink.classList.add('active');
-                            } else {
-                                likeLink.classList.remove('active');
-                            }
-                        });
-                    });
-                }
-
-                function loadMoreCommentsChild() {
-                    $("#loadMoreBtnCmtChild").hide(); // Ẩn nút tải thêm
-
-                    // Hiển thị spinner trong 1 giây trước khi tải dữ liệu
-                    $("#loadingSpinnerChild").removeClass("d-none");
-                    setTimeout(() => {
-                        $("#loadingSpinnerChild").addClass("d-none"); // Ẩn spinner sau 1 giây
-                        $("#loadMoreBtnCmtChild").show(); // Hiển thị lại nút tải thêm
-
-                        // Sử dụng slice để lấy số bình luận cần hiển thị trong lần tải thêm
-                        const startIndex = (pageChild - 1) * commentsChildPerPage;
-                        const endIndex = startIndex + commentsChildPerPage;
-                        const commentsChildToShow = commentsChild.slice(startIndex, endIndex);
-
-                        if (commentsChildToShow.length > 0) {
-                            displayCommentsChild(commentsChildToShow);
-
-                            pageChild++; // Tăng số trang lên để chuẩn bị cho lần tải thêm tiếp theo
-                        }
-
-                        // Ẩn nút tải thêm và hiển thị thông báo khi hết bình luận
-                        if (startIndex + commentsChildToShow.length >= commentsChild.length) {
-                            $("#loadMoreBtnCmtChild").hide();
-                            $("#commentList").append("<p class='text-muted'>Không còn bình luận nào khác</p>");
-                        }
-                    }, 500);
-                }
-
-                $(document).ready(function () {
-                    // Xử lý sự kiện khi nhấn nút tải thêm
-                    $("#loadMoreBtnCmtChild").on("click", function () {
-                        loadMoreCommentsChild();
-                    });
-
-                    // Hiển thị bình luận ban đầu khi trang tải
-                    loadMoreCommentsChild();
-
+            Rates.forEach(element => {
+                var ellipsisVerticalChk = document.getElementById('ellipsis-vertical' + element.id);
+                var actionList = document.getElementById('ActionList' + element.id);
+                ellipsisVerticalChk.addEventListener('change', function () {
+                    if (this.checked) {
+                        actionList.classList.remove('d-none');
+                    } else {
+                        actionList.classList.add('d-none');
+                    }
                 });
             });
-        
-    </script> -->
+            
+        }
+
+        function loadMoreRates() {
+            $("#loadMoreRateBtn").hide(); // Ẩn nút tải thêm
+
+            // Hiển thị spinner trong 1 giây trước khi tải dữ liệu
+            $("#rateLoadingSpinner").removeClass("d-none");
+            setTimeout(() => {
+                $("#rateLoadingSpinner").addClass("d-none"); // Ẩn spinner sau 1 giây
+                $("#loadMoreRateBtn").show(); // Hiển thị lại nút tải thêm
+
+                // Sử dụng slice để lấy số đánh giá cần hiển thị trong lần tải thêm
+                const startIndex = (PageRate - 1) * RatesPerPageRate;
+                const endIndex = startIndex + RatesPerPageRate;
+                const RatesToShow = Rates.slice(startIndex, endIndex);
+
+                if (RatesToShow.length > 0) {
+                    displayRates(RatesToShow);
+
+                    PageRate++; // Tăng số trang lên để chuẩn bị cho lần tải thêm tiếp theo
+                }
+
+                // Ẩn nút tải thêm và hiển thị thông báo khi hết đánh giá
+                if (startIndex + RatesToShow.length >= Rates.length) {
+                    $("#loadMoreRateBtn").hide();
+                    $("#rateList").append("<p class='text-muted'>Không còn đánh giá nào khác</p>");
+                }
+            }, 500);
+        }
+
+        $(document).ready(function () {
+            // Xử lý sự kiện khi nhấn nút tải thêm
+            $("#loadMoreRateBtn").on("click", function () {
+                loadMoreRates();
+            });
+
+            // Hiển thị đánh giá ban đầu khi trang tải
+            loadMoreRates();
+        });
+    </script>
+
+    
 
     </body>
 </html>
