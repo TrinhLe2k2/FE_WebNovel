@@ -140,8 +140,6 @@
             object-fit: cover;
         }
 
-        
-
         #Main .ActionNovel .tab-content .paginationjs {
             display: flex;
             flex-wrap: wrap;
@@ -150,8 +148,12 @@
         #Main .ActionNovel .tab-content .paginationjs .paginationjs-pages ul {
             list-style: none;
             display: flex;
+            flex-wrap: wrap;
             padding-left: 0;
             margin-bottom: 0;
+        }
+
+        #Main .ActionNovel .tab-content .paginationjs .paginationjs-pages ul li {
         }
 
         #Main .ActionNovel .tab-content .paginationjs .paginationjs-pages li>a {
@@ -205,6 +207,11 @@
 
         #Main .ActionNovel .tab-content #Comment-tab-pane .list-group-item {
             background-color: transparent;
+        }
+
+        #Main .ActionNovel .tab-content #Rate-tab-pane .rating-container .RateList .Rate #Tab-Action ul.list-group,
+        #Main .ActionNovel .tab-content #Comment-tab-pane .Comment-List .Comment #Tab-Action ul.list-group {
+            width: 500%; border: solid 1px #333; background-color: #fff; right: 0;
         }
 
         #Main .ActionNovel .tab-content #Comment-tab-pane .Comment-List .Comment-Child .Action .nav-link.active,
@@ -397,22 +404,14 @@
                     <div class="col-sm-3 col-4 mx-auto">
                         <div class="Poster position-relative">
                             <img src="./Content/assets/img/truyen1.jpg" class="rounded position-absolute w-100 h-100" alt="...">
-                            <a class="Action d-none" href="#">
-                                Xem Ngay
-                            </a>
                         </div>
                     </div>
-                    <div class="col-sm-9 ps-4 Introduction">
-                        <div class="d-flex">
+                    <div class="col-sm-9 Introduction px-4">
+                        <div class="d-flex align-items-center justify-content-sm-start my-3 flex-column flex-sm-row">
                             <h2 class="text-center text-sm-start my-2">Cổ Chân Nhân</h2>
-                            <span class="mx-2">Ngừng viết</span>
+                            <span class="ms-auto mb-2">Ngừng viết</span>
                         </div>
-                        <a class="p-2 mb-2 d-flex Link-User d-none d-md-flex" aria-current="page" href="#">
-                            <div class="Avater position-relative rounded-pill">
-                                <img src="./Content/assets/img/truyen1.jpg" class="position-absolute w-100 h-100 rounded-circle" alt="...">
-                            </div>
-                            <span class="m-0 ms-2 UserName">Cổ Chân Nhân</span>
-                        </a>
+                        
                         <nav class="nav Category-List">
                             <a class="nav-link px-2 py-1 mb-2" href="#">Huyền Huyễn</a>
                             <a class="nav-link px-2 py-1 mb-2" href="#">Tiên Hiệp</a>
@@ -433,14 +432,20 @@
                             <a class="nav-link px-2 py-1 mb-2" href="#">Xuyên Không</a>
                             <a class="nav-link px-2 py-1 mb-2" href="#">Xuyên Không</a>
                         </nav>
+                        <a class="p-2 d-flex Link-User d-md-flex" aria-current="page" href="#">
+                            <div class="Avater position-relative rounded-pill">
+                                <img src="./Content/assets/img/truyen1.jpg" class="position-absolute w-100 h-100 rounded-circle" alt="...">
+                            </div>
+                            <span class="m-0 ms-2 UserName">Cổ Chân Nhân</span>
+                        </a>
                         <div class="FeedbackWrapper d-flex">
-                            <div class="m-2 py-1 px-2 View">
+                            <div class="py-1 px-2 View">
                                 <i class="fa-solid fa-eye" style="color: #0ea5e9;"></i> 999M
                             </div>
-                            <div class="m-2 py-1 px-2 Follow">
+                            <div class="py-1 px-2 Follow">
                                 <i class="fa-solid fa-heart" style="color: #f43f5e;"></i> 999M
                             </div>
-                            <div class="m-2 py-1 px-2 Rating">
+                            <div class="py-1 px-2 Rating">
                                 <i class="fa-solid fa-star" style="color: #facc15;"></i> 5/5
                             </div>
                         </div>
@@ -456,11 +461,11 @@
                             Một thế giới kì lạ của người nuôi cổ, dùng cổ, luyện cổ.
                             Xuân Thu Thiền, Nguyệt Quang cổ, Tửu Trùng, Nhất Khí Kim Quang Trùng, Thanh Ti cổ, Hi Vọng cổ...
                         </p>
-                        <div class="Action mt-4 d-flex">
-                            <div class="Following me-2 ">
+                        <div class="Action mt-4 d-flex flex-sm-row flex-column">
+                            <div class="Following me-2 mt-1">
                                 <a class="py-2 px-3 d-block" href="#"><i class="fa-solid fa-bookmark me-1"></i> Theo Dõi Truyện</a>
                             </div>
-                            <div class="Reading me-2">
+                            <div class="Reading me-2 mt-1">
                                 <a class="py-2 px-3 d-block" href="#"><i class="fa-solid fa-book-open me-1"></i> Đọc Ngay</a>
                             </div>
                         </div>
@@ -488,9 +493,9 @@
                     <div class="tab-content " id="myTabContent">
                         <div class="tab-pane fade show active" id="infomation-tab-pane" role="tabpanel" aria-labelledby="infomation-tab" tabindex="0">
                             <div class="container-fluid">
-                                <div class="row">
-                                    <div class="col-8 my-auto Description-Novel">
-                                        <h6>Thể Loại</h6>
+                                <div class="row flex-column-reverse flex-md-row">
+                                    <div class="col-12 col-md-8 my-auto Description-Novel">
+                                        <h6 class="mt-3">Thể Loại</h6>
                                         <ul class="nav">
                                             <li class="nav-item">
                                                 <a href="#" class="nav-link">Huyền Huyễn</a>
@@ -551,7 +556,7 @@
                                             Tuy donate không đáng là bao so với công sức bỏ ra nhưng cũng là một động lực cho converter cố gắng làm hơn nha ^^
                                         </p>
                                     </div>
-                                    <div class="col-4">
+                                    <div class="col-9 col-sm-8 col-md-4 mx-auto">
                                         <div class="UserProfile p-4 rounded-start rounded-end">
                                             <div class="Avatar w-75 position-relative mx-auto">
                                                 <img class="w-100 h-100 position-absolute rounded-pill" src="./Content/assets/img/CoverImgae/solo-leveling-dau-la-linh-bong-toi-manh-nhat.jpg" alt="">
@@ -561,7 +566,7 @@
                                                     Chu-Gong
                                                 </h4>
                                                 <div class="Action">
-                                                    <ul class="nav justify-content-center">
+                                                    <ul class="nav align-items-center flex-column flex-md-row">
                                                         <li class="nav-item">
                                                             <a class="nav-link disabled" tabindex="-1">
                                                                 <span>Lượt Theo Dõi: 2000</span>
@@ -617,7 +622,7 @@
                                                         <div class="ms-auto position-relative" id="Tab-Action">
                                                             <input type="checkbox" hidden id="ellipsis-vertical">
                                                             <label for="ellipsis-vertical" style="cursor: pointer;"><i class="fa-solid fa-ellipsis-vertical p-2"></i></label>
-                                                            <ul class="list-group position-absolute d-none flex-column align-items-start" id="ActionList" style="width: 500%; border: solid 1px #333; background-color: #fff;">
+                                                            <ul class="list-group position-absolute d-none flex-column align-items-start" id="ActionList">
                                                                 <li class="list-group-item p-0 w-100">
                                                                     <a href="#" class="Item-Link p-2 d-block w-100 text-start">Chỉnh sửa</a>
                                                                 </li>
@@ -671,7 +676,7 @@
                                                                 <div class="ms-auto position-relative" id="Tab-Action">
                                                                     <input type="checkbox" hidden id="ellipsis-vertical">
                                                                     <label for="ellipsis-vertical" style="cursor: pointer;"><i class="fa-solid fa-ellipsis-vertical p-2"></i></label>
-                                                                    <ul class="list-group position-absolute d-none flex-column align-items-start" id="ActionList" style="width: 500%; border: solid 1px #333; background-color: #fff;">
+                                                                    <ul class="list-group position-absolute d-none flex-column align-items-start" id="ActionList">
                                                                         <li class="list-group-item p-0 w-100">
                                                                             <a href="#" class="Item-Link p-2 d-block w-100 text-start">Chỉnh sửa</a>
                                                                         </li>
@@ -774,7 +779,7 @@
                                                         <div class="ms-auto position-relative" id="Tab-Action">
                                                             <input type="checkbox" hidden id="ellipsis-vertical">
                                                             <label for="ellipsis-vertical" style="cursor: pointer;"><i class="fa-solid fa-ellipsis-vertical p-2"></i></label>
-                                                            <ul class="list-group position-absolute d-none flex-column align-items-start" id="ActionList" style="width: 500%; border: solid 1px #333; background-color: #fff;">
+                                                            <ul class="list-group position-absolute d-none flex-column align-items-start" id="ActionList">
                                                                 <li class="list-group-item p-0 w-100">
                                                                     <a href="#" class="Item-Link p-2 d-block w-100 text-start">Chỉnh sửa</a>
                                                                 </li>
@@ -801,6 +806,7 @@
                                                 });
                                             </script>
                                         </ul>
+                                        
                                         <div id="rateLoadingSpinner" class="d-flex justify-content-center d-none">
                                             <div class="spinner-border text-primary mx-auto" role="status">
                                                 <span class="visually-hidden">Loading...</span>
@@ -999,6 +1005,7 @@
     <script src="./Content/assets/js/pagination.js"></script>
     <script src="./Content/assets/js/app.js"></script>
 
+    <!-- pagination -->
     <script>
         (function (name) {
             var container = $('#pagination-' + name);
@@ -1028,7 +1035,7 @@
 
                     $.each(response, function (index, item) {
                         dataHtml += 
-                        '<div class="col-3">' +
+                        '<div class="col-6 col-sm-4 - col-md-3">' +
                             '<div class="p-2 Box-Chapter-Link"><a href="#" class="Chapter-Link">' +
                                 'Chương ' + item + ': Dù bỏ mình ma tâm vẫn không hối hận' +
                             '</a></div>' +
@@ -1083,7 +1090,7 @@
         function displayComments(comments) {
             const commentList = $("#commentList");
             comments.forEach((comment) => {
-                var commentElement = `<li class="list-group-item"> <div class="Comment"> <div class="Comment-Parent"> <div class="User mt-3 d-flex align-items-center"> <img class="Avatar rounded-circle" src="./Content/assets/img/truyen1.jpg" alt="Avatar" style="width: 40px; height: 40px; object-fit: cover;"> <h5 class="mb-0 ms-2">User Name</h5> <div class="ms-auto position-relative" id="Tab-Action"> <input type="checkbox" hidden id="Cmt_ellipsis-vertical${comment.id}"> <label for="Cmt_ellipsis-vertical${comment.id}" style="cursor: pointer;"><i class="fa-solid fa-ellipsis-vertical p-2"></i></label> <ul class="list-group position-absolute d-none flex-column align-items-start" id="ActionListCmt${comment.id}" style="width: 500%; border: solid 1px #333; background-color: #fff;"> <li class="list-group-item p-0 w-100"> <a href="#" class="Item-Link p-2 d-block w-100 text-start">Chỉnh sửa</a> </li> <li class="list-group-item p-0 w-100"> <a href="#" class="Item-Link p-2 d-block w-100 text-start">Xóa</a> </li> </ul> </div> </div> <p class="Comment-content my-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vel lorem at massa facilisis malesuada.</p> <div class="Action d-flex"> <ul class="nav"> <li class="nav-item"> <a href="#" class="nav-link"> <i class="fa-solid fa-book"></i> Chương 23 </a> </li> <li class="nav-item"> <a class="nav-link Nav-Like${comment.id}"> <input type="checkbox" hidden id="CheckLike${comment.id}"> <label for="CheckLike${comment.id}" style="cursor: pointer;"> <i class="fa-solid fa-thumbs-up p-1"></i> 999M </label> </a> </li> <li class="nav-item"> <a class="nav-link Nav-Reply${comment.id}"> <input type="checkbox" hidden id="CheckReply${comment.id}"> <label for="CheckReply${comment.id}" style="cursor: pointer;"> <i class="fa-solid fa-reply p-1"></i> 2 Trả lời </label> </a> </li> <li class="nav-item"> <a href="#" class="nav-link disabled"> <i class="fa-solid fa-clock"></i> 1 phút trước </a> </li> </ul> </div> </div> <div class="Comment-Child${comment.id} ms-5 d-none"> <ul class="list-group list-group-flush"> <li class="list-group-item"> <div class="User mt-3 d-flex align-items-center"> <img class="Avatar rounded-circle" src="./Content/assets/img/truyen1.jpg" alt="Avatar" style="width: 40px; height: 40px; object-fit: cover;"> <h5 class="mb-0 ms-2">User Name</h5> </div> <p class="Comment-content my-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vel lorem at massa facilisis malesuada.</p> <div class="Action d-flex"> <span class="mx-3"><i class="fa-solid fa-book"></i> Chương 23</span> <span class="mx-3"> <a href="#"> <i class="fa-solid fa-thumbs-up p-1"></i> 999M </a> </span> <div class="Reply mx-3"> <a href="#"> <i class="fa-solid fa-reply p-1"></i> Nhắc đến </a> </div> <span class="mx-3"><i class="fa-solid fa-clock"></i> 1 phút trước</span> </div> </li> <li class="list-group-item"> <div class="User mt-3 d-flex align-items-center"> <img class="Avatar rounded-circle" src="./Content/assets/img/truyen1.jpg" alt="Avatar" style="width: 40px; height: 40px; object-fit: cover;"> <h5 class="mb-0 ms-2">User Name</h5> </div> <p class="Comment-content my-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vel lorem at massa facilisis malesuada.</p> <div class="Action d-flex"> <span class="mx-3"><i class="fa-solid fa-book"></i> Chương 23</span> <span class="mx-3"> <a href="#"> <i class="fa-solid fa-thumbs-up p-1"></i> 999M </a> </span> <div class="Reply mx-3"> <a href="#"> <i class="fa-solid fa-reply p-1"></i> Nhắc đến </a> </div> <span class="mx-3"><i class="fa-solid fa-clock"></i> 1 phút trước</span> </div> </li> </ul> <form class="d-flex flex-column my-3"> <textarea class="form-control" id="comment" rows="4" placeholder="Nhập bình luận của bạn"></textarea> <button type="button" class="btn btn-primary my-2 align-self-end">Trả Lời</button> </form> </div> </div> </li>`
+                var commentElement = `<li class="list-group-item"> <div class="Comment"> <div class="Comment-Parent"> <div class="User mt-3 d-flex align-items-center"> <img class="Avatar rounded-circle" src="./Content/assets/img/truyen1.jpg" alt="Avatar" style="width: 40px; height: 40px; object-fit: cover;"> <h5 class="mb-0 ms-2">User Name</h5> <div class="ms-auto position-relative" id="Tab-Action"> <input type="checkbox" hidden id="Cmt_ellipsis-vertical${comment.id}"> <label for="Cmt_ellipsis-vertical${comment.id}" style="cursor: pointer;"><i class="fa-solid fa-ellipsis-vertical p-2"></i></label> <ul class="list-group position-absolute d-none flex-column align-items-start" id="ActionListCmt${comment.id}" style="width: 500%; border: solid 1px #333; background-color: #fff;"> <li class="list-group-item p-0 w-100"> <a href="#" class="Item-Link p-2 d-block w-100 text-start">Chỉnh sửa</a> </li> <li class="list-group-item p-0 w-100"> <a href="#" class="Item-Link p-2 d-block w-100 text-start">Xóa</a> </li> </ul> </div> </div> <p class="Comment-content my-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vel lorem at massa facilisis malesuada.</p> <div class="Action d-flex"> <ul class="nav"> <li class="nav-item"> <a href="#" class="nav-link"> <i class="fa-solid fa-book"></i> Chương 23 </a> </li> <li class="nav-item"> <a class="nav-link Nav-Like${comment.id}"> <input type="checkbox" hidden id="CheckLike${comment.id}"> <label for="CheckLike${comment.id}" style="cursor: pointer;"> <i class="fa-solid fa-thumbs-up p-1"></i> 999M </label> </a> </li> <li class="nav-item"> <a class="nav-link Nav-Reply${comment.id}"> <input type="checkbox" hidden id="CheckReply${comment.id}"> <label for="CheckReply${comment.id}" style="cursor: pointer;"> <i class="fa-solid fa-reply p-1"></i> 1 Trả lời </label> </a> </li> <li class="nav-item"> <a href="#" class="nav-link disabled"> <i class="fa-solid fa-clock"></i> 1 phút trước </a> </li> </ul> </div> </div> <div class="Comment-Child${comment.id} ms-5 d-none"> <ul class="list-group list-group-flush"> <li class="list-group-item"> <div class="User mt-3 d-flex align-items-center"> <img class="Avatar rounded-circle" src="./Content/assets/img/truyen1.jpg" alt="Avatar" style="width: 40px; height: 40px; object-fit: cover;"> <h5 class="mb-0 ms-2">User Name</h5> <div class="ms-auto position-relative" id="Tab-Action"> <input type="checkbox" hidden id="Cmt_ellipsis-vertical${comment.id}"> <label for="Cmt_ellipsis-vertical${comment.id}" style="cursor: pointer;"><i class="fa-solid fa-ellipsis-vertical p-2"></i></label> <ul class="list-group position-absolute d-none flex-column align-items-start" id="ActionListCmt${comment.id}" style="width: 500%; border: solid 1px #333; background-color: #fff;"> <li class="list-group-item p-0 w-100"> <a href="#" class="Item-Link p-2 d-block w-100 text-start">Chỉnh sửa</a> </li> <li class="list-group-item p-0 w-100"> <a href="#" class="Item-Link p-2 d-block w-100 text-start">Xóa</a> </li> </ul> </div> </div> <p class="Comment-content my-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vel lorem at massa facilisis malesuada.</p> <div class="Action d-flex"> <ul class="nav"> <li class="nav-item"> <a class="nav-link p-1 Nav-Like${comment.id}"> <input type="checkbox" hidden id="CheckLike${comment.id}"> <label for="CheckLike${comment.id}" style="cursor: pointer;"> <i class="fa-solid fa-thumbs-up p-1"></i> 999M </label> </a> </li> <li class="nav-item"> <a class="nav-link p-1 Nav-Reply${comment.id}"> <input type="checkbox" hidden id="CheckReply${comment.id}"> <label for="CheckReply${comment.id}" style="cursor: pointer;"> <i class="fa-solid fa-reply p-1"></i> Nhắc đến </label> </a> </li> <li class="nav-item"> <a href="#" class="nav-link p-1 disabled"> <i class="fa-solid fa-clock"></i> 1 phút trước </a> </li> </ul> </div> </li> </ul> <form class="d-flex flex-column my-3"> <textarea class="form-control" id="comment" rows="2" placeholder="Nhập bình luận của bạn"></textarea> <button type="button" class="btn btn-primary my-2 align-self-end">Trả Lời</button> </form> </div> </div> </li>`
                 commentList.append(commentElement);
 
                 // js like
@@ -1224,7 +1231,7 @@
         function displayRates(Rates) {
             const rateList = $("#rateList");
             Rates.forEach((rate) => {
-                var rateElement = `<li class="list-group-item bg-transparent"> <div class="Rate"> <div class="User mt-3 d-flex align-items-center"> <img class="Avatar rounded-circle" src="./Content/assets/img/truyen1.jpg" alt="Avatar" style="width: 40px; height: 40px; object-fit: cover;"> <h5 class="mb-0 ms-2">User Name</h5> <div class="ms-3 starss"> <span class="star active">&#9733;</span> <span class="star active">&#9733;</span> <span class="star active">&#9733;</span> <span class="star active">&#9733;</span> <span class="star">&#9733;</span> </div> <div class="ms-auto position-relative" id="Tab-Action"> <input type="checkbox" hidden id="ellipsis-vertical${rate.id}"> <label for="ellipsis-vertical${rate.id}" style="cursor: pointer;"><i class="fa-solid fa-ellipsis-vertical p-2"></i></label> <ul class="list-group position-absolute d-none flex-column align-items-start" id="ActionList${rate.id}" style="width: 500%; border: solid 1px #333; background-color: #fff;"> <li class="list-group-item p-0 w-100"> <a href="#" class="Item-Link p-2 d-block w-100 text-start">Chỉnh sửa</a> </li> <li class="list-group-item p-0 w-100"> <a href="#" class="Item-Link p-2 d-block w-100 text-start">Xóa</a> </li> </ul> </div> </div> <p class="Rate-content my-3 text-start">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vel lorem at massa facilisis malesuada.</p> </div> </li>`
+                var rateElement = `<li class="list-group-item bg-transparent"> <div class="Rate"> <div class="User mt-3 d-flex align-items-center"> <img class="Avatar rounded-circle" src="./Content/assets/img/truyen1.jpg" alt="Avatar" style="width: 40px; height: 40px; object-fit: cover;"> <h5 class="mb-0 ms-2">User Name</h5> <div class="ms-3 starss"> <span class="star active">&#9733;</span> <span class="star active">&#9733;</span> <span class="star active">&#9733;</span> <span class="star active">&#9733;</span> <span class="star">&#9733;</span> </div> <div class="ms-auto position-relative" id="Tab-Action"> <input type="checkbox" hidden id="ellipsis-vertical${rate.id}"> <label for="ellipsis-vertical${rate.id}" style="cursor: pointer;"><i class="fa-solid fa-ellipsis-vertical p-2"></i></label> <ul class="list-group position-absolute d-none flex-column align-items-start" id="ActionList${rate.id}"> <li class="list-group-item p-0 w-100"> <a href="#" class="Item-Link p-2 d-block w-100 text-start">Chỉnh sửa</a> </li> <li class="list-group-item p-0 w-100"> <a href="#" class="Item-Link p-2 d-block w-100 text-start">Xóa</a> </li> </ul> </div> </div> <p class="Rate-content my-3 text-start">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vel lorem at massa facilisis malesuada.</p> </div> </li>`
                 rateList.append(rateElement);
             });
 
