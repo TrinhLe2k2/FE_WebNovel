@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reading</title>
+
+    <!-- css -->
+    <link rel="stylesheet" href="./Content/assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./Content/assets/font/fontawesome-free-6.4.0-web/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="./Content/assets/css/style.css">
+
+    <style>
+        /* :root {
+            --primaty-color: #00dc82;
+            --text-bg: #fff;
+            --text-color: #000;
+        } */
+        a {
+            color: #000;
+        }
+        body {
+            background-image: linear-gradient( #00dc8035 10%, #fff);
+        }
+        .btnHovered:hover {
+            background-color: var(--primaty-color);
+            color: #fff !important;
+            border-color: var(--primaty-color) !important;
+            transition: background-color ease 1s, border-color ease .5s;
+        }
+        .textHovered:hover {
+            color: var(--primaty-color);
+        }
+        .cursorPointer {
+            cursor: pointer;
+        }
+        .bgBrimaryKey {
+            background-color: var(--primaty-color);
+        }
+
+        #Header {
+            position: fixed;
+            left: 0;
+            right: 0;
+            top: -100%;
+            transition: all ease-out .3s;
+            z-index: 999;
+        }
+
+        #Main .ActionChapter .ChapterList {
+            opacity: 0;
+            transition: opacity ease .3s;
+            width: 100%;
+            max-height: 60vh;
+            overflow: auto;
+            overscroll-behavior: contain;
+            scrollbar-width: thin;
+        }
+
+        #Main .ActionChapter .ChapterList a {
+            padding: 4px 0;
+            display: block;
+        }
+
+        #Main .ActionChapter .ChapterList a.active,
+        #Main .ActionChapter .ChapterList a:hover {
+            color: var(--primaty-color);
+        }
+
+        #Main .ChapterContent {
+            background-color: #f6f1e7;
+            border-radius: 8px;
+        }
+
+        #Main .ChapterContent p {
+            text-align: justify; /* Căn đều 2 bên */
+            hyphens: auto; /* Phân chia từng dòng */
+            white-space: pre-line; /* Khi gặp dấu chấm, văn bản sẽ xuống dòng */
+        }
+    </style>
+
+</head>
+<body>
+
+    <section id="Header" class="" style="box-shadow: 0px 10px 24px 0px rgba(0, 0, 0, 0.3);">
+        <div class="container">
+            <div class="row my-2">
+                <div class="col-4 d-flex">
+                    <a class="navbar-brand d-flex align-items-center Logo" href="./index.html">
+                        <img class="" src="https://ncomics.vercel.app/_nuxt/logo.83be12af.svg" alt="NComics">
+                        <h3 class="">Refresh</h3>
+                    </a>
+                </div>
+                <div class="col-sm-4 d-flex order-1 order-sm-0">
+                    <form data-v-eb07a472="a123" class="d-flex align-items-stretch rounded-pill m-2 w-100 custom-form bg-white">
+                        <input type="text" list="datalistOptions"
+                            class="w-100 py-1 border-0 ps-3 rounded-pill flex-fill" placeholder="Search"
+                            style="outline: none;">
+                        <button type="submit" class="px-3 border-0 rounded-pill bg-body">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </button>
+
+                        <datalist id="datalistOptions">
+                            <option value="San Francisco">
+                            <option value="New York">
+                            <option value="Seattle">
+                            <option value="Los Angeles">
+                            <option value="Chicago">
+                        </datalist>
+                    </form>
+                </div>
+                <div class="col-8 col-sm-4 d-flex justify-content-end align-items-center">
+                    <a href="#" data-bs-target="#AccountModal" data-bs-toggle="modal" class="account">
+                        <i class="fa-solid fa-user"></i>
+                        <span class="fw-bold">Tài khoản</span>
+                    </a>
+                </div>
+            </div>
+            <div class="row my-2">
+                <ul class="nav justify-content-center">
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="./index.html">
+                            <i class="fa-solid fa-house"></i>
+                            <span>Home</span>
+                        </a>
+                    </li>
+                    <li class="nav-item dropdown Category">
+                        <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button"
+                            aria-expanded="false">
+                            <i class="bi bi-tags-fill"></i>
+                            Thể Loại
+                        </a>
+                        <ul class="dropdown-menu Dropdown-Menu text-center">
+                            <div class="container">
+                                <div class="row gx-0">
+                                    <div class="col-6 col-sm-4">
+                                        <a href="#" class="Category-Link d-block w-100 h-100 py-2">Huyền Huyễn</a>
+                                    </div>
+                                    <div class="col-6 col-sm-4">
+                                        <a href="#" class="Category-Link d-block w-100 h-100 py-2">Tiên Hiệp</a>
+                                    </div>
+                                    <div class="col-6 col-sm-4">
+                                        <a href="#" class="Category-Link d-block w-100 h-100 py-2">Trọng Sinh</a>
+                                    </div>
+                                    <div class="col-6 col-sm-4">
+                                        <a href="#" class="Category-Link d-block w-100 h-100 py-2">Huyền Huyễn</a>
+                                    </div>
+                                    <div class="col-6 col-sm-4">
+                                        <a href="#" class="Category-Link d-block w-100 h-100 py-2">Tiên Hiệp</a>
+                                    </div>
+                                    <div class="col-6 col-sm-4">
+                                        <a href="#" class="Category-Link d-block w-100 h-100 py-2">Trọng Sinh</a>
+                                    </div>
+                                    <div class="col-6 col-sm-4">
+                                        <a href="#" class="Category-Link d-block w-100 h-100 py-2">Huyền Huyễn</a>
+                                    </div>
+                                    <div class="col-6 col-sm-4">
+                                        <a href="#" class="Category-Link d-block w-100 h-100 py-2">Tiên Hiệp</a>
+                                    </div>
+                                    <div class="col-6 col-sm-4">
+                                        <a href="#" class="Category-Link d-block w-100 h-100 py-2">Trọng Sinh</a>
+                                    </div>
+                                    <div class="col-6 col-sm-4">
+                                        <a href="#" class="Category-Link d-block w-100 h-100 py-2">Huyền Huyễn</a>
+                                    </div>
+                                    <div class="col-6 col-sm-4">
+                                        <a href="#" class="Category-Link d-block w-100 h-100 py-2">Tiên Hiệp</a>
+                                    </div>
+                                    <div class="col-6 col-sm-4">
+                                        <a href="#" class="Category-Link d-block w-100 h-100 py-2">Trọng Sinh</a>
+                                    </div>
+                                    <div class="col-6 col-sm-4">
+                                        <a href="#" class="Category-Link d-block w-100 h-100 py-2">Huyền Huyễn</a>
+                                    </div>
+                                    <div class="col-6 col-sm-4">
+                                        <a href="#" class="Category-Link d-block w-100 h-100 py-2">Tiên Hiệp</a>
+                                    </div>
+                                    <div class="col-6 col-sm-4">
+                                        <a href="#" class="Category-Link d-block w-100 h-100 py-2">Trọng Sinh</a>
+                                    </div>
+                                    <div class="col-6 col-sm-4">
+                                        <a href="#" class="Category-Link d-block w-100 h-100 py-2">Huyền Huyễn</a>
+                                    </div>
+                                    <div class="col-6 col-sm-4">
+                                        <a href="#" class="Category-Link d-block w-100 h-100 py-2">Tiên Hiệp</a>
+                                    </div>
+                                    <div class="col-6 col-sm-4">
+                                        <a href="#" class="Category-Link d-block w-100 h-100 py-2">Trọng Sinh</a>
+                                    </div>
+                                    <div class="col-6 col-sm-4">
+                                        <a href="#" class="Category-Link d-block w-100 h-100 py-2">Huyền Huyễn</a>
+                                    </div>
+                                    <div class="col-6 col-sm-4">
+                                        <a href="#" class="Category-Link d-block w-100 h-100 py-2">Tiên Hiệp</a>
+                                    </div>
+                                    <div class="col-6 col-sm-4">
+                                        <a href="#" class="Category-Link d-block w-100 h-100 py-2">Trọng Sinh</a>
+                                    </div>
+                                    <div class="col-6 col-sm-4">
+                                        <a href="#" class="Category-Link d-block w-100 h-100 py-2">Huyền Huyễn</a>
+                                    </div>
+                                    <div class="col-6 col-sm-4">
+                                        <a href="#" class="Category-Link d-block w-100 h-100 py-2">Tiên Hiệp</a>
+                                    </div>
+                                    <div class="col-6 col-sm-4">
+                                        <a href="#" class="Category-Link d-block w-100 h-100 py-2">Tất cả</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./BoLoc.html">
+                            <i class="fa-solid fa-filter"></i>
+                            <span>Bộ Lọc</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <section id="Navigation">
+        <input type="checkbox" hidden id="Bar">
+        <label for="Bar" class="cursorPointer fixed-top p-3" style="width: 50px;"><i class="fa-solid fa-bars-progress"></i></label>
+    </section>
+
+    <script> // js header
+        var chkBar = document.querySelector('#Navigation #Bar');
+        var header = document.querySelector('#Header');
+        chkBar.addEventListener('change', function() {
+            if (this.checked) {
+                header.classList.add('bg-white')
+                header.style.top = '0'
+            } else {
+                header.style.top = '-100%'
+            }
+        })
+
+    </script>
+
+    <section id="Main" class="my-5">
+        <div class="container">
+            <div class="row text-center">
+                <h3><a href="#">Cổ Chân Nhân</a></h3>
+                <a href="#" class="mb-3">Người đăng: Mario Baby</a>
+            </div>
+            <div class="row align-items-center g-3 ActionChapter pb-5">
+                
+                <div class="col-12 col-8 rounded-pill position-relative">
+                    <div>
+                        <input type="checkbox" hidden id="CheckChapterList">
+                        <label for="CheckChapterList" class="w-100 cursorPointer">
+                            <h4 class="mb-0 py-2 mb-2 text-center">Chương 1: Dù bỏ mình ma tâm vẫn không hối hận <i class="fa-solid fa-angles-down"></i></h4>
+                        </label>
+                    </div>
+                    <div class="ChapterList container-fluid bg-white rounded-top rounded-bottom position-absolute shadow" style="top: 100%;">
+                        <div class="row d-none p-3"> <!-- Chapter list -->
+                            <div class="col-6">
+                                <a href="#" class="active">Chương 1: Dù bỏ mình ma tâm vẫn không hối hận</a>
+                            </div>
+                            <div class="col-6">
+                                <a href="#">Chương 2 : Giác ngộ ngược dòng thời gian năm trăm năm</a>
+                            </div>
+                            <div class="col-6">
+                                <a href="#">Chương 3 : Mời ở một bên chơi trứng đi</a>
+                            </div>
+                            <div class="col-6">
+                                <a href="#">Chương 4 : Cổ Nguyệt Phương Nguyên</a>
+                            </div>
+                            <div class="col-6">
+                                <a href="#">Chương 1: Dù bỏ mình ma tâm vẫn không hối hận</a>
+                            </div>
+                            <div class="col-6">
+                                <a href="#">Chương 2 : Giác ngộ ngược dòng thời gian năm trăm năm</a>
+                            </div>
+                            <div class="col-6">
+                                <a href="#">Chương 3 : Mời ở một bên chơi trứng đi</a>
+                            </div>
+                            <div class="col-6">
+                                <a href="#">Chương 4 : Cổ Nguyệt Phương Nguyên</a>
+                            </div>
+                            <div class="col-6">
+                                <a href="#">Chương 1: Dù bỏ mình ma tâm vẫn không hối hận</a>
+                            </div>
+                            <div class="col-6">
+                                <a href="#">Chương 2 : Giác ngộ ngược dòng thời gian năm trăm năm</a>
+                            </div>
+                            <div class="col-6">
+                                <a href="#">Chương 3 : Mời ở một bên chơi trứng đi</a>
+                            </div>
+                            <div class="col-6">
+                                <a href="#">Chương 4 : Cổ Nguyệt Phương Nguyên</a>
+                            </div>
+                            <div class="col-6">
+                                <a href="#">Chương 1: Dù bỏ mình ma tâm vẫn không hối hận</a>
+                            </div>
+                            <div class="col-6">
+                                <a href="#">Chương 2 : Giác ngộ ngược dòng thời gian năm trăm năm</a>
+                            </div>
+                            <div class="col-6">
+                                <a href="#">Chương 3 : Mời ở một bên chơi trứng đi</a>
+                            </div>
+                            <div class="col-6">
+                                <a href="#">Chương 4 : Cổ Nguyệt Phương Nguyên</a>
+                            </div>
+                            <div class="col-6">
+                                <a href="#">Chương 2 : Giác ngộ ngược dòng thời gian năm trăm năm</a>
+                            </div>
+                            <div class="col-6">
+                                <a href="#">Chương 3 : Mời ở một bên chơi trứng đi</a>
+                            </div>
+                            <div class="col-6">
+                                <a href="#">Chương 4 : Cổ Nguyệt Phương Nguyên</a>
+                            </div>
+                            <div class="col-6">
+                                <a href="#">Chương 1: Dù bỏ mình ma tâm vẫn không hối hận</a>
+                            </div>
+                            <div class="col-6">
+                                <a href="#">Chương 2 : Giác ngộ ngược dòng thời gian năm trăm năm</a>
+                            </div>
+                            <div class="col-6">
+                                <a href="#">Chương 3 : Mời ở một bên chơi trứng đi</a>
+                            </div>
+                            <div class="col-6">
+                                <a href="#">Chương 4 : Cổ Nguyệt Phương Nguyên</a>
+                            </div>
+                            <div class="col-6">
+                                <a href="#">Chương 1: Dù bỏ mình ma tâm vẫn không hối hận</a>
+                            </div>
+                            <div class="col-6">
+                                <a href="#">Chương 2 : Giác ngộ ngược dòng thời gian năm trăm năm</a>
+                            </div>
+                            <div class="col-6">
+                                <a href="#">Chương 3 : Mời ở một bên chơi trứng đi</a>
+                            </div>
+                            <div class="col-6">
+                                <a href="#">Chương 4 : Cổ Nguyệt Phương Nguyên</a>
+                            </div>
+                            <div class="col-6">
+                                <a href="#">Chương 1: Dù bỏ mình ma tâm vẫn không hối hận</a>
+                            </div>
+                            <div class="col-6">
+                                <a href="#">Chương 2 : Giác ngộ ngược dòng thời gian năm trăm năm</a>
+                            </div>
+                            <div class="col-6">
+                                <a href="#">Chương 3 : Mời ở một bên chơi trứng đi</a>
+                            </div>
+                            <div class="col-6">
+                                <a href="#">Chương 4 : Cổ Nguyệt Phương Nguyên</a>
+                            </div>
+                        </div>
+                    </div>
+                    <script> // js chap list
+                        var boxChapList = document.querySelector('#Main .ActionChapter .ChapterList');
+                        var chapterList = document.querySelector('#Main .ActionChapter .ChapterList .row');
+                        document.getElementById('CheckChapterList').addEventListener('change', function() {
+                            if(this.checked) {
+                                boxChapList.classList.add('opacity-100');
+                                chapterList.classList.remove('d-none');
+                            } else {
+                                boxChapList.classList.remove('opacity-100');
+                                chapterList.classList.add('d-none');
+                            }
+                        });
+                    </script>
+                </div>
+                <div class="col-6">
+                    <a href="#" class="py-2 mb-2 px-4 rounded-pill text-black border border-dark btnHovered"><i class="fa-solid fa-angle-left"></i> Chương trước</a>
+                </div>
+                <div class="col-6 text-end">
+                    <a href="#" class="py-2 mb-2 px-4 rounded-pill text-black border border-dark btnHovered">Chương sau <i class="fa-solid fa-angle-right"></i></a>
+                </div>
+            </div>
+            
+            <div class="row ChapterContent flex-column pb-5"> <!-- Nội dung chapter -->
+                <div class="col-12 col-sm-8 mx-auto fs-4"> 
+                    <p>
+                        "Phương Nguyên, ngoan ngoãn giao ra Xuân Thu Thiền, ta cho ngươi chết một cách thoải mái!"
+
+                    "Phương lão ma, ngươi đừng hòng phản kháng, hôm nay chúng ta các phái  chính đạo liên hợp lại, nhất định phải phá ma quật của ngươi. Nơi này  sớm đã bày thiên la địa võng, lần này ngươi nhất định đầu thân khác  chỗ!"
+                    
+                    "Phương Nguyên ngươi là đồ ma đầu chết tiệt, ngươi vì luyện thành  Xuân Thu Thiền, giết ngàn vạn mạng người. Ngươi đã phạm phải tội nghiệt  đầy trời, tội không thể tha, tội lỗi chất chồng!"
+                    
+                    "Ma đầu, ba trăm năm trước ngươi làm nhục ta, cướp đi tấm thân trong  sạch của ta, giết sạch cả nhà ta, giết cửu tộc của ta. Từ thời khắc đó,  ta hận không thể ăn thịt ngươi, uống máu ngươi! Hôm nay, ta muốn ngươi  sống không bằng chết!!"
+                    
+                    ...
+                    
+                    Phương Nguyên mặc một bộ trường bào xanh biếc rách nát, tóc tai bù xù, cả người đẫm máu, nhìn bốn phía xung quanh.
+                    
+                    Gió núi thổi huyết bào phất phơ, giống như chiến kì tung bay phần phật.
+                    
+                    Máu đỏ tươi, từ mấy trăm miệng vết thương trên người tuôn ra ngoài.  Chỉ đứng trong chốc lát, dưới chân Phương Nguyên đã tích tụ một vũng máu  loãng lớn.
+                    
+                    Quần địch bao vậy, đã sớm không có đường sống.
+                    
+                    Đại cục đã định, hôm nay hẳn phải chết không nghi ngờ.
+                    
+                    Phương Nguyên thấy rõ thế cục, nhưng mà mặc dù tử vong đến, hắn vẫn mặt không đổi sắc như trước, vẻ mặt bình thản.
+                    
+                    Ánh mắt hắn sâu thẳm, như một cái giếng cổ, trước sau như một, sâu không thấy đáy.
+                    
+                    Quần hùng chính đạo vây công hắn, không phải đường đường trưởng môn  một phái tôn quý, thì cũng là thiếu niên anh hào danh chấn tứ phương.  Lúc này vây quanh Phương Nguyên, có gào thét, có cười lạnh, có hai mắt  nheo lại hiện ra tia sáng cảnh giác, có đang che vết thương sợ hãi mà  nhìn.
+                    
+                    Bọn họ không hề động thủ, cũng vì e ngại Phương Nguyên sắp chết phản công.
+                    
+                    Cứ giằng co căng thẳng như vậy ba canh giờ, mặt trời chiều ngả về  tây, ánh sáng còn lại của mặt trời nhen nhóm bên sườn núi mà ánh chiều  chiếu vào, trong một lúc sáng lên như lửa đốt.
+                    
+                    Phương Nguyên vẫn yên lặng như tượng, từ từ xoay người lại.
+                    
+                    Quần hùng ngay lập tức xôn xao một trận, đồng loạt lui về sau một khoảng lớn.
+                    
+                    Giờ phút này, núi đá xám trắng dưới chân Phương Nguyên sớm đã bị máu  tươi nhuộm thành đỏ sậm. Gương mặt có vẻ trắng xám vì mất máu quá nhiều  được ánh nắng chiều chiếu rọi, bỗng nhiên có thêm một phần hào quang rực  sáng.
+                    
+                    Nhìn ngắm khung cảnh mặt trời khuất núi xanh nơi này, Phương Nguyên  cười khẽ một tiếng: "Thanh sơn lạc nhật, thu nguyệt xuân phong. Quả  nhiên sáng sớm tóc đen chiều thành tuyết trắng, thị phi thành bại quay  đầu lại như không." Thời điểm nói lời này, trước mắt hốt nhiên hiện ra  khung cảnh kiếp trước trên địa cầu.
+                    
+                    Hắn vốn là học sinh Hoa Hạ* trên địa cầu, cơ duyên xảo hợp xuyên qua  đến thế giới này. Trăn trở nghiêng ngả ba trăm năm, tung hoành thế gian  hai trăm năm, hơn năm trăm năm dài dằng dặc, nhưng cũng là trôi qua  trong huy hoàng.
+                    
+                    (*Tên cũ của Trung Quốc)
+                    
+                    Rất nhiều kí ức chôn sâu dưới đáy lòng, ở thời khắc này như còn mới, sinh động như thật mà hiện về trước mắt.
+                    
+                    "Cuối cùng vẫn thất bại à." Phương Nguyên trong lòng than thở, có hơi bùi ngùi, lại không hối hận.
+                    
+                    Loại kết quả này, hắn cũng sớm đoán được. Lúc trước lựa chọn đã chuẩn bị tâm lý rồi.
+                    
+                    Cái gọi là ma đạo, chính là không tu thiện quả, giết người phóng hỏa.  Thiên địa không dung, người trên thế gian đều là địch, thỏa sức tung  hoành.
+                    
+                    "Nếu như Xuân Thu Thiền vừa mới luyện thành có hiệu quả, kiếp sau vẫn  muốn làm tà ma." Nghĩ như vậy, Phương Nguyên không kìm lòng được, cất  tiếng cười to.
+                    
+                    "Lão ma, ngươi cười cái gì?"
+                    
+                    "Mọi người cẩn thận, ma đầu chết đến nơi còn muốn phản công!"
+                    
+                    "Mau giao ra Xuân Thu Thiền!!"
+                    
+                    Quần hùng dồn ép đến, đúng lúc này, oanh một tiếng, Phương Nguyên ngang nhiên tự bạo.
+                    
+                    ...
+                    
+                    Mưa xuân rả rích, lặng yên tưới mát Thanh Mao sơn.
+                    
+                    Đêm đã khuya, gió lạnh nhè nhẹ thổi mưa phùn lất phất.
+                    
+                    Thanh Mao Sơn cũng không tối om, từ sườn núi đến chân núi, rất đốm  sáng óng ánh hiện ra, như là khoác một dải băng ánh sáng rực rỡ.
+                    
+                    Nơi phát ra những ánh sáng này là từng căn từng căn nhà sàn, mặc dù  không thể gọi là vạn nhà lên đèn, nhưng cũng đến quy mô hàng ngàn.
+                    
+                    Đây chính là Cổ Nguyệt Sơn Trại nằm trên Thanh Mao Sơn, khiến cho dãy  núi mênh mông u tĩnh tăng thêm một phần hơi thở dân cư nồng đậm.
+                    
+                    Chính giữ nhất của Cổ Nguyệt Sơn Trại, là một tòa lầu các rực rỡ. Lúc  này đang tổ chức hiến tế đại điển, vì vậy đèn đuốc càng là sáng choang,  bên trong sáng ngời rực rỡ.
+                    
+                    "Liệt tổ liệt tông phù hộ, hy vọng trong Khai Khiếu Đại Điển lần này  có thể xuất hiện nhiều thiếu niên tư chất ưu tú hơn, trở thành hy vọng  và tăng thêm máu huyết mới cho gia tộc !" Cổ Nguyệt tộc trưởng bộ dáng  trung niên, hai bên tóc mai bạc trắng, trang phục hiến tế toàn thân  thuần một màu trắng trang trọng, quỳ gối trên sàn nhà màu nâu nhạt, hai  tay chắp thành chữ thập trên người, hai mắt nhắm chặt thành tâm cầu  nguyện.
+                    
+                    Đối mặt với ông ta là cái đài cao dài sơn màu đen, đài có ba tầng,  thờ phụng bài vị tổ tiên. Hai bên bài vị đặt để lư hương đồng đỏ, hương  khói lượn lờ.
+                    
+                    Phía sau ông ta, có hơn mười người cũng quỳ như vậy. Bọn họ mặc đồ lễ  màu trắng rộng thùng thình, đều là gia lão trong gia tộc, nắm giữ các  phương diện quyền hành.
+                    
+                    Sau khi cầu nguyện một phen , Cổ Nguyệt tộc trưởng dẫn đầu xoay người  lại, hai tay trải ra ngang nhau, lòng bàn tay áp xuống sàn nhà, dập  đầu. Cái trán chạm vào trên sàn nhà màu nâu, khẽ phát ra âm thanh phịch  phịch.
+                    
+                    Các gia lão phía sau từng người đều có vẻ mặt trang nghiêm, cũng im lặng làm theo.
+                    
+                    Trong một lúc, trong Từ Đường dòng họ phát ra tiếng vang khẽ của phần trán va chạm vào sàn nhà.
+                    
+                    Xong đại điển, mọi người từ từ đứng dậy từ trên sàn nhà, lẳng lặng mà đi ra khỏi Từ Đường trang nghiêm.
+                    
+                    Trong hành lang, chúng gia lão lặng lẽ thở phào nhẹ nhõm, không khí có phần buông lỏng.
+                    
+                    Tiếng bàn luận dần dần vang lên.
+                    
+                    " Thời gian thật sự là quá nhanh, nháy mắt một năm đã trôi qua."
+                    
+                    "Khai Khiếu Đại Điển lần trước giống như mới ngày hôm qua, hiện rõ như ở trước mắt vậy."
+                    
+                    "Ngày mai chính là Khai Khiếu Đại Điển mỗi năm một lần, không biết năm nay sẽ xuất hiện dạng máu huyết mới nào của gia tộc đây?"
+                    
+                    "Ai, hy vọng có thiếu niên tư chất Giáp đẳng xuất hiện. Bộ tộc Cổ  Nguyệt chúng ta đã ba năm không có thiên tài như vậy xuất hiện."
+                    
+                    "Đúng vậy, Bạch gia trại, Hùng gia trại mấy năm nay đều có nhiều  thiên tài xuất hiện. Nhất là Bạch gia Bạch Ngưng Băng, thiên tư thật sự  khủng bố."
+                    
+                    Không ngoại trừ ai, nói đến cái tên Bạch Ngưng Băng này, trên mặt chúng gia lão không khỏi hiện ra vẻ mặt lo âu.
+                    
+                    Người này thiên tư cực kỳ xuất sắc, ngắn ngủi hai năm thời gian, đã  tu hành đến Cổ sư tam chuyển. Trong thế hệ thanh niên, có thể nói là đầu  lĩnh đứng đầu duy nhất. Thậm chí ngay cả các thế hệ trước cũng cảm giác  được áp lực từ vị nhân tài mới xuất hiện này.
+                    
+                    Qua thời gian, hắn tất nhiên là trụ cột của Bạch gia trại. Ít nhất  cũng là cường giả một mình đảm đương một phương. Không ai hoài nghi điểm  này.
+                    
+                    "Nhưng mà thiếu niên tham gia Khai Khiếu Đại Điển trong năm nay cũng không phải không có hy vọng."
+                    
+                    "Không sai, chi mạch họ Phương xuất hiện một thiếu niên thiên tài. Ba  tháng có thể nói, bốn tháng có thể đi. Lúc năm tuổi có thể làm thơ, trí  tuệ phi thường tài hoa hơn người. Đáng tiếc là cha mẹ chết sớm, hiện  tại được cậu mợ nuôi dưỡng."
+                    
+                    "Ừ, đây là có trí tuệ sớm, hơn nữa chí hướng lớn. Mấy năm nay hắn  sáng tác "Tương kính tửu", "Vịnh mai", còn có "Giang thành tử", ta đã  nghe qua, thật sự là thiên tài!"
+                    
+                    Cổ Nguyệt tộc trưởng là người cuối cùng đi ra khỏi Từ Đường tổ tông,  chậm rãi đóng cửa lại, liền nghe được tiếng các gia lão bàn luận trong  hành lang.
+                    
+                    Trong một lúc chỉ biết được các gia lão lúc này bàn luận về một vị thiếu niên gọi là Cổ Nguyệt Phương Nguyên.
+                    
+                    Làm người đứng đầu một tộc, đối với việc xuất hiện đệ tử ưu tú tự  nhiên sẽ chú ý. Mà Cổ Nguyệt Phương Nguyên đúng là một vị chói mắt xuất  sắc nhất trong lớp tiểu bối.
+                    
+                    Mà kinh nghiệm cho thấy, thường là người thiên phú dị bẩm từ nhỏ gặp  là không quên được, hoặc là sức lực lớn như người trưởng thành v.v ..  cũng đều có tư chất tu hành ưu tú.
+                    
+                    "Nếu người này kiểm tra ra tư chất Giáp đẳng, đào tạo thật tốt, cũng  không hẳn không thể chống lại Bạch Ngưng Băng. Cho dù là tư chất Ất  đẳng, ngày sau chắc chắn cũng có thể một mình đảm đương một phương, trở  thành một lá cờ đầu của bộ tộc Cổ Nguyệt. Nhưng mà hắn sớm thông minh  như vậy, tư chất Ất đẳng chắc là không lớn, vô cùng có khả năng chính là  Giáp đẳng." Ý niệm này vừa sinh ra, khóe miệng tộc trưởng Cổ Nguyệt  không khỏi hơi nhếch lên, hiện ra một nụ cười mỉm.
+                    
+                    Ngay lúc đó, ho khan một tiếng, nói với các gia lão: "Các vị, thời  gian không còn sớm, vì đại điển ngày mai suông sẻ, đêm nay xin hãy nghỉ  ngơi thật tốt, điều dưỡng tinh thần."
+                    
+                    Các gia lão nghe xong lời này, đều nao nao. Trong ánh mắt nhìn nhau cũng ẩn giấu một tia cảnh giác.
+                    
+                    Tộc trưởng nói lời này rất kín đáo, nhưng tất cả mọi người hiểu rõ ý.
+                    
+                    Hàng năm vì tranh đoạt những hậu bối thiên tài này, giữa các gia lão  tranh đoạt lẫn nhau cũng là mặt đỏ tai hồng, sứt đầu mẻ trán.
+                    
+                    Nên phải nghỉ ngơi dưỡng sức thật tốt, đợi đến ngày mai cho một phen tranh đoạt kia.
+                    
+                    Nhất là Cổ Nguyệt Phương Nguyên, có khả năng là tư chất Giáp đẳng vô  cùng lớn. Hơn nữa, cha mẹ của hắn đã qua đời, là một trong hai cô nhi  còn sót lại của chi mạch họ Phương. Nếu có thể thu vào trong một mạch,  đào tạo thật tốt, đảm bảo chi mạch của mình một trăm năm hưng thịnh  không suy!
+                    
+                    "Chẳng qua, cảnh báo trước một câu. Tranh đoạt phải đường đường chính  chính tranh đoạt, không thể sử dụng âm mưu thủ đoạn, tổn hại đoàn kết  gia tộc. Các vị gia lão xin hãy nhớ kĩ trong lòng!" Tộc trưởng nghiêm  túc nhắn nhủ.
+                    
+                    "Không dám. Không dám."
+                    
+                    "Nhất định nhớ kĩ trong lòng."
+                    
+                    "Phải cáo từ rồi, tộc trưởng đại nhân xin dừng bước."
+                    
+                    Các gia lão lòng đầy tâm tư, từng người một tản đi.
+                    
+                    Không lâu sau, trên hành lang đã vắng vẻ. Mưa xuân gió tạt qua cửa sổ  thổi sang đây, tộc trưởng nhẹ bước đi, đi đến trước cửa sổ.
+                    
+                    Ngay lập tức, đầy miệng là không khí tươi mát ẩm ướt của núi rừng, thấm vào ruột gan.
+                    
+                    Đây là tầng ba của lầu các, tôc trưởng phóng ánh mắt nhìn lại, hơn phân nửa Cổ Nguyệt sơn trại cũng nhìn thấy tất cả.
+                    
+                    Đêm khuya vào giờ này, đại đa số mọi người trong trại lại còn ánh đèn, rất khác ngày thường.
+                    
+                    Ngày mai chính là ngày Khai Khiếu Đại Điển, liên quan đến lợi ích bản  thân mỗi người. Một loại không khí hưng phấn, căng thẳng bao phủ trái  tim của tộc nhân, tất nhiên là rất nhiều người ngủ không yên.
+                    
+                    "Đây là hy vọng tương lai của gia tộc." Trong mắt phản chiếu từng điểm từng điểm ánh đèn, tộc trưởng nói thầm một tiếng.
+                    
+                    Mà lúc này, có một đôi con ngươi trong trẻo cũng như vậy, lẳng lặng  mà nhìn những ánh đèn lập lòe giữa đêm khuya này, cõi lòng ôm đầy tình  cảm phức tạp.
+                    
+                    "Cổ Nguyệt Sơn Trại, đây là năm trăm năm trước?! Xuân Thu Thiền quả  thực có tác dụng..." Phương Nguyên ánh mắt sâu thẳm, đứng bên cạnh cửa  sổ, mặc cho gió mưa đập vào trên người.
+                    
+                    Tác dụng của Xuân Thu Thiền, chính là nghịch chuyển thời gian. Bài  danh trong Thập đại kì cổ, có thể xếp tên thứ bảy, tự nhiên không thể  coi thường.
+                    
+                    Nói ngắn gọn, chính là sống lại.
+                    
+                    "Lợi dụng Xuân Thu Thiền sống lại, về năm trăm năm trước!" Phương  Nguyên vươn tay, ánh mắt bình tĩnh nhìn bàn tay trẻ tuổi non nớt có phần  tái nhợt của mình, sau đó từ từ nắm chặt, cố sức cảm nhận được phần  chân thật này.
+                    
+                    Bên tai là tiếng mưa phùn đập vào trên cửa sổ, hắn từ từ nhắm mắt  lại, sau một lúc lâu mới mở mắt ra, thở dài một hơi: "Từng trải năm trăm  năm, giống như là giấc mộng."
+                    
+                    Nhưng hắn lại biết rõ, đây cũng không phải là mộng.
+                    </p>
+                </div>
+                <div class="d-flex justify-content-around mt-5">
+                    <div class="">
+                        <a href="#" class="py-2 px-4 d-block rounded-pill text-black border border-dark btnHovered"><i class="fa-solid fa-angle-left"></i> Chương trước</a>
+                    </div>
+                    <div class="">
+                        <a href="#" class="py-2 px-4 d-block rounded-pill text-black border border-dark btnHovered">Chương sau <i class="fa-solid fa-angle-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section id="Footer">
+        <div class="container p-5 my-5">
+            <ul class="nav justify-content-center">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">
+                        <i class="fa-brands fa-facebook"></i>
+                        <span>Facebook</span>
+                    </a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">
+                        <i class="fa-brands fa-square-instagram"></i>
+                        <span>Instagram</span>
+                    </a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">
+                        <i class="fa-brands fa-discord"></i>
+                        <span>Discord</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+    </section>
+
+    <section id="Modal">
+        <section> <!-- Login/Register -->
+            <div class="modal fade" id="AccountModal" aria-hidden="true" aria-labelledby="AccountModalLabel"
+                tabindex="-1">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="AccountModalLabel">Đăng Nhập</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <form action="#" class="" method="post">
+                                <div class="form-group mb-3">
+                                    <label class="col-md-12 my-1 control-label" for="Email">Email</label>
+                                    <div class="col-md-12">
+                                        <input class="form-control" id="Email" name="Email" type="email" value="">
+                                        <span></span>
+                                    </div>
+                                </div>
+                                <div class="form-group mb-3">
+                                    <label class="col-md-12 my-1 control-label" for="Password">Password</label>
+                                    <div class="col-md-12">
+                                        <input class="form-control" id="Password" name="Password" type="password" value="">
+                                        <span></span>
+                                    </div>
+                                </div>
+                                <div class="form-group mb-3">
+                                    <div class="col-md-offset-2 col-md-12">
+                                        <div class="checkbox">
+                                            <input id="RememberMe" name="RememberMe" type="checkbox" value="true">
+                                            <label for="RememberMe">Remember me?</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group mb-3">
+                                    <div class="col-md-offset-2 col-md-12">
+                                        <input type="submit" value="Đăng Nhập" class="btn btn-success">
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <span>Bạn chưa có tài khoản?<a href="" data-bs-target="#AccountModal2" data-bs-toggle="modal"> Đăng ký tại đây</a></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal fade" id="AccountModal2" aria-hidden="true"
+                aria-labelledby="AccountModalLabel2" tabindex="-1">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="AccountModalLabel2">Đăng ký</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <form action="#" class="" method="post">
+                                <div class="form-group mb-3">
+                                    <label class="col-md-12 my-1 control-label" for="UserName">Tên đăng nhập</label>
+                                    <div class="col-md-12">
+                                        <input class="form-control" id="UserName" name="UserName" type="text" value="">
+                                        <span></span>
+                                    </div>
+                                </div>
+                                <div class="form-group mb-3">
+                                    <label class="col-md-12 my-1 control-label" for="Email">Email</label>
+                                    <div class="col-md-12">
+                                        <input class="form-control" id="Email" name="Email" type="email" value="">
+                                        <span></span>
+                                    </div>
+                                </div>
+                                <div class="form-group mb-3">
+                                    <label class="col-md-12 my-1 control-label" for="Password">Mật khẩu</label>
+                                    <div class="col-md-12">
+                                        <input class="form-control" id="Password" name="Password" type="password" value="">
+                                        <span></span>
+                                    </div>
+                                </div>
+                                <div class="form-group mb-3">
+                                    <label class="col-md-12 my-1 control-label" for="Re-Password">Nhập lại mật khẩu</label>
+                                    <div class="col-md-12">
+                                        <input class="form-control" id="Re-Password" name="Re-Password" type="password" value="">
+                                        <span></span>
+                                    </div>
+                                </div>
+                                <div class="form-group mb-3">
+                                    <div class="col-md-offset-2 col-md-12">
+                                        <input type="submit" value="Đăng ký" class="btn btn-success">
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <a href="#" data-bs-target="#AccountModal" data-bs-toggle="modal">Quay lại trang đăng nhập</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- <button class="btn btn-primary" data-bs-target="#AccountModal" data-bs-toggle="modal">Open first modal</button> -->
+        </section>
+    </section>
+
+
+    <!-- js -->
+    <script src="./Content/assets/js/bootstrap.bundle.min.js"></script>
+    <script src="./Content/assets/ckeditor/ckeditor.js"></script>
+    <script src="./Content/assets/js/jquery-3.6.0.min.js"></script>
+    <script src="./Content/assets/js/pagination.js"></script>
+    <script src="./Content/assets/js/app.js"></script>
+</body>
+</html>
