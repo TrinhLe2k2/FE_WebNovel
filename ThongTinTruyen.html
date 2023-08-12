@@ -81,12 +81,15 @@
             font-weight: 500;
         }
 
-        #Main .InformationNovel .Introduction .Description-Novel {
+        #Main .InformationNovel .Introduction .Description-Novel p {
             display: -webkit-box;
             -webkit-line-clamp: 3; /* Số dòng tối đa muốn hiển thị */
             -webkit-box-orient: vertical;
             overflow: hidden;
             text-overflow: ellipsis;
+            text-align: justify;
+            hyphens: auto;
+            margin-bottom: 0;
         }
 
         #Main .InformationNovel .Introduction .Action a {
@@ -120,7 +123,16 @@
             border: none;
         }
 
-        
+        #Main .ActionNovel .tab-content #infomation-tab-pane .Description-Novel a:hover {
+            color: var(--primaty-color);
+        }
+
+        #Main .ActionNovel .tab-content #infomation-tab-pane .Introduction p{
+            text-align: justify;
+            hyphens: auto;
+            /* white-space: pre-line; */
+            margin-bottom: 0;
+        }
 
         #Main .ActionNovel .tab-content .UserProfile .Information .Action .nav-item a:hover {
             background-color: var(--primaty-color);
@@ -413,26 +425,26 @@
                         </div>
                         
                         <nav class="nav Category-List">
-                            <a class="nav-link px-2 py-1 mb-2" href="#">Huyền Huyễn</a>
-                            <a class="nav-link px-2 py-1 mb-2" href="#">Tiên Hiệp</a>
-                            <a class="nav-link px-2 py-1 mb-2" href="#">Trùng Sinh</a>
-                            <a class="nav-link px-2 py-1 mb-2" href="#">Xuyên Không</a>
-                            <a class="nav-link px-2 py-1 mb-2" href="#">Xuyên Không</a>
-                            <a class="nav-link px-2 py-1 mb-2" href="#">Xuyên Không</a>
-                            <a class="nav-link px-2 py-1 mb-2" href="#">Xuyên Không</a>
-                            <a class="nav-link px-2 py-1 mb-2" href="#">Xuyên Không</a>
-                            <a class="nav-link px-2 py-1 mb-2" href="#">Xuyên Không</a>
-                            <a class="nav-link px-2 py-1 mb-2" href="#">Xuyên Không</a>
-                            <a class="nav-link px-2 py-1 mb-2" href="#">Xuyên Không</a>
-                            <a class="nav-link px-2 py-1 mb-2" href="#">Xuyên Không</a>
-                            <a class="nav-link px-2 py-1 mb-2" href="#">Xuyên Không</a>
-                            <a class="nav-link px-2 py-1 mb-2" href="#">Xuyên Không</a>
-                            <a class="nav-link px-2 py-1 mb-2" href="#">Xuyên Không</a>
-                            <a class="nav-link px-2 py-1 mb-2" href="#">Xuyên Không</a>
-                            <a class="nav-link px-2 py-1 mb-2" href="#">Xuyên Không</a>
-                            <a class="nav-link px-2 py-1 mb-2" href="#">Xuyên Không</a>
+                            <a class="nav-link px-2 py-1 mb-2" href="./BoLoc.html">Huyền Huyễn</a>
+                            <a class="nav-link px-2 py-1 mb-2" href="./BoLoc.html">Tiên Hiệp</a>
+                            <a class="nav-link px-2 py-1 mb-2" href="./BoLoc.html">Trùng Sinh</a>
+                            <a class="nav-link px-2 py-1 mb-2" href="./BoLoc.html">Xuyên Không</a>
+                            <a class="nav-link px-2 py-1 mb-2" href="./BoLoc.html">Xuyên Không</a>
+                            <a class="nav-link px-2 py-1 mb-2" href="./BoLoc.html">Xuyên Không</a>
+                            <a class="nav-link px-2 py-1 mb-2" href="./BoLoc.html">Xuyên Không</a>
+                            <a class="nav-link px-2 py-1 mb-2" href="./BoLoc.html">Xuyên Không</a>
+                            <a class="nav-link px-2 py-1 mb-2" href="./BoLoc.html">Xuyên Không</a>
+                            <a class="nav-link px-2 py-1 mb-2" href="./BoLoc.html">Xuyên Không</a>
+                            <a class="nav-link px-2 py-1 mb-2" href="./BoLoc.html">Xuyên Không</a>
+                            <a class="nav-link px-2 py-1 mb-2" href="./BoLoc.html">Xuyên Không</a>
+                            <a class="nav-link px-2 py-1 mb-2" href="./BoLoc.html">Xuyên Không</a>
+                            <a class="nav-link px-2 py-1 mb-2" href="./BoLoc.html">Xuyên Không</a>
+                            <a class="nav-link px-2 py-1 mb-2" href="./BoLoc.html">Xuyên Không</a>
+                            <a class="nav-link px-2 py-1 mb-2" href="./BoLoc.html">Xuyên Không</a>
+                            <a class="nav-link px-2 py-1 mb-2" href="./BoLoc.html">Xuyên Không</a>
+                            <a class="nav-link px-2 py-1 mb-2" href="./BoLoc.html">Xuyên Không</a>
                         </nav>
-                        <a class="p-2 d-flex Link-User d-md-flex" aria-current="page" href="#">
+                        <a class="p-2 d-flex Link-User d-md-flex" aria-current="page" href="./TrangCaNhan.html">
                             <div class="Avater position-relative rounded-pill">
                                 <img src="./Content/assets/img/truyen1.jpg" class="position-absolute w-100 h-100 rounded-circle" alt="...">
                             </div>
@@ -449,24 +461,26 @@
                                 <i class="fa-solid fa-star" style="color: #facc15;"></i> 5/5
                             </div>
                         </div>
-                        <p class="m-0 Description-Novel">
-                            "Con người là linh hồn vạn vật, cổ là tinh hoa của trời đất
-                            Tam quan bất chính, ma đầu hồi sinh.
-                            Chuyện xưa về một người xuyên không được sống lại.
-                            Một thế giới kì lạ của người nuôi cổ, dùng cổ, luyện cổ.
-                            Xuân Thu Thiền, Nguyệt Quang cổ, Tửu Trùng, Nhất Khí Kim Quang Trùng, Thanh Ti cổ, Hi Vọng cổ... 
-                            "Con người là linh hồn vạn vật, cổ là tinh hoa của trời đất
-                            Tam quan bất chính, ma đầu hồi sinh.
-                            Chuyện xưa về một người xuyên không được sống lại.
-                            Một thế giới kì lạ của người nuôi cổ, dùng cổ, luyện cổ.
-                            Xuân Thu Thiền, Nguyệt Quang cổ, Tửu Trùng, Nhất Khí Kim Quang Trùng, Thanh Ti cổ, Hi Vọng cổ...
-                        </p>
+                        <div class="Description-Novel">
+                            <p>
+                                "Con người là linh hồn vạn vật, cổ là tinh hoa của trời đất
+                                Tam quan bất chính, ma đầu hồi sinh.
+                                Chuyện xưa về một người xuyên không được sống lại.
+                                Một thế giới kì lạ của người nuôi cổ, dùng cổ, luyện cổ.
+                                Xuân Thu Thiền, Nguyệt Quang cổ, Tửu Trùng, Nhất Khí Kim Quang Trùng, Thanh Ti cổ, Hi Vọng cổ... 
+                                "Con người là linh hồn vạn vật, cổ là tinh hoa của trời đất
+                                Tam quan bất chính, ma đầu hồi sinh.
+                                Chuyện xưa về một người xuyên không được sống lại.
+                                Một thế giới kì lạ của người nuôi cổ, dùng cổ, luyện cổ.
+                                Xuân Thu Thiền, Nguyệt Quang cổ, Tửu Trùng, Nhất Khí Kim Quang Trùng, Thanh Ti cổ, Hi Vọng cổ...
+                            </p>
+                        </div>
                         <div class="Action mt-4 d-flex flex-sm-row flex-column">
                             <div class="Following me-2 mt-1">
                                 <a class="py-2 px-3 d-block" href="#"><i class="fa-solid fa-bookmark me-1"></i> Theo Dõi Truyện</a>
                             </div>
                             <div class="Reading me-2 mt-1">
-                                <a class="py-2 px-3 d-block" href="#"><i class="fa-solid fa-book-open me-1"></i> Đọc Ngay</a>
+                                <a class="py-2 px-3 d-block" href="./DocTruyen.html"><i class="fa-solid fa-book-open me-1"></i> Đọc Ngay</a>
                             </div>
                         </div>
                     </div>
@@ -498,63 +512,54 @@
                                         <h6 class="mt-3">Thể Loại</h6>
                                         <ul class="nav">
                                             <li class="nav-item">
-                                                <a href="#" class="nav-link">Huyền Huyễn</a>
+                                                <a href="./BoLoc.html" class="nav-link">Huyền Huyễn</a>
                                             </li>
                                             <li class="nav-item">
-                                                <a href="#" class="nav-link">Huyền Huyễn</a>
+                                                <a href="./BoLoc.html" class="nav-link">Huyền Huyễn</a>
                                             </li>
                                             <li class="nav-item">
-                                                <a href="#" class="nav-link">Huyền Huyễn</a>
+                                                <a href="./BoLoc.html" class="nav-link">Huyền Huyễn</a>
                                             </li>
                                             <li class="nav-item">
-                                                <a href="#" class="nav-link">Huyền Huyễn</a>
+                                                <a href="./BoLoc.html" class="nav-link">Huyền Huyễn</a>
                                             </li>
                                             <li class="nav-item">
-                                                <a href="#" class="nav-link">Huyền Huyễn</a>
+                                                <a href="./BoLoc.html" class="nav-link">Huyền Huyễn</a>
                                             </li>
                                             <li class="nav-item">
-                                                <a href="#" class="nav-link">Xuyên Không</a>
+                                                <a href="./BoLoc.html" class="nav-link">Xuyên Không</a>
                                             </li>
                                             <li class="nav-item">
-                                                <a href="#" class="nav-link">Huyền Huyễn</a>
+                                                <a href="./BoLoc.html" class="nav-link">Huyền Huyễn</a>
                                             </li>
                                             <li class="nav-item">
-                                                <a href="#" class="nav-link">Đô Thị</a>
+                                                <a href="./BoLoc.html" class="nav-link">Đô Thị</a>
                                             </li>
                                             <li class="nav-item">
-                                                <a href="#" class="nav-link">Ngôn Tình</a>
+                                                <a href="./BoLoc.html" class="nav-link">Ngôn Tình</a>
                                             </li>
                                             <li class="nav-item">
-                                                <a href="#" class="nav-link">Huyền Huyễn</a>
+                                                <a href="./BoLoc.html" class="nav-link">Huyền Huyễn</a>
                                             </li>
                                         </ul>
-                                        <h6 class="mt-3">Mô tả</h6>
-                                        <p class="lh-lg">
-                                            Trong đêm không ánh sáng, nhưng có tiếng trống trận cùng hò hét. Thiếu niên cẩn thận lắng nghe, là nhịp tim của hắn cùng
-                                            huyết dịch chảy xuôi.
-                                            
-                                            Phía trước trong bóng tối ẩn giấu lấy cái gì? Là người là Thần vẫn là... Quái vật?
-                                            
-                                            Không có đường không còn gì tốt hơn, dưới chân liền vô hạn hành trình!
-                                            
-                                            Trong đêm không ánh sáng, nhưng có tiếng trống trận cùng hò hét. Thiếu niên cẩn thận lắng nghe, là nhịp tim của hắn cùng
-                                            huyết dịch chảy xuôi.
-                                            
-                                            Phía trước trong bóng tối ẩn giấu lấy cái gì? Là người là Thần vẫn là... Quái vật?
-                                            
-                                            Không có đường không còn gì tốt hơn, dưới chân liền vô hạn hành trình!
-                                            Trong đêm không ánh sáng, nhưng có tiếng trống trận cùng hò hét. Thiếu niên cẩn thận lắng nghe, là nhịp tim của hắn cùng
-                                            huyết dịch chảy xuôi.
-                                            
-                                            Phía trước trong bóng tối ẩn giấu lấy cái gì? Là người là Thần vẫn là... Quái vật?
-                                            
-                                            Không có đường không còn gì tốt hơn, dưới chân liền vô hạn hành trình!
-                                            
-                                            ---
-                                            Tài khoản momo 0348357188 - Nguyễn Nội Pháp
-                                            TCB 19033858504011 - Nguyễn Nội Pháp
-                                            Tuy donate không đáng là bao so với công sức bỏ ra nhưng cũng là một động lực cho converter cố gắng làm hơn nha ^^
-                                        </p>
+                                        <h6 class="mt-3">Giới thiệu</h6>
+                                        <div class="Introduction lh-lg">
+                                            <p>"Con người là linh hồn vạn vật, cổ là tinh hoa của trời đất</p>
+                                            <p>Tam quan bất chính, ma đầu hồi sinh.</p>
+                                            <p>Chuyện xưa về một người xuyên không được sống lại.</p>
+                                            <p>Một thế giới kì lạ của người nuôi cổ, dùng cổ, luyện cổ.</p>
+                                            <p>Xuân Thu Thiền, Nguyệt Quang cổ, Tửu Trùng, Nhất Khí Kim Quang Trùng, Thanh Ti cổ, Hi Vọng cổ...</p>
+                                            <p>Còn có một tuyệt thế ma đầu tung hoành!"</p>
+                                            <p> Người hiểu hắn sẽ kính nể, tôn sùng, yêu quý hắn. Người hận hắn nghiến răng nghiến lợi, sử dụng vô số thủ đoạn, lại chỉ
+                                                có thể khiến hắn ngày càng mạnh thêm.</p>
+                                            <p>Hắn đi trên con đường của mình, cô độc bao quanh, đôi mắt lạnh lùng có thể hiểu rõ tất cả dối trá.</p>
+                                            <p>Đối với sự phủ quyết phê phán, hắn cười nhạo xem thường. Đối với khoác lác a dua, hắn cười nhạt không nói.</p>
+                                            <p>Hắn chịu được tịch mịch, thậm chí hưởng thụ tịch mịch.</p>
+                                            <p>Hắn không thành công, tức là hủy diệt.</p>
+                                            <p>Hắn là một dũng sĩ, hắn nện bước cô độc trong bóng đêm, vượt mọi chông gai, bất kể thứ gì cũng không thể ngăn trở hắn.</p>
+                                            <p>Thần cản giết Thần, Phật cản giết Phật!</p>
+                                        </div>
+                                        
                                     </div>
                                     <div class="col-9 col-sm-8 col-md-4 mx-auto">
                                         <div class="UserProfile p-4 rounded-start rounded-end">
@@ -566,26 +571,26 @@
                                                     Chu-Gong
                                                 </h4>
                                                 <div class="Action">
-                                                    <ul class="nav align-items-center flex-column flex-md-row">
+                                                    <ul class="nav align-items-center flex-column flex-md-row justify-content-xl-center">
                                                         <li class="nav-item">
-                                                            <a class="nav-link disabled" tabindex="-1">
-                                                                <span>Lượt Theo Dõi: 2000</span>
-                                                            </a>
-                                                        </li>
-                                                        <li class="nav-item">
-                                                            <a class="nav-link" href="#" tabindex="-1">
-                                                                <i class="fa-solid fa-heart"></i>
-                                                                <span>Theo Dõi</span>
-                                                            </a>
-                                                        </li>
-                                                        <li class="nav-item">
-                                                            <a class="nav-link" href="#" tabindex="-1">
+                                                            <a class="nav-link disabled">
                                                                 <i class="fa-solid fa-swatchbook"></i>
                                                                 <span>Truyện Đã Đăng: 231</span>
                                                             </a>
                                                         </li>
                                                         <li class="nav-item">
-                                                            <a class="nav-link" href="#" tabindex="-1">
+                                                            <a class="nav-link disabled" >
+                                                                <span><i class="fa-solid fa-heart"></i> Lượt Theo Dõi: 2000</span>
+                                                            </a>
+                                                        </li>
+                                                        <li class="nav-item">
+                                                            <a class="nav-link" href="#" >
+                                                                <i class="fa-regular fa-heart"></i>
+                                                                <span>Theo Dõi</span>
+                                                            </a>
+                                                        </li>
+                                                        <li class="nav-item">
+                                                            <a class="nav-link" href="./TrangCaNhan.html" >
                                                                 <i class="fa-solid fa-up-right-from-square"></i>
                                                                 <span>Truy Cập Trang Cá Nhân</span>
                                                             </a>
@@ -612,128 +617,7 @@
                                 </form>
                                 <div class="Comment-List">
                                     <ul class="list-group list-group-flush" id="commentList">
-                                        <li class="list-group-item">
-                                            <div class="Comment">
-                                                <div class="Comment-Parent">
-                                                    <div class="User mt-3 d-flex align-items-center">
-                                                        <img class="Avatar rounded-circle" src="./Content/assets/img/truyen1.jpg" alt="Avatar"
-                                                            style="width: 40px; height: 40px; object-fit: cover;">
-                                                        <h5 class="mb-0 ms-2">User Name</h5>
-                                                        <div class="ms-auto position-relative" id="Tab-Action">
-                                                            <input type="checkbox" hidden id="ellipsis-vertical">
-                                                            <label for="ellipsis-vertical" style="cursor: pointer;"><i class="fa-solid fa-ellipsis-vertical p-2"></i></label>
-                                                            <ul class="list-group position-absolute d-none flex-column align-items-start" id="ActionList">
-                                                                <li class="list-group-item p-0 w-100">
-                                                                    <a href="#" class="Item-Link p-2 d-block w-100 text-start">Chỉnh sửa</a>
-                                                                </li>
-                                                                <li class="list-group-item p-0 w-100">
-                                                                    <a href="#" class="Item-Link p-2 d-block w-100 text-start">Xóa</a>
-                                                                </li>
-                                                            </ul>
-                                                        </div>
-                                                    </div>
-                                                    <p class="Comment-content my-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vel lorem at
-                                                        massa facilisis malesuada.</p>
-                                                    <div class="Action d-flex">
-                                                        <ul class="nav">
-                                                            <li class="nav-item">
-                                                                <a href="#" class="nav-link">
-                                                                    <i class="fa-solid fa-book"></i> Chương 23
-                                                                </a>
-                                                            </li>
-                                                            <li class="nav-item">
-                                                                <a  class="nav-link Nav-Like">
-                                                                    <input type="checkbox" hidden id="CheckLike${comment.id}">
-                                                                    <label for="CheckLike${comment.id}" style="cursor: pointer;">
-                                                                        <i class="fa-solid fa-thumbs-up p-1"></i> 999M
-                                                                    </label>
-                                                                </a>
-                                                            </li>
-                                                            <li class="nav-item">
-                                                                <a class="nav-link Nav-Reply">
-                                                                    <input type="checkbox" hidden id="CheckReply${comment.id}">
-                                                                    <label for="CheckReply${comment.id}" style="cursor: pointer;">
-                                                                        <i class="fa-solid fa-reply p-1"></i> 2 Trả lời
-                                                                    </label>
-                                                                </a>
-                                                            </li>
-                                                            <li class="nav-item">
-                                                                <a href="#" class="nav-link disabled">
-                                                                    <i class="fa-solid fa-clock"></i> 1 phút trước
-                                                                </a>
-                                                            </li>
-                                                        </ul>
-                                                        
-                                                    </div>
-                                                </div>
-                                                <div class="Comment-Child ms-5 d-none">
-                                                    <ul class="list-group list-group-flush" id="commentChildList">
-                                                        <li class="list-group-item">
-                                                            <div class="User mt-3 d-flex align-items-center">
-                                                                <img class="Avatar rounded-circle" src="./Content/assets/img/truyen1.jpg" alt="Avatar"
-                                                                    style="width: 40px; height: 40px; object-fit: cover;">
-                                                                <h5 class="mb-0 ms-2">User Name</h5>
-                                                                <div class="ms-auto position-relative" id="Tab-Action">
-                                                                    <input type="checkbox" hidden id="ellipsis-vertical">
-                                                                    <label for="ellipsis-vertical" style="cursor: pointer;"><i class="fa-solid fa-ellipsis-vertical p-2"></i></label>
-                                                                    <ul class="list-group position-absolute d-none flex-column align-items-start" id="ActionList">
-                                                                        <li class="list-group-item p-0 w-100">
-                                                                            <a href="#" class="Item-Link p-2 d-block w-100 text-start">Chỉnh sửa</a>
-                                                                        </li>
-                                                                        <li class="list-group-item p-0 w-100">
-                                                                            <a href="#" class="Item-Link p-2 d-block w-100 text-start">Xóa</a>
-                                                                        </li>
-                                                                    </ul>
-                                                                </div>
-                                                            </div>
-                                                            <p class="Comment-content my-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vel lorem at
-                                                                massa facilisis malesuada.</p>
-                                                            <div class="Action d-flex">
-                                                                <span class="mx-3"><i class="fa-solid fa-book"></i> Chương 23</span>
-                                                                <span class="mx-3">
-                                                                    <a href="#">
-                                                                        <i class="fa-solid fa-thumbs-up p-1"></i> 999M
-                                                                    </a> 
-                                                                </span>
-                                                                <div class="Reply mx-3">
-                                                                    <a href="#">
-                                                                        <i class="fa-solid fa-reply p-1"></i> Nhắc đến
-                                                                    </a> 
-                                                                </div>
-                                                                <span class="mx-3"><i class="fa-solid fa-clock"></i> 1 phút trước</span>
-                                                            </div>
-                                                        </li>
-                                                        <li class="list-group-item">
-                                                            <div class="User mt-3 d-flex align-items-center">
-                                                                <img class="Avatar rounded-circle" src="./Content/assets/img/truyen1.jpg" alt="Avatar"
-                                                                    style="width: 40px; height: 40px; object-fit: cover;">
-                                                                <h5 class="mb-0 ms-2">User Name</h5>
-                                                            </div>
-                                                            <p class="Comment-content my-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vel lorem at
-                                                                massa facilisis malesuada.</p>
-                                                            <div class="Action d-flex">
-                                                                <span class="mx-3"><i class="fa-solid fa-book"></i> Chương 23</span>
-                                                                <span class="mx-3">
-                                                                    <a href="#">
-                                                                        <i class="fa-solid fa-thumbs-up p-1"></i> 999M
-                                                                    </a> 
-                                                                </span>
-                                                                <div class="Reply mx-3">
-                                                                    <a href="#">
-                                                                        <i class="fa-solid fa-reply p-1"></i> Nhắc đến
-                                                                    </a> 
-                                                                </div>
-                                                                <span class="mx-3"><i class="fa-solid fa-clock"></i> 1 phút trước</span>
-                                                            </div>
-                                                        </li>
-                                                    </ul>
-                                                    <form class="d-flex flex-column my-3">
-                                                        <textarea class="form-control" id="comment" rows="4" placeholder="Nhập bình luận của bạn"></textarea>
-                                                        <button type="button" class="btn btn-primary my-2 align-self-end">Trả Lời</button>
-                                                    </form>
-                                                </div>
-                                            </div>
-                                        </li>
+                                        
                                     </ul>
                                     <div id="loadingSpinner" class="d-flex justify-content-center d-none">
                                         <div class="spinner-border text-primary mx-auto" role="status">
@@ -763,48 +647,7 @@
                                     </form>
                                     <div class="RateList">
                                         <ul class="list-group list-group-flush" id="rateList">
-                                            <li class="list-group-item bg-transparent">
-                                                <div class="Rate">
-                                                    <div class="User mt-3 d-flex align-items-center">
-                                                        <img class="Avatar rounded-circle" src="./Content/assets/img/truyen1.jpg" alt="Avatar"
-                                                            style="width: 40px; height: 40px; object-fit: cover;">
-                                                        <h5 class="mb-0 ms-2">User Name</h5>
-                                                        <div class="ms-3 starss">
-                                                            <span class="star active">&#9733;</span>
-                                                            <span class="star active">&#9733;</span>
-                                                            <span class="star active">&#9733;</span>
-                                                            <span class="star active">&#9733;</span>
-                                                            <span class="star">&#9733;</span>
-                                                        </div>
-                                                        <div class="ms-auto position-relative" id="Tab-Action">
-                                                            <input type="checkbox" hidden id="ellipsis-vertical">
-                                                            <label for="ellipsis-vertical" style="cursor: pointer;"><i class="fa-solid fa-ellipsis-vertical p-2"></i></label>
-                                                            <ul class="list-group position-absolute d-none flex-column align-items-start" id="ActionList">
-                                                                <li class="list-group-item p-0 w-100">
-                                                                    <a href="#" class="Item-Link p-2 d-block w-100 text-start">Chỉnh sửa</a>
-                                                                </li>
-                                                                <li class="list-group-item p-0 w-100">
-                                                                    <a href="#" class="Item-Link p-2 d-block w-100 text-start">Xóa</a>
-                                                                </li>
-                                                            </ul>
-                                                        </div>
-                                                    </div>
-                                                    <p class="Rate-content my-3 text-start">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vel lorem at
-                                                        massa facilisis malesuada.</p>
-                                                </div>
-                                            </li>
-                                            <!-- js ellipsis-vertical -->
-                                            <script>
-                                                var ellipsisVerticalChk = document.getElementById('ellipsis-vertical');
-                                                var actionList = document.getElementById('ActionList');
-                                                ellipsisVerticalChk.addEventListener('change', function () {
-                                                    if (this.checked) {
-                                                        actionList.classList.remove('d-none');
-                                                    } else {
-                                                        actionList.classList.add('d-none');
-                                                    }
-                                                });
-                                            </script>
+                                            
                                         </ul>
                                         
                                         <div id="rateLoadingSpinner" class="d-flex justify-content-center d-none">
@@ -1035,11 +878,11 @@
 
                     $.each(response, function (index, item) {
                         dataHtml += 
-                        '<div class="col-6 col-sm-4 - col-md-3">' +
-                            '<div class="p-2 Box-Chapter-Link"><a href="#" class="Chapter-Link">' +
+                        '<div class="col-6 col-sm-4 col-md-3">' +
+                            '<a href="./DocTruyen.html"><div class="p-2 Box-Chapter-Link"><span class="Chapter-Link">' +
                                 'Chương ' + item + ': Dù bỏ mình ma tâm vẫn không hối hận' +
-                            '</a></div>' +
-                        '</div>';    
+                            '</span></div></a>' +
+                        '</div>';
                     });
 
                     dataHtml += '</div>';
@@ -1084,16 +927,33 @@
             // Các bình luận tiếp theo ...
         ];
 
+        const commentsChild = [
+            {id: 1, commentID: 1, content: "Comment child 1" },
+            {id: 2, commentID: 2, content: "Comment child 2" },
+            {id: 3, commentID: 3, content: "Comment child 3" },
+            {id: 4, commentID: 4, content: "Comment child 4" },
+            {id: 5, commentID: 5, content: "Comment child 5" },
+            {id: 6, commentID: 6, content: "Comment child 6" },
+            {id: 7, commentID: 7, content: "Comment child 7" },
+            {id: 8, commentID: 8, content: "Comment child 8" },
+            {id: 9, commentID: 9, content: "Comment child 9" },
+            {id: 10, commentID: 10, content: "Comment child 10" },
+            {id: 11, commentID: 11, content: "Comment child 11" },
+            {id: 12, commentID: 12, content: "Comment child 12" },
+            {id: 13, commentID: 13, content: "Comment child 13" },
+            {id: 14, commentID: 14, content: "Comment child 14" }
+        ];
+
         let page = 1;
         const commentsPerPage = 5; // Số bình luận hiển thị trên mỗi lần tải thêm
 
         function displayComments(comments) {
             const commentList = $("#commentList");
             comments.forEach((comment) => {
-                var commentElement = `<li class="list-group-item"> <div class="Comment"> <div class="Comment-Parent"> <div class="User mt-3 d-flex align-items-center"> <img class="Avatar rounded-circle" src="./Content/assets/img/truyen1.jpg" alt="Avatar" style="width: 40px; height: 40px; object-fit: cover;"> <h5 class="mb-0 ms-2">User Name</h5> <div class="ms-auto position-relative" id="Tab-Action"> <input type="checkbox" hidden id="Cmt_ellipsis-vertical${comment.id}"> <label for="Cmt_ellipsis-vertical${comment.id}" style="cursor: pointer;"><i class="fa-solid fa-ellipsis-vertical p-2"></i></label> <ul class="list-group position-absolute d-none flex-column align-items-start" id="ActionListCmt${comment.id}" style="width: 500%; border: solid 1px #333; background-color: #fff;"> <li class="list-group-item p-0 w-100"> <a href="#" class="Item-Link p-2 d-block w-100 text-start">Chỉnh sửa</a> </li> <li class="list-group-item p-0 w-100"> <a href="#" class="Item-Link p-2 d-block w-100 text-start">Xóa</a> </li> </ul> </div> </div> <p class="Comment-content my-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vel lorem at massa facilisis malesuada.</p> <div class="Action d-flex"> <ul class="nav"> <li class="nav-item"> <a href="#" class="nav-link"> <i class="fa-solid fa-book"></i> Chương 23 </a> </li> <li class="nav-item"> <a class="nav-link Nav-Like${comment.id}"> <input type="checkbox" hidden id="CheckLike${comment.id}"> <label for="CheckLike${comment.id}" style="cursor: pointer;"> <i class="fa-solid fa-thumbs-up p-1"></i> 999M </label> </a> </li> <li class="nav-item"> <a class="nav-link Nav-Reply${comment.id}"> <input type="checkbox" hidden id="CheckReply${comment.id}"> <label for="CheckReply${comment.id}" style="cursor: pointer;"> <i class="fa-solid fa-reply p-1"></i> 1 Trả lời </label> </a> </li> <li class="nav-item"> <a href="#" class="nav-link disabled"> <i class="fa-solid fa-clock"></i> 1 phút trước </a> </li> </ul> </div> </div> <div class="Comment-Child${comment.id} ms-5 d-none"> <ul class="list-group list-group-flush"> <li class="list-group-item"> <div class="User mt-3 d-flex align-items-center"> <img class="Avatar rounded-circle" src="./Content/assets/img/truyen1.jpg" alt="Avatar" style="width: 40px; height: 40px; object-fit: cover;"> <h5 class="mb-0 ms-2">User Name</h5> <div class="ms-auto position-relative" id="Tab-Action"> <input type="checkbox" hidden id="Cmt_ellipsis-vertical${comment.id}"> <label for="Cmt_ellipsis-vertical${comment.id}" style="cursor: pointer;"><i class="fa-solid fa-ellipsis-vertical p-2"></i></label> <ul class="list-group position-absolute d-none flex-column align-items-start" id="ActionListCmt${comment.id}" style="width: 500%; border: solid 1px #333; background-color: #fff;"> <li class="list-group-item p-0 w-100"> <a href="#" class="Item-Link p-2 d-block w-100 text-start">Chỉnh sửa</a> </li> <li class="list-group-item p-0 w-100"> <a href="#" class="Item-Link p-2 d-block w-100 text-start">Xóa</a> </li> </ul> </div> </div> <p class="Comment-content my-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vel lorem at massa facilisis malesuada.</p> <div class="Action d-flex"> <ul class="nav"> <li class="nav-item"> <a class="nav-link p-1 Nav-Like${comment.id}"> <input type="checkbox" hidden id="CheckLike${comment.id}"> <label for="CheckLike${comment.id}" style="cursor: pointer;"> <i class="fa-solid fa-thumbs-up p-1"></i> 999M </label> </a> </li> <li class="nav-item"> <a class="nav-link p-1 Nav-Reply${comment.id}"> <input type="checkbox" hidden id="CheckReply${comment.id}"> <label for="CheckReply${comment.id}" style="cursor: pointer;"> <i class="fa-solid fa-reply p-1"></i> Nhắc đến </label> </a> </li> <li class="nav-item"> <a href="#" class="nav-link p-1 disabled"> <i class="fa-solid fa-clock"></i> 1 phút trước </a> </li> </ul> </div> </li> </ul> <form class="d-flex flex-column my-3"> <textarea class="form-control" id="comment" rows="2" placeholder="Nhập bình luận của bạn"></textarea> <button type="button" class="btn btn-primary my-2 align-self-end">Trả Lời</button> </form> </div> </div> </li>`
+                var commentElement = `<li class="list-group-item"> <div class="Comment"> <div class="Comment-Parent"> <div class="User mt-3 d-flex align-items-center"> <img class="Avatar rounded-circle" src="./Content/assets/img/truyen1.jpg" alt="Avatar" style="width: 40px; height: 40px; object-fit: cover" /> <h5 class="mb-0 ms-2">User Name</h5> <div class="ms-auto position-relative" id="Tab-Action"> <input type="checkbox" hidden id="Cmt_ellipsis-vertical${comment.id}" /> <label id="Cmt_ellipsis-verticalLabel${comment.id}" for="Cmt_ellipsis-vertical${comment.id}" style="cursor: pointer" ><i class="fa-solid fa-ellipsis-vertical p-2"></i ></label> <ul class="list-group position-absolute d-none flex-column align-items-start" id="ActionListCmt${comment.id}" style="width: 500%; border: solid 1px #333; background-color: #fff" > <li class="list-group-item p-0 w-100"> <a href="#" class="Item-Link p-2 d-block w-100 text-start" >Chỉnh sửa</a > </li> <li class="list-group-item p-0 w-100"> <a href="#" class="Item-Link p-2 d-block w-100 text-start">Xóa</a> </li> </ul> </div> </div> <p class="Comment-content my-3"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vel lorem at massa facilisis malesuada. </p> <div class="Action d-flex"> <ul class="nav"> <li class="nav-item"> <a href="#" class="nav-link"> <i class="fa-solid fa-book"></i> Chương 23 </a> </li> <li class="nav-item"> <a class="nav-link Nav-Like${comment.id}"> <input type="checkbox" hidden id="CheckLike${comment.id}" /> <label for="CheckLike${comment.id}" style="cursor: pointer"> <i class="fa-solid fa-thumbs-up p-1"></i> 999M </label> </a> </li> <li class="nav-item"> <a class="nav-link Nav-Reply${comment.id}"> <input type="checkbox" hidden id="CheckReply${comment.id}" /> <label for="CheckReply${comment.id}" style="cursor: pointer"> <i class="fa-solid fa-reply p-1"></i> 1 Trả lời </label> </a> </li> <li class="nav-item"> <a href="#" class="nav-link disabled"> <i class="fa-solid fa-clock"></i> 1 phút trước </a> </li> </ul> </div> </div> <div class="Comment-Child${comment.id} Comment-Child ms-5 d-none"> <ul class="list-group list-group-flush"> <li class="list-group-item"> <div class="User mt-3 d-flex align-items-center"> <img class="Avatar rounded-circle" src="./Content/assets/img/truyen1.jpg" alt="Avatar" style="width: 40px; height: 40px; object-fit: cover" /> <h5 class="mb-0 ms-2">User Name</h5> <div class="ms-auto position-relative" id="Tab-Action"> <input type="checkbox" hidden id="CmtChild_ellipsis-vertical${comment.id}" /> <label id="CmtChild_ellipsis-verticalLabel${comment.id}" for="CmtChild_ellipsis-vertical${comment.id}" style="cursor: pointer" ><i class="fa-solid fa-ellipsis-vertical p-2"></i ></label> <ul class="list-group position-absolute d-none flex-column align-items-start" id="ActionListCmtChild${comment.id}" style=" width: 500%; border: solid 1px #333; background-color: #fff; " > <li class="list-group-item p-0 w-100"> <a href="#" class="Item-Link p-2 d-block w-100 text-start" >Chỉnh sửa</a > </li> <li class="list-group-item p-0 w-100"> <a href="#" class="Item-Link p-2 d-block w-100 text-start" >Xóa</a > </li> </ul> </div> </div> <p class="Comment-content my-3"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vel lorem at massa facilisis malesuada. </p> <div class="Action d-flex"> <ul class="nav"> <li class="nav-item"> <a class="p-2 nav-link Nav-Like${comment.id}"> <input type="checkbox" hidden id="CheckLikeCmtChild${comment.id}" /> <label for="CheckLikeCmtChild${comment.id}" style="cursor: pointer"> <i class="fa-solid fa-thumbs-up"></i> 999M </label> </a> </li> <li class="nav-item"> <a href="#" class="p-2 nav-link disabled"> <i class="fa-solid fa-clock"></i> 1 phút trước </a> </li> </ul> </div> </li> </ul> <form class="d-flex flex-column my-3"> <textarea class="form-control" id="comment" rows="2" placeholder="Nhập bình luận của bạn" ></textarea> <button type="button" class="btn btn-primary my-2 align-self-end"> Trả Lời </button> </form> </div> </div> </li>`
                 commentList.append(commentElement);
 
-                // js like
+                // js like cmt parent
                 var clike = document.querySelector('#Main .ActionNovel .tab-content .Comment-List .Comment .Comment-Parent .Action #CheckLike' + comment.id);
                 var likeLink = document.querySelector('#Main .ActionNovel .tab-content .Comment-List .Comment .Comment-Parent .Action .Nav-Like' + comment.id);
                 clike.addEventListener('change', function () {
@@ -1103,6 +963,18 @@
                         likeLink.classList.remove('active');
                     }
                 });
+
+                // js like cmt child
+                var clikeCmtChild = document.querySelector('#Main .ActionNovel .tab-content .Comment-List .Comment .Comment-Child'+ comment.id + ' .Action #CheckLikeCmtChild' + comment.id);
+                var likeLinkCmtChild = document.querySelector('#Main .ActionNovel .tab-content .Comment-List .Comment .Comment-Child'+ comment.id + ' .Action .Nav-Like' + comment.id);
+                clikeCmtChild.addEventListener('change', function () {
+                    if (this.checked) {
+                        likeLinkCmtChild.classList.add('active');
+                    } else {
+                        likeLinkCmtChild.classList.remove('active');
+                    }
+                });
+
                 // js cmt child
                 var crep = document.querySelector('#Main .ActionNovel .tab-content .Comment-List .Comment .Comment-Parent .Action #CheckReply' + comment.id);
                 var child = document.querySelector('#Main .ActionNovel .tab-content .Comment-List .Comment .Comment-Child' + comment.id);
@@ -1119,7 +991,7 @@
             });
             
 
-            // js chỉnh sửa, xóa
+            // js chỉnh sửa, xóa cho comment parent
             comments.forEach(element => {
                 var ellipsisVerticalChk = document.getElementById('Cmt_ellipsis-vertical' + element.id);
                 var actionList = document.getElementById('ActionListCmt' + element.id);
@@ -1129,6 +1001,60 @@
                     } else {
                         actionList.classList.add('d-none');
                     }
+                });
+            });
+
+            // js chỉnh sửa, xóa cho comment child
+            comments.forEach(element => {
+                var ellipsisVerticalChkCmtChild = document.getElementById('CmtChild_ellipsis-vertical' + element.id);
+                var actionList = document.getElementById('ActionListCmtChild' + element.id);
+                ellipsisVerticalChkCmtChild.addEventListener('change', function () {
+                    if (this.checked) {
+                        actionList.classList.remove('d-none');
+                    } else {
+                        actionList.classList.add('d-none');
+                    }
+                });
+            });
+
+            
+
+            // js ẩn drop block
+            document.addEventListener('click', function(event) {
+                // cmt parent
+                comments.forEach(element => {
+                    var ellipsisVerticalChkParent = document.getElementById('Cmt_ellipsis-vertical'+ element.id);
+                    var ellipsisVerticalChkParentLabel = document.getElementById('Cmt_ellipsis-verticalLabel'+ element.id);
+                    var ActionListCmtParent = document.getElementById('ActionListCmt'+ element.id);
+                    var editBtnCmtParent = ActionListCmtParent.querySelector('.Item-Link');
+
+                    if(!ActionListCmtParent.contains(event.target) && !ellipsisVerticalChkParent.contains(event.target) && !ellipsisVerticalChkParentLabel.contains(event.target)) {
+                        ellipsisVerticalChkParent.checked = false;
+                        ActionListCmtParent.classList.add('d-none');
+                    }
+
+                    editBtnCmtParent.addEventListener('click', function() {
+                        ellipsisVerticalChkParent.checked = false;
+                        ActionListCmtParent.classList.add('d-none');
+                    });
+                });
+
+                // cmt child
+                commentsChild.forEach(element => {
+                    var ellipsisVerticalChkChild = document.getElementById('CmtChild_ellipsis-vertical'+ element.commentID);
+                    var ellipsisVerticalChkChildLabel = document.getElementById('CmtChild_ellipsis-verticalLabel'+ element.commentID);
+                    var ActionListCmtChild = document.getElementById('ActionListCmtChild'+ element.commentID);
+                    var editBtnCmtChild = ActionListCmtChild.querySelector('.Item-Link');
+
+                    if(!ActionListCmtChild.contains(event.target) && !ellipsisVerticalChkChild.contains(event.target) && !ellipsisVerticalChkChildLabel.contains(event.target)) {
+                        ellipsisVerticalChkChild.checked = false;
+                        ActionListCmtChild.classList.add('d-none');
+                    }
+
+                    editBtnCmtChild.addEventListener('click', function() {
+                        ellipsisVerticalChkChild.checked = false;
+                        ActionListCmtChild.classList.add('d-none');
+                    });
                 });
             });
         }
@@ -1231,7 +1157,7 @@
         function displayRates(Rates) {
             const rateList = $("#rateList");
             Rates.forEach((rate) => {
-                var rateElement = `<li class="list-group-item bg-transparent"> <div class="Rate"> <div class="User mt-3 d-flex align-items-center"> <img class="Avatar rounded-circle" src="./Content/assets/img/truyen1.jpg" alt="Avatar" style="width: 40px; height: 40px; object-fit: cover;"> <h5 class="mb-0 ms-2">User Name</h5> <div class="ms-3 starss"> <span class="star active">&#9733;</span> <span class="star active">&#9733;</span> <span class="star active">&#9733;</span> <span class="star active">&#9733;</span> <span class="star">&#9733;</span> </div> <div class="ms-auto position-relative" id="Tab-Action"> <input type="checkbox" hidden id="ellipsis-vertical${rate.id}"> <label for="ellipsis-vertical${rate.id}" style="cursor: pointer;"><i class="fa-solid fa-ellipsis-vertical p-2"></i></label> <ul class="list-group position-absolute d-none flex-column align-items-start" id="ActionList${rate.id}"> <li class="list-group-item p-0 w-100"> <a href="#" class="Item-Link p-2 d-block w-100 text-start">Chỉnh sửa</a> </li> <li class="list-group-item p-0 w-100"> <a href="#" class="Item-Link p-2 d-block w-100 text-start">Xóa</a> </li> </ul> </div> </div> <p class="Rate-content my-3 text-start">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vel lorem at massa facilisis malesuada.</p> </div> </li>`
+                var rateElement = `<li class="list-group-item bg-transparent"> <div class="Rate"> <div class="User mt-3 d-flex align-items-center"> <img class="Avatar rounded-circle" src="./Content/assets/img/truyen1.jpg" alt="Avatar" style="width: 40px; height: 40px; object-fit: cover" /> <h5 class="mb-0 ms-2">User Name</h5> <div class="ms-3 starss"> <span class="star active">&#9733;</span> <span class="star active">&#9733;</span> <span class="star active">&#9733;</span> <span class="star active">&#9733;</span> <span class="star">&#9733;</span> </div> <div class="ms-auto position-relative" id="Tab-Action"> <input type="checkbox" hidden id="ellipsis-vertical${rate.id}" /> <label for="ellipsis-vertical${rate.id}" id="ellipsis-verticalLabel${rate.id}" style="cursor: pointer"><i class="fa-solid fa-ellipsis-vertical p-2"></i></label> <ul class="list-group position-absolute d-none flex-column align-items-start" id="ActionList${rate.id}"> <li class="list-group-item p-0 w-100"> <a href="#" class="Item-Link p-2 d-block w-100 text-start">Xóa</a> </li> </ul> </div> </div> <p class="Rate-content my-3 text-start"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vel lorem at massa facilisis malesuada. </p> </div> </li>`
                 rateList.append(rateElement);
             });
 
@@ -1245,7 +1171,22 @@
                         actionList.classList.add('d-none');
                     }
                 });
+
+                // js ẩn drop block
+                document.addEventListener('click', function(event) {
+                    // cmt parent
+                    comments.forEach(element => {
+                        var ellipsisVerticalChkLabel = document.getElementById('ellipsis-verticalLabel'+ element.id);
+                        
+                        if(!actionList.contains(event.target) && !ellipsisVerticalChk.contains(event.target) && !ellipsisVerticalChkLabel.contains(event.target)) {
+                            ellipsisVerticalChk.checked = false;
+                            actionList.classList.add('d-none');
+                        }
+                    });
+                });
             });
+
+            
             
         }
 
