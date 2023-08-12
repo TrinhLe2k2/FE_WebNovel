@@ -227,15 +227,31 @@
 
     <script> // js header
         var chkBar = document.querySelector('#Navigation #Bar');
+        var labelChekBar = document.querySelector('#Navigation label');
         var header = document.querySelector('#Header');
         chkBar.addEventListener('change', function() {
             if (this.checked) {
                 header.classList.add('bg-white')
-                header.style.top = '0'
+                header.style.top = '0';
             } else {
-                header.style.top = '-100%'
+                header.style.top = '-100%';
             }
         })
+
+        document.addEventListener('click', function (event) {
+            if (!header.contains(event.target) && !chkBar.contains(event.target) && !labelChekBar.contains(event.target)) {
+                header.style.top = '-100%';
+                chkBar.checked = false;
+            }
+        });
+        
+        var Links = document.querySelectorAll('#Header a');
+        Links.forEach(link => {
+            link.addEventListener('click', function () {
+                chkBar.checked = false;
+            });
+        });
+
 
     </script>
 
@@ -250,111 +266,114 @@
                 <div class="col-12 col-8 rounded-pill position-relative">
                     <div>
                         <input type="checkbox" hidden id="CheckChapterList">
-                        <label for="CheckChapterList" class="w-100 cursorPointer">
+                        <label for="CheckChapterList" class="w-100 cursorPointer" id="labelCheckChapterList">
                             <h4 class="mb-0 py-2 mb-2 text-center">Chương 1: Dù bỏ mình ma tâm vẫn không hối hận <i class="fa-solid fa-angles-down"></i></h4>
                         </label>
                     </div>
                     <div class="ChapterList container-fluid bg-white rounded-top rounded-bottom position-absolute shadow" style="top: 100%;">
                         <div class="row d-none p-3"> <!-- Chapter list -->
                             <div class="col-6">
-                                <a href="#" class="active">Chương 1: Dù bỏ mình ma tâm vẫn không hối hận</a>
+                                <a href="https://www.facebook.com/ktrinh23/" class="active">Chương 1: Dù bỏ mình ma tâm vẫn không hối hận</a>
                             </div>
                             <div class="col-6">
-                                <a href="#">Chương 2 : Giác ngộ ngược dòng thời gian năm trăm năm</a>
+                                <a href="https://www.facebook.com/ktrinh23/">Chương 2 : Giác ngộ ngược dòng thời gian năm trăm năm</a>
                             </div>
                             <div class="col-6">
-                                <a href="#">Chương 3 : Mời ở một bên chơi trứng đi</a>
+                                <a href="https://www.facebook.com/ktrinh23/">Chương 3 : Mời ở một bên chơi trứng đi</a>
                             </div>
                             <div class="col-6">
-                                <a href="#">Chương 4 : Cổ Nguyệt Phương Nguyên</a>
+                                <a href="https://www.facebook.com/ktrinh23/">Chương 4 : Cổ Nguyệt Phương Nguyên</a>
                             </div>
                             <div class="col-6">
-                                <a href="#">Chương 1: Dù bỏ mình ma tâm vẫn không hối hận</a>
+                                <a href="https://www.facebook.com/ktrinh23/">Chương 1: Dù bỏ mình ma tâm vẫn không hối hận</a>
                             </div>
                             <div class="col-6">
-                                <a href="#">Chương 2 : Giác ngộ ngược dòng thời gian năm trăm năm</a>
+                                <a href="https://www.facebook.com/ktrinh23/">Chương 2 : Giác ngộ ngược dòng thời gian năm trăm năm</a>
                             </div>
                             <div class="col-6">
-                                <a href="#">Chương 3 : Mời ở một bên chơi trứng đi</a>
+                                <a href="https://www.facebook.com/ktrinh23/">Chương 3 : Mời ở một bên chơi trứng đi</a>
                             </div>
                             <div class="col-6">
-                                <a href="#">Chương 4 : Cổ Nguyệt Phương Nguyên</a>
+                                <a href="https://www.facebook.com/ktrinh23/">Chương 4 : Cổ Nguyệt Phương Nguyên</a>
                             </div>
                             <div class="col-6">
-                                <a href="#">Chương 1: Dù bỏ mình ma tâm vẫn không hối hận</a>
+                                <a href="https://www.facebook.com/ktrinh23/">Chương 1: Dù bỏ mình ma tâm vẫn không hối hận</a>
                             </div>
                             <div class="col-6">
-                                <a href="#">Chương 2 : Giác ngộ ngược dòng thời gian năm trăm năm</a>
+                                <a href="https://www.facebook.com/ktrinh23/">Chương 2 : Giác ngộ ngược dòng thời gian năm trăm năm</a>
                             </div>
                             <div class="col-6">
-                                <a href="#">Chương 3 : Mời ở một bên chơi trứng đi</a>
+                                <a href="https://www.facebook.com/ktrinh23/">Chương 3 : Mời ở một bên chơi trứng đi</a>
                             </div>
                             <div class="col-6">
-                                <a href="#">Chương 4 : Cổ Nguyệt Phương Nguyên</a>
+                                <a href="https://www.facebook.com/ktrinh23/">Chương 4 : Cổ Nguyệt Phương Nguyên</a>
                             </div>
                             <div class="col-6">
-                                <a href="#">Chương 1: Dù bỏ mình ma tâm vẫn không hối hận</a>
+                                <a href="https://www.facebook.com/ktrinh23/">Chương 1: Dù bỏ mình ma tâm vẫn không hối hận</a>
                             </div>
                             <div class="col-6">
-                                <a href="#">Chương 2 : Giác ngộ ngược dòng thời gian năm trăm năm</a>
+                                <a href="https://www.facebook.com/ktrinh23/">Chương 2 : Giác ngộ ngược dòng thời gian năm trăm năm</a>
                             </div>
                             <div class="col-6">
-                                <a href="#">Chương 3 : Mời ở một bên chơi trứng đi</a>
+                                <a href="https://www.facebook.com/ktrinh23/">Chương 3 : Mời ở một bên chơi trứng đi</a>
                             </div>
                             <div class="col-6">
-                                <a href="#">Chương 4 : Cổ Nguyệt Phương Nguyên</a>
+                                <a href="https://www.facebook.com/ktrinh23/">Chương 4 : Cổ Nguyệt Phương Nguyên</a>
                             </div>
                             <div class="col-6">
-                                <a href="#">Chương 2 : Giác ngộ ngược dòng thời gian năm trăm năm</a>
+                                <a href="https://www.facebook.com/ktrinh23/">Chương 2 : Giác ngộ ngược dòng thời gian năm trăm năm</a>
                             </div>
                             <div class="col-6">
-                                <a href="#">Chương 3 : Mời ở một bên chơi trứng đi</a>
+                                <a href="https://www.facebook.com/ktrinh23/">Chương 3 : Mời ở một bên chơi trứng đi</a>
                             </div>
                             <div class="col-6">
-                                <a href="#">Chương 4 : Cổ Nguyệt Phương Nguyên</a>
+                                <a href="https://www.facebook.com/ktrinh23/">Chương 4 : Cổ Nguyệt Phương Nguyên</a>
                             </div>
                             <div class="col-6">
-                                <a href="#">Chương 1: Dù bỏ mình ma tâm vẫn không hối hận</a>
+                                <a href="https://www.facebook.com/ktrinh23/">Chương 1: Dù bỏ mình ma tâm vẫn không hối hận</a>
                             </div>
                             <div class="col-6">
-                                <a href="#">Chương 2 : Giác ngộ ngược dòng thời gian năm trăm năm</a>
+                                <a href="https://www.facebook.com/ktrinh23/">Chương 2 : Giác ngộ ngược dòng thời gian năm trăm năm</a>
                             </div>
                             <div class="col-6">
-                                <a href="#">Chương 3 : Mời ở một bên chơi trứng đi</a>
+                                <a href="https://www.facebook.com/ktrinh23/">Chương 3 : Mời ở một bên chơi trứng đi</a>
                             </div>
                             <div class="col-6">
-                                <a href="#">Chương 4 : Cổ Nguyệt Phương Nguyên</a>
+                                <a href="https://www.facebook.com/ktrinh23/">Chương 4 : Cổ Nguyệt Phương Nguyên</a>
                             </div>
                             <div class="col-6">
-                                <a href="#">Chương 1: Dù bỏ mình ma tâm vẫn không hối hận</a>
+                                <a href="https://www.facebook.com/ktrinh23/">Chương 1: Dù bỏ mình ma tâm vẫn không hối hận</a>
                             </div>
                             <div class="col-6">
-                                <a href="#">Chương 2 : Giác ngộ ngược dòng thời gian năm trăm năm</a>
+                                <a href="https://www.facebook.com/ktrinh23/">Chương 2 : Giác ngộ ngược dòng thời gian năm trăm năm</a>
                             </div>
                             <div class="col-6">
-                                <a href="#">Chương 3 : Mời ở một bên chơi trứng đi</a>
+                                <a href="https://www.facebook.com/ktrinh23/">Chương 3 : Mời ở một bên chơi trứng đi</a>
                             </div>
                             <div class="col-6">
-                                <a href="#">Chương 4 : Cổ Nguyệt Phương Nguyên</a>
+                                <a href="https://www.facebook.com/ktrinh23/">Chương 4 : Cổ Nguyệt Phương Nguyên</a>
                             </div>
                             <div class="col-6">
-                                <a href="#">Chương 1: Dù bỏ mình ma tâm vẫn không hối hận</a>
+                                <a href="https://www.facebook.com/ktrinh23/">Chương 1: Dù bỏ mình ma tâm vẫn không hối hận</a>
                             </div>
                             <div class="col-6">
-                                <a href="#">Chương 2 : Giác ngộ ngược dòng thời gian năm trăm năm</a>
+                                <a href="https://www.facebook.com/ktrinh23/">Chương 2 : Giác ngộ ngược dòng thời gian năm trăm năm</a>
                             </div>
                             <div class="col-6">
-                                <a href="#">Chương 3 : Mời ở một bên chơi trứng đi</a>
+                                <a href="https://www.facebook.com/ktrinh23/">Chương 3 : Mời ở một bên chơi trứng đi</a>
                             </div>
                             <div class="col-6">
-                                <a href="#">Chương 4 : Cổ Nguyệt Phương Nguyên</a>
+                                <a href="https://www.facebook.com/ktrinh23/">Chương 4 : Cổ Nguyệt Phương Nguyên</a>
                             </div>
                         </div>
                     </div>
                     <script> // js chap list
                         var boxChapList = document.querySelector('#Main .ActionChapter .ChapterList');
                         var chapterList = document.querySelector('#Main .ActionChapter .ChapterList .row');
-                        document.getElementById('CheckChapterList').addEventListener('change', function() {
+                        var checkChapterList = document.getElementById('CheckChapterList');
+                        var labelCheckChapterList = document.getElementById('labelCheckChapterList');
+
+                        checkChapterList.addEventListener('change', function() {
                             if(this.checked) {
                                 boxChapList.classList.add('opacity-100');
                                 chapterList.classList.remove('d-none');
@@ -362,6 +381,22 @@
                                 boxChapList.classList.remove('opacity-100');
                                 chapterList.classList.add('d-none');
                             }
+                        });
+
+                        // Ẩn drop-down menu khi nhấp vào bất kỳ nơi nào khác trên trang
+                        document.addEventListener('click', function (event) {
+                            if (!chapterList.contains(event.target) && !checkChapterList.contains(event.target) && !labelCheckChapterList.contains(event.target)) {
+                                chapterList.classList.add('d-none');
+                                boxChapList.classList.remove('opacity-100');
+                                checkChapterList.checked = false;
+                            }
+                        });
+
+                        var Links = document.querySelectorAll('#Main .ActionChapter .ChapterList a');
+                        Links.forEach(link => {
+                            link.addEventListener('click', function () {
+                                checkChapterList.checked = false;
+                            });
                         });
                     </script>
                 </div>
@@ -565,20 +600,20 @@
     <section id="Footer">
         <div class="container p-5 my-5">
             <ul class="nav justify-content-center">
-                <li class="nav-item active">
-                    <a class="nav-link" href="#">
+                <li class="nav-item">
+                    <a class="nav-link" href="https://www.facebook.com/ktrinh23/">
                         <i class="fa-brands fa-facebook"></i>
                         <span>Facebook</span>
                     </a>
                 </li>
-                <li class="nav-item active">
-                    <a class="nav-link" href="#">
+                <li class="nav-item">
+                    <a class="nav-link" href="https://www.facebook.com/ktrinh23/">
                         <i class="fa-brands fa-square-instagram"></i>
                         <span>Instagram</span>
                     </a>
                 </li>
-                <li class="nav-item active">
-                    <a class="nav-link" href="#">
+                <li class="nav-item">
+                    <a class="nav-link" href="https://www.facebook.com/ktrinh23/">
                         <i class="fa-brands fa-discord"></i>
                         <span>Discord</span>
                     </a>
@@ -697,5 +732,8 @@
     <script src="./Content/assets/js/jquery-3.6.0.min.js"></script>
     <script src="./Content/assets/js/pagination.js"></script>
     <script src="./Content/assets/js/app.js"></script>
+
+    
+
 </body>
 </html>
