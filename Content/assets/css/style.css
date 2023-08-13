@@ -47,6 +47,10 @@ input.outline-none { /* start Shared css */
 
 /* start Header css */
 
+body {
+    background-image: linear-gradient( #00dc8035, #fff);
+}
+
 #Header .Dropdown-Menu {
     top: 100% !important;
     left: 50% !important;
@@ -334,6 +338,8 @@ object-fit:cover;
 }
 
 
+
+
 #Main .BookUpdate h3 i {
     color: var(--primaty-color);
 }
@@ -408,3 +414,24 @@ object-fit:cover;
 
 /* Responsive */
 
+#Main .BookUpdate {
+    zoom: .7;
+}
+
+@media (min-width: 400px) {
+    #Main .BookUpdate {
+        zoom: .8;
+    }
+}
+
+@media (min-width: 450px) {
+    #Main .BookUpdate {
+        zoom: .9;
+    }
+}
+
+@media (min-width: 500px) {
+    #Main .BookUpdate {
+        zoom: 1;
+    }
+}
