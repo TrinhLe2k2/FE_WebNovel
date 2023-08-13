@@ -17,7 +17,7 @@
 </head>
 <body>
     <section id="Header">
-        <div class="container bg-white">
+        <div class="container">
             <div class="row my-2">
                 <div class="col-4 d-flex">
                     <a class="navbar-brand d-flex align-items-center Logo" href="./index.html">
@@ -26,7 +26,7 @@
                     </a>
                 </div>
                 <div class="col-sm-4 d-flex order-1 order-sm-0">
-                    <form data-v-eb07a472="a123" class="d-flex align-items-stretch rounded-pill m-2 w-100 custom-form">
+                    <form data-v-eb07a472="a123" class="d-flex align-items-stretch rounded-pill m-2 w-100 custom-form bg-white">
                         <input type="text" list="datalistOptions"
                             class="w-100 py-1 border-0 ps-3 rounded-pill flex-fill" placeholder="Search"
                             style="outline: none;">
@@ -157,11 +157,11 @@
     <section id="Main" class="my-5">
         <div class="container FilterResults">
             <input type="checkbox" name="" hidden id="Filter" class="Btn-Tab-Filter position-relative" >
-            <label for="Filter" class="py-2 px-3 d-lg-none" style="color: black; cursor: pointer;">
+            <label for="Filter" id="FilterLabel" class="py-2 px-3 d-lg-none" style="color: black; cursor: pointer;">
                 <i class="fa-solid fa-sliders"></i>
             </label>
             <div class="row">
-                <div class="Filter col-4 d-none d-lg-block">
+                <div class="Filter col-lg-4 d-none d-lg-block">
                     <div class="accordion" id="accordionPanelsStayOpenExample">
                         <div class="accordion-item">
                             <h2 class="accordion-header">
@@ -176,11 +176,11 @@
                                     <ul class="nav nav-fill">
                                         <li class="nav-item d-flex align-items-center">
                                             <input class="form-check-input me-1" type="radio" name="SapXepTheo" value="" id="sx1">
-                                            <label class="p-2 form-check-label" for="sx1">Số Chương</label>
+                                            <label class="p-2 form-check-label" for="sx1">Số Chương tăng dần</label>
                                         </li>
                                         <li class="nav-item d-flex align-items-center">
-                                            <input class="form-check-input me-1" type="radio" name="SapXepTheo" value="" id="sx2">
-                                            <label class="p-2 form-check-label" for="sx2">Mới Cập Nhật</label>
+                                            <input class="form-check-input me-1" type="radio" name="SapXepTheo" value="" id="sx1">
+                                            <label class="p-2 form-check-label" for="sx1">Số Chương giảm dần</label>
                                         </li>
                                         <li class="nav-item d-flex align-items-center">
                                             <input class="form-check-input me-1" type="radio" name="SapXepTheo" value="" id="sx3">
@@ -191,12 +191,12 @@
                                             <label class="p-2 form-check-label" for="sx4">Tên Truyện Z-A</label>
                                         </li>
                                         <li class="nav-item d-flex align-items-center">
-                                            <input class="form-check-input me-1" type="radio" name="SapXepTheo" value="" id="sx5">
-                                            <label class="p-2 form-check-label" for="sx5">Đánh Giá</label>
+                                            <input class="form-check-input me-1" type="radio" name="SapXepTheo" value="" id="sx6">
+                                            <label class="p-2 form-check-label" for="sx6">Xem nhiều</label>
                                         </li>
                                         <li class="nav-item d-flex align-items-center">
-                                            <input class="form-check-input me-1" type="radio" name="SapXepTheo" value="" id="sx6">
-                                            <label class="p-2 form-check-label" for="sx6">Luợt Xem</label>
+                                            <input class="form-check-input me-1" type="radio" name="SapXepTheo" value="" id="sx2">
+                                            <label class="p-2 form-check-label" for="sx2">Mới Cập Nhật</label>
                                         </li>
                                     </ul>
                                 </div>
@@ -326,19 +326,34 @@
                                     </div>
                                     <span class="m-0 ms-2">Cổ Chân Nhân</span>
                                 </a>
-                                <nav class="nav">
-                                    <a class="nav-link px-2 py-1" href="#">Huyền Huyễn</a>
-                                    <a class="nav-link px-2 py-1" href="#">Tiên Hiệp</a>
-                                    <a class="nav-link px-2 py-1" href="#">Trùng Sinh</a>
-                                    <a class="nav-link px-2 py-1" href="#">Trùng Sinh</a>
-                                    <a class="nav-link px-2 py-1" href="#">Xuyên Không</a>
-                                </nav>
-                                <a class="px-2 py-1 Link-Detail-Novel" href="#">2333 Chương</a>
-                                <a class="px-2 py-1 disabled" href="#">
-                                    <small class="text-body-secondary">Last updated 3 mins ago</small>
-                                </a>
+                                <div class="CategoryList my-2">
+                                    <span class="px-2 py-1">Huyền Huyễn</span>
+                                    <span class="px-2 py-1">Tiên Hiệp</span>
+                                    <span class="px-2 py-1">Trùng Sinh</span>
+                                    <span class="px-2 py-1">Trùng Sinh</span>
+                                    <span class="px-2 py-1">Xuyên Không</span>
+                                    <span class="px-2 py-1">Xuyên Không</span>
+                                    <span class="px-2 py-1">Xuyên Không</span>
+                                    <span class="px-2 py-1">Xuyên Không</span>
+                                    <span class="px-2 py-1">Xuyên Không</span>
+                                    <span class="px-2 py-1">Xuyên Không</span>
+                                    <span class="px-2 py-1">Xuyên Không</span>
+                                    <span class="px-2 py-1">Xuyên Không</span>
+                                    <span class="px-2 py-1">Xuyên Không</span>
+                                    <span class="px-2 py-1">Xuyên Không</span>
+                                    <span class="px-2 py-1">Xuyên Không</span>
+                                    <span class="px-2 py-1">Xuyên Không</span>
+                                    <span class="px-2 py-1">Xuyên Không</span>
+                                    <span class="px-2 py-1">Xuyên Không</span>
+                                    <span class="px-2 py-1">Xuyên Không</span>
+                                    <span class="px-2 py-1">Trùng Sinh</span>
+                                </div>
+                                <span class="px-2 py-1 Link-Detail-Novel">2333 Chương</span>
+                                <span class="px-2 py-1">
+                                    <small class="text-body-secondary">1 giờ trước</small>
+                                </span>
                             
-                                <p class="m-0 Description-Novel">
+                                <p class="m-0 Description-Novel my-1">
                                     "Con người là linh hồn vạn vật, cổ là tinh hoa của trời đất
                             
                                     Tam quan bất chính, ma đầu hồi sinh.
@@ -371,19 +386,34 @@
                                     </div>
                                     <span class="m-0 ms-2">Cổ Chân Nhân</span>
                                 </a>
-                                <nav class="nav">
-                                    <a class="nav-link px-2 py-1" href="#">Huyền Huyễn</a>
-                                    <a class="nav-link px-2 py-1" href="#">Tiên Hiệp</a>
-                                    <a class="nav-link px-2 py-1" href="#">Trùng Sinh</a>
-                                    <a class="nav-link px-2 py-1" href="#">Trùng Sinh</a>
-                                    <a class="nav-link px-2 py-1" href="#">Xuyên Không</a>
-                                </nav>
-                                <a class="px-2 py-1 Link-Detail-Novel" href="#">2333 Chương</a>
-                                <a class="px-2 py-1 disabled" href="#">
-                                    <small class="text-body-secondary">Last updated 3 mins ago</small>
-                                </a>
+                                <div class="CategoryList my-2">
+                                    <span class="px-2 py-1">Huyền Huyễn</span>
+                                    <span class="px-2 py-1">Tiên Hiệp</span>
+                                    <span class="px-2 py-1">Trùng Sinh</span>
+                                    <span class="px-2 py-1">Trùng Sinh</span>
+                                    <span class="px-2 py-1">Xuyên Không</span>
+                                    <span class="px-2 py-1">Xuyên Không</span>
+                                    <span class="px-2 py-1">Xuyên Không</span>
+                                    <span class="px-2 py-1">Xuyên Không</span>
+                                    <span class="px-2 py-1">Xuyên Không</span>
+                                    <span class="px-2 py-1">Xuyên Không</span>
+                                    <span class="px-2 py-1">Xuyên Không</span>
+                                    <span class="px-2 py-1">Xuyên Không</span>
+                                    <span class="px-2 py-1">Xuyên Không</span>
+                                    <span class="px-2 py-1">Xuyên Không</span>
+                                    <span class="px-2 py-1">Xuyên Không</span>
+                                    <span class="px-2 py-1">Xuyên Không</span>
+                                    <span class="px-2 py-1">Xuyên Không</span>
+                                    <span class="px-2 py-1">Xuyên Không</span>
+                                    <span class="px-2 py-1">Xuyên Không</span>
+                                    <span class="px-2 py-1">Trùng Sinh</span>
+                                </div>
+                                <span class="px-2 py-1 Link-Detail-Novel">2333 Chương</span>
+                                <span class="px-2 py-1">
+                                    <small class="text-body-secondary">1 giờ trước</small>
+                                </span>
                             
-                                <p class="m-0 Description-Novel">
+                                <p class="m-0 Description-Novel my-1">
                                     "Con người là linh hồn vạn vật, cổ là tinh hoa của trời đất
                             
                                     Tam quan bất chính, ma đầu hồi sinh.
@@ -416,19 +446,34 @@
                                     </div>
                                     <span class="m-0 ms-2">Cổ Chân Nhân</span>
                                 </a>
-                                <nav class="nav">
-                                    <a class="nav-link px-2 py-1" href="#">Huyền Huyễn</a>
-                                    <a class="nav-link px-2 py-1" href="#">Tiên Hiệp</a>
-                                    <a class="nav-link px-2 py-1" href="#">Trùng Sinh</a>
-                                    <a class="nav-link px-2 py-1" href="#">Trùng Sinh</a>
-                                    <a class="nav-link px-2 py-1" href="#">Xuyên Không</a>
-                                </nav>
-                                <a class="px-2 py-1 Link-Detail-Novel" href="#">2333 Chương</a>
-                                <a class="px-2 py-1 disabled" href="#">
-                                    <small class="text-body-secondary">Last updated 3 mins ago</small>
-                                </a>
+                                <div class="CategoryList my-2">
+                                    <span class="px-2 py-1">Huyền Huyễn</span>
+                                    <span class="px-2 py-1">Tiên Hiệp</span>
+                                    <span class="px-2 py-1">Trùng Sinh</span>
+                                    <span class="px-2 py-1">Trùng Sinh</span>
+                                    <span class="px-2 py-1">Xuyên Không</span>
+                                    <span class="px-2 py-1">Xuyên Không</span>
+                                    <span class="px-2 py-1">Xuyên Không</span>
+                                    <span class="px-2 py-1">Xuyên Không</span>
+                                    <span class="px-2 py-1">Xuyên Không</span>
+                                    <span class="px-2 py-1">Xuyên Không</span>
+                                    <span class="px-2 py-1">Xuyên Không</span>
+                                    <span class="px-2 py-1">Xuyên Không</span>
+                                    <span class="px-2 py-1">Xuyên Không</span>
+                                    <span class="px-2 py-1">Xuyên Không</span>
+                                    <span class="px-2 py-1">Xuyên Không</span>
+                                    <span class="px-2 py-1">Xuyên Không</span>
+                                    <span class="px-2 py-1">Xuyên Không</span>
+                                    <span class="px-2 py-1">Xuyên Không</span>
+                                    <span class="px-2 py-1">Xuyên Không</span>
+                                    <span class="px-2 py-1">Trùng Sinh</span>
+                                </div>
+                                <span class="px-2 py-1 Link-Detail-Novel">2333 Chương</span>
+                                <span class="px-2 py-1">
+                                    <small class="text-body-secondary">1 giờ trước</small>
+                                </span>
                             
-                                <p class="m-0 Description-Novel">
+                                <p class="m-0 Description-Novel my-1">
                                     "Con người là linh hồn vạn vật, cổ là tinh hoa của trời đất
                             
                                     Tam quan bất chính, ma đầu hồi sinh.
@@ -461,19 +506,154 @@
                                     </div>
                                     <span class="m-0 ms-2">Cổ Chân Nhân</span>
                                 </a>
-                                <nav class="nav">
-                                    <a class="nav-link px-2 py-1" href="#">Huyền Huyễn</a>
-                                    <a class="nav-link px-2 py-1" href="#">Tiên Hiệp</a>
-                                    <a class="nav-link px-2 py-1" href="#">Trùng Sinh</a>
-                                    <a class="nav-link px-2 py-1" href="#">Trùng Sinh</a>
-                                    <a class="nav-link px-2 py-1" href="#">Xuyên Không</a>
-                                </nav>
-                                <a class="px-2 py-1 Link-Detail-Novel" href="#">2333 Chương</a>
-                                <a class="px-2 py-1 disabled" href="#">
-                                    <small class="text-body-secondary">Last updated 3 mins ago</small>
-                                </a>
+                                <div class="CategoryList my-2">
+                                    <span class="px-2 py-1">Huyền Huyễn</span>
+                                    <span class="px-2 py-1">Tiên Hiệp</span>
+                                    <span class="px-2 py-1">Trùng Sinh</span>
+                                    <span class="px-2 py-1">Trùng Sinh</span>
+                                    <span class="px-2 py-1">Xuyên Không</span>
+                                    <span class="px-2 py-1">Xuyên Không</span>
+                                    <span class="px-2 py-1">Xuyên Không</span>
+                                    <span class="px-2 py-1">Xuyên Không</span>
+                                    <span class="px-2 py-1">Xuyên Không</span>
+                                    <span class="px-2 py-1">Xuyên Không</span>
+                                    <span class="px-2 py-1">Xuyên Không</span>
+                                    <span class="px-2 py-1">Xuyên Không</span>
+                                    <span class="px-2 py-1">Xuyên Không</span>
+                                    <span class="px-2 py-1">Xuyên Không</span>
+                                    <span class="px-2 py-1">Xuyên Không</span>
+                                    <span class="px-2 py-1">Xuyên Không</span>
+                                    <span class="px-2 py-1">Xuyên Không</span>
+                                    <span class="px-2 py-1">Xuyên Không</span>
+                                    <span class="px-2 py-1">Xuyên Không</span>
+                                    <span class="px-2 py-1">Trùng Sinh</span>
+                                </div>
+                                <span class="px-2 py-1 Link-Detail-Novel">2333 Chương</span>
+                                <span class="px-2 py-1">
+                                    <small class="text-body-secondary">1 giờ trước</small>
+                                </span>
                             
-                                <p class="m-0 Description-Novel">
+                                <p class="m-0 Description-Novel my-1">
+                                    "Con người là linh hồn vạn vật, cổ là tinh hoa của trời đất
+                            
+                                    Tam quan bất chính, ma đầu hồi sinh.
+                            
+                                    Chuyện xưa về một người xuyên không được sống lại.
+                            
+                                    Một thế giới kì lạ của người nuôi cổ, dùng cổ, luyện cổ.
+                            
+                                    Xuân Thu Thiền, Nguyệt Quang cổ, Tửu Trùng, Nhất Khí Kim Quang Trùng, Thanh Ti cổ, Hi Vọng cổ... ...
+                            
+                                    Còn có một tuyệt thế ma đầu tung hoành!"
+                            
+                                </p>
+                            </div>
+                        </div><hr>
+                        <div class="row">
+                            <div class="Box-Poster col-2 col-sm-2 p-0">
+                                <div class="Poster">
+                                    <img src="./Content/assets/img/truyen1.jpg" class="rounded-start" alt="...">
+                                    <a class="Action" href="#">
+                                        Xem Ngay
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-10 col-sm-10 InformationNovel">
+                                <h5 class="">Cổ Chân Nhân</h5>
+                                <a class="px-2 py-1 d-flex Link-User d-none d-md-flex" aria-current="page" href="#">
+                                    <div class="Avater">
+                                        <img src="./Content/assets/img/truyen1.jpg" alt="">
+                                    </div>
+                                    <span class="m-0 ms-2">Cổ Chân Nhân</span>
+                                </a>
+                                <div class="CategoryList my-2">
+                                    <span class="px-2 py-1">Huyền Huyễn</span>
+                                    <span class="px-2 py-1">Tiên Hiệp</span>
+                                    <span class="px-2 py-1">Trùng Sinh</span>
+                                    <span class="px-2 py-1">Trùng Sinh</span>
+                                    <span class="px-2 py-1">Xuyên Không</span>
+                                    <span class="px-2 py-1">Xuyên Không</span>
+                                    <span class="px-2 py-1">Xuyên Không</span>
+                                    <span class="px-2 py-1">Xuyên Không</span>
+                                    <span class="px-2 py-1">Xuyên Không</span>
+                                    <span class="px-2 py-1">Xuyên Không</span>
+                                    <span class="px-2 py-1">Xuyên Không</span>
+                                    <span class="px-2 py-1">Xuyên Không</span>
+                                    <span class="px-2 py-1">Xuyên Không</span>
+                                    <span class="px-2 py-1">Xuyên Không</span>
+                                    <span class="px-2 py-1">Xuyên Không</span>
+                                    <span class="px-2 py-1">Xuyên Không</span>
+                                    <span class="px-2 py-1">Xuyên Không</span>
+                                    <span class="px-2 py-1">Xuyên Không</span>
+                                    <span class="px-2 py-1">Xuyên Không</span>
+                                    <span class="px-2 py-1">Trùng Sinh</span>
+                                </div>
+                                <span class="px-2 py-1 Link-Detail-Novel">2333 Chương</span>
+                                <span class="px-2 py-1">
+                                    <small class="text-body-secondary">1 giờ trước</small>
+                                </span>
+                            
+                                <p class="m-0 Description-Novel my-1">
+                                    "Con người là linh hồn vạn vật, cổ là tinh hoa của trời đất
+                            
+                                    Tam quan bất chính, ma đầu hồi sinh.
+                            
+                                    Chuyện xưa về một người xuyên không được sống lại.
+                            
+                                    Một thế giới kì lạ của người nuôi cổ, dùng cổ, luyện cổ.
+                            
+                                    Xuân Thu Thiền, Nguyệt Quang cổ, Tửu Trùng, Nhất Khí Kim Quang Trùng, Thanh Ti cổ, Hi Vọng cổ... ...
+                            
+                                    Còn có một tuyệt thế ma đầu tung hoành!"
+                            
+                                </p>
+                            </div>
+                        </div><hr>
+                        <div class="row">
+                            <div class="Box-Poster col-2 col-sm-2 p-0">
+                                <div class="Poster">
+                                    <img src="./Content/assets/img/truyen1.jpg" class="rounded-start" alt="...">
+                                    <a class="Action" href="#">
+                                        Xem Ngay
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-10 col-sm-10 InformationNovel">
+                                <h5 class="">Cổ Chân Nhân</h5>
+                                <a class="px-2 py-1 d-flex Link-User d-none d-md-flex" aria-current="page" href="#">
+                                    <div class="Avater">
+                                        <img src="./Content/assets/img/truyen1.jpg" alt="">
+                                    </div>
+                                    <span class="m-0 ms-2">Cổ Chân Nhân</span>
+                                </a>
+                                <div class="CategoryList my-2">
+                                    <span class="px-2 py-1">Huyền Huyễn</span>
+                                    <span class="px-2 py-1">Tiên Hiệp</span>
+                                    <span class="px-2 py-1">Trùng Sinh</span>
+                                    <span class="px-2 py-1">Trùng Sinh</span>
+                                    <span class="px-2 py-1">Xuyên Không</span>
+                                    <span class="px-2 py-1">Xuyên Không</span>
+                                    <span class="px-2 py-1">Xuyên Không</span>
+                                    <span class="px-2 py-1">Xuyên Không</span>
+                                    <span class="px-2 py-1">Xuyên Không</span>
+                                    <span class="px-2 py-1">Xuyên Không</span>
+                                    <span class="px-2 py-1">Xuyên Không</span>
+                                    <span class="px-2 py-1">Xuyên Không</span>
+                                    <span class="px-2 py-1">Xuyên Không</span>
+                                    <span class="px-2 py-1">Xuyên Không</span>
+                                    <span class="px-2 py-1">Xuyên Không</span>
+                                    <span class="px-2 py-1">Xuyên Không</span>
+                                    <span class="px-2 py-1">Xuyên Không</span>
+                                    <span class="px-2 py-1">Xuyên Không</span>
+                                    <span class="px-2 py-1">Xuyên Không</span>
+                                    <span class="px-2 py-1">Trùng Sinh</span>
+                                </div>
+                                <span class="px-2 py-1 Link-Detail-Novel">2333 Chương</span>
+                                <span class="px-2 py-1">
+                                    <small class="text-body-secondary">1 giờ trước</small>
+                                </span>
+                            
+                                <p class="m-0 Description-Novel my-1">
                                     "Con người là linh hồn vạn vật, cổ là tinh hoa của trời đất
                             
                                     Tam quan bất chính, ma đầu hồi sinh.

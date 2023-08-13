@@ -77,12 +77,14 @@
     text-overflow: ellipsis;
 }
 
-#Main .FilterResults .Results .InformationNovel nav.nav {
-    max-height: 4em;
+#Main .FilterResults .Results .InformationNovel .CategoryList {
+    display: -webkit-box;
+    -webkit-line-clamp: 1; /* Số dòng tối đa muốn hiển thị */
+    -webkit-box-orient: vertical;
     overflow: hidden;
+    text-overflow: ellipsis;
 }
 
-#Main .FilterResults .Results .InformationNovel .Link-Detail-Novel:hover,
-#Main .FilterResults .Results .InformationNovel .nav-link:hover {
-    font-weight: 700;
+#Main .Pagination .page-link.active {
+    color: #fff;
 }
