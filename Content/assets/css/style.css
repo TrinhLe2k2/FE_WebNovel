@@ -414,24 +414,33 @@ object-fit:cover;
 
 /* Responsive */
 
-#Main .BookUpdate {
+#Main .BookUpdate .Information .InfoChapter span {
+    zoom: .7;
+}
+#Main .BookUpdate .Information ul {
     zoom: .7;
 }
 
 @media (min-width: 400px) {
-    #Main .BookUpdate {
+    #Main .BookUpdate .Information .InfoChapter span {
         zoom: .8;
     }
-}
-
-@media (min-width: 450px) {
-    #Main .BookUpdate {
+    #Main .BookUpdate .Information ul {
         zoom: .9;
     }
 }
 
+@media (min-width: 450px) {
+    #Main .BookUpdate .Information .InfoChapter span {
+        zoom: .9;
+    }
+    #Main .BookUpdate .Information ul {
+        zoom: 1;
+    }
+}
+
 @media (min-width: 500px) {
-    #Main .BookUpdate {
+    #Main .BookUpdate .Information .InfoChapter span {
         zoom: 1;
     }
 }
