@@ -44,22 +44,6 @@
     transform: scale(1.1);
 }
 
-#Main .FilterResults .Results .Box-Poster .Poster .Action {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    color: #fff;
-    font-weight: 700;
-    display: none;
-    align-items: center;
-    justify-content: center;
-    background-color: rgba(0, 0, 0, 0.1);
-}
-
-#Main .FilterResults .Results .Box-Poster .Poster:hover .Action {
-    display: flex;
-}
-
 #Main .FilterResults .Results .InformationNovel .Avater {
     position: relative;
     width: 28px;
