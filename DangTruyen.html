@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mario Baby - trang cá nhân</title>
+    <title>Mario Baby - Đăng truyện</title>
 
     <!-- css -->
     <link rel="stylesheet" href="./Content/assets/css/bootstrap.min.css">
@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
     <link rel="stylesheet" href="./Content/assets/css/style.css">
 
+    <script src="./Content/assets/ckeditor/ckeditor.js"></script>
     <style>
         :root {
             --primaty-color: #00dc82;
@@ -18,6 +19,7 @@
             --text-color: #000;
         }
 
+        label,
         .cursorPointer {
             cursor: pointer;
         }
@@ -277,71 +279,127 @@
                     })
                 </script>
                 <div class="col-12 col-md-8 col-lg-9">
-                    <div class="container position-relative User">
-                        <div class="Card row g-0">
-                            <div class="Card-img col-12 position-relative Background-User">
-                                <img src="./Content/assets/img/CoverImgae/clr.jpg" class="position-absolute rounded-top" style="width:100%; height: 100%; object-fit: cover;">
-                                <div class="Overlay-Card"></div>
-                            </div>
-                        </div>
-                        <div class="row position-absolute w-100 p-2 align-items-center" style="bottom: 50%; transform: translateY(50%);">
-                            <div class="UserProfile col-5 col-sm-3 col-xl-2">
-                                <div class="Avatar position-relative rounded-circle" style="padding-bottom: 100%; box-shadow: 0 0 4px #fff;">
-                                    <img src="./Content/assets/img/CoverImgae/clr.jpg" alt="" class="w-100 h-100 position-absolute rounded-circle" style="object-fit: cover;">
+                    <div class="container">
+                        <h3 class="ms-4 mb-0">Đăng Truyện</h3>
+                        <form action="" class="p-5">
+                            <div class="mb-3 row">
+                                <label for="NovelName" class="col-xl-2 col-lg-3 col-form-label">Tên truyện: </label>
+                                <div class="col-12 col-lg-9 col-xl-10">
+                                    <input type="text" class="form-control" id="NovelName" placeholder="Tên truyện">
                                 </div>
                             </div>
-                            <div class="Information col-12 col-sm-9 col-xl-10">
-                                <h4 class="UserName text-white fw-bold" style="text-shadow: 0 0 4px #000;">
-                                    Kinugasa Syougo
-                                </h4>
-                                <div class="Information_Action">
-                                    <ul class="nav">
-                                        <li class="nav-item">
-                                            <a href="#" class="nav-link text-white disabled" style="text-shadow: 0 0 4px #000;">
-                                                Lượt Theo Dõi: 2000
-                                            </a>
-                                        </li>
-                                        <li class="nav-item rounded-pill">
-                                            <a href="#" class="nav-link text-white rounded-pill" style="text-shadow: 0 0 4px #000;">
-                                                Xin quyền tác giả
-                                            </a>
-                                        </li>
-                                    </ul>
+                            <div class="mb-3 row">
+                                <label for="NovelAuthor" class="col-xl-2 col-lg-3 col-form-label">Tác giả: </label>
+                                <div class="col-12 col-lg-9 col-xl-10">
+                                    <input type="text" class="form-control" id="NovelAuthor" placeholder="Tác giả">
                                 </div>
                             </div>
-                        </div>
-                    </div>
-                    <div class="container my-3">
-                        <form action="">
-                            <div class="my-2">
-                                <label class="form-label" for="">Ảnh đại diện: </label>
-                                <input class="form-control" type="file">
+                            <div class="mb-3 row">
+                                <label for="NovelPoster" class="col-xl-2 col-lg-3 col-form-label">Poster truyện: </label>
+                                <div class="col-12 col-lg-9 col-xl-10">
+                                    <input type="file" class="form-control" id="NovelPoster">
+                                </div>
                             </div>
-                            <div class="my-2">
-                                <label class="form-label" for="">Ảnh bìa: </label>
-                                <input class="form-control" type="file">
+                            <div class="mb-3 row">
+                                <label for="NovelStatus" class="col-xl-2 col-lg-3 col-form-label">Trạng thái: </label>
+                                <div class="col-12 col-lg-9 col-xl-10">
+                                    <div class="row">
+                                        <div class="col-sm-6 col-xl-4">
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" id="radio1" name="NovelStatus">
+                                                <label class="form-check-label" for="radio1">
+                                                    Chưa hoàn thành
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6 col-xl-4">
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" id="radio2" name="NovelStatus">
+                                                <label class="form-check-label" for="radio2">
+                                                    Hoàn thành
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6 col-xl-4">
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" id="radio3" name="NovelStatus">
+                                                <label class="form-check-label" for="radio3">
+                                                    Ngừng viết
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="my-2">
-                                <label class="form-label" for="">Tên: </label>
-                                <input class="form-control" type="text" placeholder="Nhập tên" value="Mario Baby">
+                            <div class="mb-3 row">
+                                <label for="NovelCategory" class="col-xl-2 col-lg-3 col-form-label">Thể loại: </label>
+                                <div class="col-12 col-lg-9 col-xl-10">
+                                    <div class="row">
+                                        <div class="col-sm-6 col-xl-4">
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked1">
+                                                <label class="form-check-label" for="flexCheckChecked1">
+                                                    Huyền Huyễn
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6 col-xl-4">
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked2">
+                                                <label class="form-check-label" for="flexCheckChecked2">
+                                                    Tiên Hiệp
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6 col-xl-4">
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked3">
+                                                <label class="form-check-label" for="flexCheckChecked3">
+                                                    Đô Thị
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6 col-xl-4">
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked4">
+                                                <label class="form-check-label" for="flexCheckChecked4">
+                                                    Huyền Huyễn
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6 col-xl-4">
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked5">
+                                                <label class="form-check-label" for="flexCheckChecked5">
+                                                    Tiên Hiệp
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6 col-xl-4">
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked6">
+                                                <label class="form-check-label" for="flexCheckChecked6">
+                                                    Đô Thị
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="my-2">
-                                <label class="form-label" for="">Email: </label>
-                                <input class="form-control" type="email" placeholder="Nhập email" value="khanhtrinh.phuyen@gmail.com">
+                            <div class="mb-3 row">
+                                <label for="NovelIntroduction" class="col-xl-2 col-lg-3 col-form-label">Giới thiệu: </label>
+                                <div class="col-12 col-lg-9 col-xl-10">
+                                    <textarea class="form-control" id="NovelIntroduction"></textarea>
+                                    <script>
+                                        // Khởi tạo CKEditor
+                                        CKEDITOR.replace('NovelIntroduction');
+                                    </script>
+                                </div>
                             </div>
-                            <div class="my-2">
-                                <label class="form-label" for="">Mật khẩu hiện tại: </label>
-                                <input class="form-control" type="password" placeholder="Nhập mật khẩu hiện tại">
+                            <div class="mb-3 text-end">
+                                <input type="reset" class="btn btn-danger" value="Đặt lại">
+                                <input type="submit" class="btn btn-success" value="Đăng truyện">
                             </div>
-                            <div class="my-2">
-                                <label class="form-label" for="">Mật khẩu mới: </label>
-                                <input class="form-control" type="password" placeholder="Nhập mật khẩu mới">
-                            </div>
-                            <div class="my-2">
-                                <label class="form-label" for="">Xác nhận lại mật khẩu: </label>
-                                <input class="form-control" type="password" placeholder="Nhập lại mật khẩu">
-                            </div>
-                            <input class="my-3 p-1 px-3" type="submit" value="Lưu lại">
                         </form>
                     </div>
                 </div>
@@ -473,13 +531,11 @@
                     </div>
                 </div>
             </div>
-            <!-- <button class="btn btn-primary" data-bs-target="#AccountModal" data-bs-toggle="modal">Open first modal</button> -->
         </section>
     </section>
 
     <!-- js -->
     <script src="./Content/assets/js/bootstrap.bundle.min.js"></script>
-    <script src="./Content/assets/ckeditor/ckeditor.js"></script>
     <script src="./Content/assets/js/jquery-3.6.0.min.js"></script>
     <script src="./Content/assets/js/pagination.js"></script>
     <script src="./Content/assets/js/app.js"></script>
@@ -494,7 +550,7 @@
         function start() {
             removeActive();
             linksSideBar.forEach(element => {
-                if(element.textContent.includes('Cá nhân')) {
+                if(element.textContent.includes('Đăng truyện')) {
                     element.classList.add('active')
                 }
             })

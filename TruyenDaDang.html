@@ -3,13 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mario Baby - trang cá nhân</title>
+    <title>Mario Baby - Truyện đã đăng</title>
 
     <!-- css -->
     <link rel="stylesheet" href="./Content/assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="./Content/assets/font/fontawesome-free-6.4.0-web/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
     <link rel="stylesheet" href="./Content/assets/css/style.css">
+
+    <script src="./Content/assets/ckeditor/ckeditor.js"></script>
 
     <style>
         :root {
@@ -18,8 +20,70 @@
             --text-color: #000;
         }
 
+        label,
         .cursorPointer {
             cursor: pointer;
+        }
+
+        /* start pagination */
+
+        .paginationjs {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .paginationjs .paginationjs-pages ul {
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            padding-left: 0;
+            margin-bottom: 0;
+        }
+
+        .paginationjs .paginationjs-pages ul li {
+        }
+
+        .paginationjs .paginationjs-pages li>a {
+            display: block;
+            padding: 4px 24px;
+            border: solid 1px #33333340;
+            cursor: pointer;
+        }
+
+        .paginationjs .paginationjs-pages li>a:hover {
+            background-color: var(--primaty-color);
+        }
+
+        .paginationjs .paginationjs-pages li.active a {
+            background-color: var(--primaty-color);
+            border: solid 1px var(--primaty-color);
+            color: #fff;
+        }
+
+        .paginationjs .paginationjs-go-input {
+            margin: 0 8px;
+            min-width: 59px;
+            max-width: 60px;
+        }
+
+        .paginationjs .paginationjs-go-input input {
+            height: 100%;
+            width: 100%;
+        }
+
+        .paginationjs .paginationjs-go-button input {
+            height: 100%;
+            padding: 0 16px;
+        }
+
+        /* end pagination */
+
+        table tbody tr td a {
+            border-bottom: solid 1px transparent;
+        }
+
+        table tbody tr td a:hover {
+            border-color: blue;
         }
 
         #Main .SideBar .nav {
@@ -277,72 +341,87 @@
                     })
                 </script>
                 <div class="col-12 col-md-8 col-lg-9">
-                    <div class="container position-relative User">
-                        <div class="Card row g-0">
-                            <div class="Card-img col-12 position-relative Background-User">
-                                <img src="./Content/assets/img/CoverImgae/clr.jpg" class="position-absolute rounded-top" style="width:100%; height: 100%; object-fit: cover;">
-                                <div class="Overlay-Card"></div>
-                            </div>
+                    <div class="container">
+                        <div class="d-flex justify-content-between">
+                            <h3>Truyện đã đăng</h3>
+                            <a href="./DangTruyen.html" class="btn btn-primary">Thêm truyện mới</a>
                         </div>
-                        <div class="row position-absolute w-100 p-2 align-items-center" style="bottom: 50%; transform: translateY(50%);">
-                            <div class="UserProfile col-5 col-sm-3 col-xl-2">
-                                <div class="Avatar position-relative rounded-circle" style="padding-bottom: 100%; box-shadow: 0 0 4px #fff;">
-                                    <img src="./Content/assets/img/CoverImgae/clr.jpg" alt="" class="w-100 h-100 position-absolute rounded-circle" style="object-fit: cover;">
-                                </div>
-                            </div>
-                            <div class="Information col-12 col-sm-9 col-xl-10">
-                                <h4 class="UserName text-white fw-bold" style="text-shadow: 0 0 4px #000;">
-                                    Kinugasa Syougo
-                                </h4>
-                                <div class="Information_Action">
-                                    <ul class="nav">
-                                        <li class="nav-item">
-                                            <a href="#" class="nav-link text-white disabled" style="text-shadow: 0 0 4px #000;">
-                                                Lượt Theo Dõi: 2000
-                                            </a>
-                                        </li>
-                                        <li class="nav-item rounded-pill">
-                                            <a href="#" class="nav-link text-white rounded-pill" style="text-shadow: 0 0 4px #000;">
-                                                Xin quyền tác giả
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
+                        <div id="wrapperPages">
+                            <div class="data-container"></div>
+                            <div id="pagination-ForNovels" class="my-3"></div>
                         </div>
-                    </div>
-                    <div class="container my-3">
-                        <form action="">
-                            <div class="my-2">
-                                <label class="form-label" for="">Ảnh đại diện: </label>
-                                <input class="form-control" type="file">
-                            </div>
-                            <div class="my-2">
-                                <label class="form-label" for="">Ảnh bìa: </label>
-                                <input class="form-control" type="file">
-                            </div>
-                            <div class="my-2">
-                                <label class="form-label" for="">Tên: </label>
-                                <input class="form-control" type="text" placeholder="Nhập tên" value="Mario Baby">
-                            </div>
-                            <div class="my-2">
-                                <label class="form-label" for="">Email: </label>
-                                <input class="form-control" type="email" placeholder="Nhập email" value="khanhtrinh.phuyen@gmail.com">
-                            </div>
-                            <div class="my-2">
-                                <label class="form-label" for="">Mật khẩu hiện tại: </label>
-                                <input class="form-control" type="password" placeholder="Nhập mật khẩu hiện tại">
-                            </div>
-                            <div class="my-2">
-                                <label class="form-label" for="">Mật khẩu mới: </label>
-                                <input class="form-control" type="password" placeholder="Nhập mật khẩu mới">
-                            </div>
-                            <div class="my-2">
-                                <label class="form-label" for="">Xác nhận lại mật khẩu: </label>
-                                <input class="form-control" type="password" placeholder="Nhập lại mật khẩu">
-                            </div>
-                            <input class="my-3 p-1 px-3" type="submit" value="Lưu lại">
-                        </form>
+                        <!-- <table class="table">
+                            <thead>
+                                <tr>
+                                    <th scope="col">STT</th>
+                                    <th scope="col">Truyện</th>
+                                    <th scope="col">QL Chương</th>
+                                    <th scope="col">Trạng Thái</th>
+                                    <th scope="col">Hành Động</th>
+                                    <th scope="col">Tình trạng</th>
+                                </tr>
+                            </thead>
+                            <tbody class="table-group-divider">
+                                <tr>
+                                    <th scope="row">1</th>
+                                    <td><a href="./ThongTinTruyen.html">Cổ Chân Nhân</a></td>
+                                    <td><a href="./QuanLyChapter.html">2333 Chương</a></td>
+                                    <td>Ngừng viết</td>
+                                    <td>
+                                        <a href="#" data-bs-target="#EditNovelModalToggle" data-bs-toggle="modal">Sửa</a> |
+                                        <a href="#" data-bs-toggle="modal" data-bs-target="#Novel1DeleteModal">Xóa</a>
+                                        
+                                        <div class="modal fade" id="Novel1DeleteModal" tabindex="-1" aria-labelledby="Novel1DeleteModalLabel" aria-hidden="true">
+                                            <div class="modal-dialog modal-dialog-centered">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h1 class="modal-title fs-5" id="Novel1DeleteModalLabel">Xác nhận xóa</h1>
+                                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        bạn có chắc muốn xóa truyện "Cổ Chân Nhân" không?
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Hủy</button>
+                                                        <a href="#" class="btn btn-primary">Xóa</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>Đã duyệt</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">2</th>
+                                    <td><a href="#">Vạn Cổ Tối Cường Tông</a></td>
+                                    <td><a href="#">2333 Chương</a></td>
+                                    <td>Hoàn thành</td>
+                                    <td>
+                                        <a href="#" data-bs-target="#EditNovelModalToggle" data-bs-toggle="modal">Sửa</a> |
+                                        <a href="#" data-bs-toggle="modal" data-bs-target="#Novel2DeleteModal">Xóa</a>
+                                        
+                                        <div class="modal fade" id="Novel2DeleteModal" tabindex="-1" aria-labelledby="Novel2DeleteModalLabel" aria-hidden="true">
+                                            <div class="modal-dialog modal-dialog-centered">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h1 class="modal-title fs-5" id="Novel2DeleteModalLabel">Xác nhận xóa</h1>
+                                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        bạn có chắc muốn xóa truyện "Cổ Chân Nhân" không?
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Hủy</button>
+                                                        <a href="#" class="btn btn-primary">Xóa</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>Chưa duyệt</td>
+                                </tr>
+                            </tbody>
+                        </table> -->
                     </div>
                 </div>
             </div>
@@ -494,12 +573,111 @@
         function start() {
             removeActive();
             linksSideBar.forEach(element => {
-                if(element.textContent.includes('Cá nhân')) {
+                if(element.textContent.includes('Truyện đã đăng')) {
                     element.classList.add('active')
                 }
             })
         }
         start();
+    </script>
+
+    <script> // js danh sách truyện
+        (function (name) {
+            var container = $('#pagination-' + name);
+            if (!container.length) return;
+            var sources = function () {
+                var result = [];
+
+                for (var i = 1; i < 200; i++) {
+                    result.push(i);
+                }
+
+                return result;
+            }();
+
+            var options = {
+                dataSource: sources,
+                pageSize: 10,
+                showSizeChanger: false,
+                showGoInput: true,
+                showGoButton: true,
+                autoHidePrevious: true,
+                autoHideNext: true,
+                callback: function (response, pagination) {
+                    window.console && console.log(response, pagination);
+
+                    var dataHtml = `
+                        <table class="table table-hover">
+                            <thead>
+                                <tr>
+                                    <th scope="col">STT</th>
+                                    <th scope="col">Truyện</th>
+                                    <th scope="col">Số Chương</th>
+                                    <th scope="col">Trạng Thái</th>
+                                    <th scope="col">Hành Động</th>
+                                    <th scope="col">Tình trạng</th>
+                                </tr>
+                            </thead>
+                            <tbody class="table-group-divider">
+                    `;
+
+                    $.each(response, function (index, item) {
+                        dataHtml += `
+                            <tr>
+                                <th scope="row">${item}</th>
+                                <td><a href="./ThongTinTruyen.html">Cổ Chân Nhân</a></td>
+                                <td>2333</td>
+                                <td>Ngừng viết</td>
+                                <td>
+                                    <a href="./ChinhSuaTruyen.html">Sửa</a> |
+                                    <a href="#" data-bs-toggle="modal" data-bs-target="#Novel${item}DeleteModal">Xóa</a> |
+                                    <a href="./QuanLyChapter.html">QL Chương</a>
+                                    <!-- Modal -->
+                                    <div class="modal fade" id="Novel${item}DeleteModal" tabindex="-1" aria-labelledby="Novel${item}DeleteModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog modal-dialog-centered">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h1 class="modal-title fs-5" id="Novel${item}DeleteModalLabel">Xác nhận xóa</h1>
+                                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    bạn có chắc muốn xóa truyện "Cổ Chân Nhân ${item}" không?
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Hủy</button>
+                                                    <a href="#" class="btn btn-primary">Xóa</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>Đã duyệt</td>
+                            </tr>
+                        `;
+                    });
+
+                    dataHtml += `
+                            </tbody>
+                        </table>
+                    `;
+
+                    container.prev().html(dataHtml);
+                }
+            };
+
+            //$.pagination(container, options);
+
+            container.addHook('beforeInit', function () {
+                window.console && console.log('beforeInit...');
+            });
+            container.pagination(options);
+
+            container.addHook('beforePageOnClick', function () {
+                window.console && console.log('beforePageOnClick...');
+                //return false
+            });
+        })('ForNovels');
+
     </script>
 
 </body>

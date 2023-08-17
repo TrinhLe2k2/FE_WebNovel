@@ -185,22 +185,6 @@
             color: #fff;
         }
 
-        #Main .ActionNovel .tab-content .Box-Chapter-Link {
-            border: solid 1px #33333340;
-        }
-
-        #Main .ActionNovel .tab-content .Box-Chapter-Link:hover {
-            background-color: #00dc803f;
-        }
-
-        #Main .ActionNovel .tab-content .Chapter-Link {
-            display: -webkit-box;
-            -webkit-line-clamp: 2; /* Số dòng tối đa muốn hiển thị */
-            -webkit-box-orient: vertical;
-            overflow: hidden;
-            text-overflow: ellipsis;
-        }
-
         #Main .ActionNovel .tab-content .paginationjs .paginationjs-go-input {
             margin: 0 8px;
             min-width: 59px;
@@ -215,6 +199,22 @@
         #Main .ActionNovel .tab-content .paginationjs .paginationjs-go-button input {
             height: 100%;
             padding: 0 16px;
+        }
+
+        #Main .ActionNovel .tab-content .Box-Chapter-Link {
+            border: solid 1px #33333340;
+        }
+
+        #Main .ActionNovel .tab-content .Box-Chapter-Link:hover {
+            background-color: #00dc803f;
+        }
+
+        #Main .ActionNovel .tab-content .Chapter-Link {
+            display: -webkit-box;
+            -webkit-line-clamp: 2; /* Số dòng tối đa muốn hiển thị */
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            text-overflow: ellipsis;
         }
 
         #Main .ActionNovel .tab-content #Comment-tab-pane .list-group-item {
@@ -444,12 +444,10 @@
                             <a class="nav-link px-2 py-1 mb-2" href="./BoLoc.html">Xuyên Không</a>
                             <a class="nav-link px-2 py-1 mb-2" href="./BoLoc.html">Xuyên Không</a>
                         </nav>
-                        <a class="p-2 d-flex Link-User d-md-flex" aria-current="page" href="./TrangCaNhan.html">
-                            <div class="Avater position-relative rounded-pill">
-                                <img src="./Content/assets/img/truyen1.jpg" class="position-absolute w-100 h-100 rounded-circle" alt="...">
-                            </div>
-                            <span class="m-0 ms-2 UserName">Cổ Chân Nhân</span>
-                        </a>
+                        <div class="p-2 d-flex Link-User d-md-flex">
+                            <span class="fw-bold">Tác giả: </span>
+                            <span class="ms-2">Cổ Chân Nhân</span>
+                        </div>
                         <div class="FeedbackWrapper d-flex">
                             <div class="py-1 px-2 View">
                                 <i class="fa-solid fa-eye" style="color: #0ea5e9;"></i> 999M

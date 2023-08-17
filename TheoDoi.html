@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mario Baby - Theo dõi</title>
+
+    <!-- css -->
+    <link rel="stylesheet" href="./Content/assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./Content/assets/font/fontawesome-free-6.4.0-web/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="./Content/assets/css/style.css">
+
+    <style>
+        :root {
+            --primaty-color: #00dc82;
+            --text-bg: #fff;
+            --text-color: #000;
+        }
+
+        .cursorPointer {
+            cursor: pointer;
+        }
+
+        #Main .SideBar .nav {
+            
+        }
+
+        #Main .SideBar .nav-link {
+            color: #000;
+            border: solid 1px transparent;
+            transition: all ease 0.3s;
+        }
+
+        #Main .SideBar .nav-link:hover,
+        #Main .SideBar .nav-link.active {
+            color: var(--primaty-color);
+            border: solid 1px var(--primaty-color);
+            padding-left: 20px;
+        }
+        
+        #Main .SideBar .nav-link.active {
+            font-weight: 500;
+        }
+
+        #Main .User .Background-User {
+            padding-bottom: 70%;
+        }
+
+        #Main .User .Information_Action .nav-link:hover {
+            background-color: var(--primaty-color);
+        }
+
+        #Main .User {
+            zoom: 0.9;
+        }
+
+        @media (min-width: 400px) {
+            #Main .User {
+                zoom: 1;
+            }
+        }
+        
+        @media (min-width: 576px) {
+            #Main .User .Background-User {
+                padding-bottom: 33.33%;
+            }
+        }
+        @media (min-width: 768px) and (max-width: 992px) {
+            #Main .User {
+                zoom: 0.9;
+            }
+        }
+        /* Content css */
+        #Main .Content a {
+            color: #000;
+        }
+
+        #Main .Content #myTab .nav-link {
+            color: #000;
+            font-weight: 500;
+            border: none;
+            border-bottom: solid 1px transparent;
+        }
+
+        #Main .Content #myTab .nav-link.active {
+            background-color: transparent;
+            border-color: var(--primaty-color);
+            color: var(--primaty-color);
+        }
+
+        #Main .Content #myTabContent #bookMark-tab-pane .BookMark .Novel .InformationNovel .CategoryList {
+            display: -webkit-box;
+            -webkit-line-clamp: 1;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        #Main .Pagination .page-link.active {
+            color: #fff;
+        }
+        
+    </style>
+
+</head>
+<body>
+
+    <section id="Header">
+        <div class="container">
+            <div class="row my-2">
+                <div class="col-4 d-flex">
+                    <a class="navbar-brand d-flex align-items-center Logo" href="./index.html">
+                        <img class="" src="https://ncomics.vercel.app/_nuxt/logo.83be12af.svg" alt="NComics">
+                        <h3 class="">Refresh</h3>
+                    </a>
+                </div>
+                <div class="col-sm-4 d-flex order-1 order-sm-0">
+                    <form data-v-eb07a472="a123" class="d-flex align-items-stretch rounded-pill m-2 w-100 custom-form bg-white">
+                        <input type="text" list="datalistOptions"
+                            class="w-100 py-1 border-0 ps-3 rounded-pill flex-fill" placeholder="Search"
+                            style="outline: none;">
+                        <button type="submit" class="px-3 border-0 rounded-pill bg-body">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </button>
+
+                        <datalist id="datalistOptions">
+                            <option value="San Francisco">
+                            <option value="New York">
+                            <option value="Seattle">
+                            <option value="Los Angeles">
+                            <option value="Chicago">
+                        </datalist>
+                    </form>
+                </div>
+                <div class="col-8 col-sm-4 d-flex justify-content-end align-items-center">
+                    <a href="#" data-bs-target="#AccountModal" data-bs-toggle="modal" class="account">
+                        <i class="fa-solid fa-user"></i>
+                        <span class="fw-bold">Tài khoản</span>
+                    </a>
+                </div>
+            </div>
+            <div class="row my-2">
+                <ul class="nav justify-content-center">
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="./index.html">
+                            <i class="fa-solid fa-house"></i>
+                            <span>Home</span>
+                        </a>
+                    </li>
+                    <li class="nav-item dropdown Category">
+                        <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button"
+                            aria-expanded="false">
+                            <i class="bi bi-tags-fill"></i>
+                            Thể Loại
+                        </a>
+                        <ul class="dropdown-menu Dropdown-Menu text-center">
+                            <div class="container">
+                                <div class="row gx-0">
+                                    <div class="col-6 col-sm-4">
+                                        <a href="#" class="Category-Link d-block w-100 h-100 py-2">Huyền Huyễn</a>
+                                    </div>
+                                    <div class="col-6 col-sm-4">
+                                        <a href="#" class="Category-Link d-block w-100 h-100 py-2">Tiên Hiệp</a>
+                                    </div>
+                                    <div class="col-6 col-sm-4">
+                                        <a href="#" class="Category-Link d-block w-100 h-100 py-2">Trọng Sinh</a>
+                                    </div>
+                                    <div class="col-6 col-sm-4">
+                                        <a href="#" class="Category-Link d-block w-100 h-100 py-2">Huyền Huyễn</a>
+                                    </div>
+                                    <div class="col-6 col-sm-4">
+                                        <a href="#" class="Category-Link d-block w-100 h-100 py-2">Tiên Hiệp</a>
+                                    </div>
+                                    <div class="col-6 col-sm-4">
+                                        <a href="#" class="Category-Link d-block w-100 h-100 py-2">Trọng Sinh</a>
+                                    </div>
+                                    <div class="col-6 col-sm-4">
+                                        <a href="#" class="Category-Link d-block w-100 h-100 py-2">Huyền Huyễn</a>
+                                    </div>
+                                    <div class="col-6 col-sm-4">
+                                        <a href="#" class="Category-Link d-block w-100 h-100 py-2">Tiên Hiệp</a>
+                                    </div>
+                                    <div class="col-6 col-sm-4">
+                                        <a href="#" class="Category-Link d-block w-100 h-100 py-2">Trọng Sinh</a>
+                                    </div>
+                                    <div class="col-6 col-sm-4">
+                                        <a href="#" class="Category-Link d-block w-100 h-100 py-2">Huyền Huyễn</a>
+                                    </div>
+                                    <div class="col-6 col-sm-4">
+                                        <a href="#" class="Category-Link d-block w-100 h-100 py-2">Tiên Hiệp</a>
+                                    </div>
+                                    <div class="col-6 col-sm-4">
+                                        <a href="#" class="Category-Link d-block w-100 h-100 py-2">Trọng Sinh</a>
+                                    </div>
+                                    <div class="col-6 col-sm-4">
+                                        <a href="#" class="Category-Link d-block w-100 h-100 py-2">Huyền Huyễn</a>
+                                    </div>
+                                    <div class="col-6 col-sm-4">
+                                        <a href="#" class="Category-Link d-block w-100 h-100 py-2">Tiên Hiệp</a>
+                                    </div>
+                                    <div class="col-6 col-sm-4">
+                                        <a href="#" class="Category-Link d-block w-100 h-100 py-2">Trọng Sinh</a>
+                                    </div>
+                                    <div class="col-6 col-sm-4">
+                                        <a href="#" class="Category-Link d-block w-100 h-100 py-2">Huyền Huyễn</a>
+                                    </div>
+                                    <div class="col-6 col-sm-4">
+                                        <a href="#" class="Category-Link d-block w-100 h-100 py-2">Tiên Hiệp</a>
+                                    </div>
+                                    <div class="col-6 col-sm-4">
+                                        <a href="#" class="Category-Link d-block w-100 h-100 py-2">Trọng Sinh</a>
+                                    </div>
+                                    <div class="col-6 col-sm-4">
+                                        <a href="#" class="Category-Link d-block w-100 h-100 py-2">Huyền Huyễn</a>
+                                    </div>
+                                    <div class="col-6 col-sm-4">
+                                        <a href="#" class="Category-Link d-block w-100 h-100 py-2">Tiên Hiệp</a>
+                                    </div>
+                                    <div class="col-6 col-sm-4">
+                                        <a href="#" class="Category-Link d-block w-100 h-100 py-2">Trọng Sinh</a>
+                                    </div>
+                                    <div class="col-6 col-sm-4">
+                                        <a href="#" class="Category-Link d-block w-100 h-100 py-2">Huyền Huyễn</a>
+                                    </div>
+                                    <div class="col-6 col-sm-4">
+                                        <a href="#" class="Category-Link d-block w-100 h-100 py-2">Tiên Hiệp</a>
+                                    </div>
+                                    <div class="col-6 col-sm-4">
+                                        <a href="#" class="Category-Link d-block w-100 h-100 py-2">Tất cả</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./BoLoc.html">
+                            <i class="fa-solid fa-filter"></i>
+                            <span>Bộ Lọc</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    
+    <section id="Main" class="my-5">
+        <div class="container">
+            <div class="row g-1">
+                <div class="col-md-4 col-lg-3 SideBar position-relative">
+                    <div class="cursorPointer d-md-none d-block barBtn">
+                        <input type="checkbox" hidden id="checkNavBar">
+                        <label for="checkNavBar" class="p-2 checkNavBarLabel">
+                            <i class="fa-solid fa-bars-progress"></i>
+                        </label>
+                    </div>
+                    <ul class="nav flex-column d-none d-md-block Navigation w-100">
+                        <li class="nav-item">
+                            <a href="./QuanLyTrangCaNhan.html" class="nav-link"><i class="fa-solid fa-user"></i> Cá nhân</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="./TheoDoi.html" class="nav-link"><i class="fa-solid fa-book-bookmark"></i> Theo dõi</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="./DangTruyen.html" class="nav-link"><i class="fa-solid fa-upload"></i> Đăng truyện</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="./TruyenDaDang.html" class="nav-link"><i class="fa-solid fa-book-journal-whills"></i> Truyện đã đăng (2333)</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="./QuanLyNguoiDung.html" class="nav-link"><i class="fa-solid fa-people-roof"></i> Quản lý người dùng (2333)</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="./QuanLyTruyen.html" class="nav-link"><i class="fa-solid fa-swatchbook"></i> Quản lý truyện (2333)</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="./QuanLyTheLoai.html" class="nav-link"><i class="fa-solid fa-earth-americas"></i> Quản lý thể loại (23)</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="./ThongKe.html" class="nav-link"><i class="fa-solid fa-chart-simple"></i> Thống kê</a>
+                        </li>
+                    </ul>
+                </div>
+                <script> // js navbar
+                    var checkNavBar = document.querySelector('#Main .barBtn #checkNavBar');
+                    var labelcheckbox = document.querySelector('#Main .barBtn .checkNavBarLabel');
+                    var nav = document.querySelector('#Main .Navigation');
+                    checkNavBar.addEventListener('change', function() {
+                        if(checkNavBar.checked) {
+                            nav.classList.remove('d-none');
+                            nav.classList.add('position-absolute');
+                            nav.style = 'z-index: 1; background-color: #fff; border: solid 1px var(--primaty-color); box-shadow: 0 0 4px var(--primaty-color);'
+                        } else {
+                            nav.classList.add('d-none');
+                            nav.classList.remove('position-absolute');
+                            nav.removeAttribute('style');
+                        }
+                    })
+                    document.addEventListener('click', function(event) {
+                        if(!checkNavBar.contains(event.target) && !labelcheckbox.contains(event.target) && !nav.contains(event.target)) {
+                            checkNavBar.checked = false;
+                            nav.classList.add('d-none');
+                            nav.classList.remove('position-absolute');
+                            nav.removeAttribute('style');
+                        }
+                    })
+                </script>
+                <div class="col-12 col-md-8 col-lg-9 Content">
+                    <div class="container">
+                        <ul class="nav nav-tabs" id="myTab" role="tablist">
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link active" id="bookMark-tab" data-bs-toggle="tab" data-bs-target="#bookMark-tab-pane" type="button"
+                                    role="tab" aria-controls="bookMark-tab-pane" aria-selected="true">Truyện</button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="author-tab" data-bs-toggle="tab" data-bs-target="#author-tab-pane" type="button"
+                                    role="tab" aria-controls="author-tab-pane" aria-selected="false">Tác giả</button>
+                            </li>
+                        </ul>
+                        <div class="tab-content" id="myTabContent">
+                            <div class="tab-pane fade show active" id="bookMark-tab-pane" role="tabpanel" aria-labelledby="bookMark-tab" tabindex="0">
+                                <div class="container my-3">
+                                    <div class="row BookMarks">
+                                        <div class="col-12 BookMark">
+                                            <a href="./ThongTinTruyen.html">
+                                                <div class="container-fluid Novel">
+                                                    <div class="row">
+                                                        <div class="col-6 col-sm-2 mx-auto">
+                                                            <div class="Poster position-relative" style="padding-bottom: 133.33%;">
+                                                                <img src="./Content/assets/img/truyen1.jpg" class="rounded-start position-absolute w-100 h-100" alt="" style="object-fit: cover;">
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-12 col-sm-10 InformationNovel">
+                                                            <div class="d-flex flex-column flex-sm-row align-items-center align-items-sm-start">
+                                                                <h4 class="mt-2 mb-0">Cổ Chân Nhân</h4>
+                                                                <small class="px-2 py-1">Đang ra</small>
+
+                                                            </div>
+                                                            <span class="fw-bold">Tác giả: </span><span class="px-2 py-1">Tài chủ bất lương</span><br>
+                                                            <span class="fw-bold">Lượt xem: </span><span class="px-2 py-1">2000000</span><br>
+                                                            <span class="fw-bold">Thể loại: </span>
+                                                            <div class="CategoryList my-1">
+                                                                <span class="px-2 py-1">Huyền Huyễn</span>
+                                                                <span class="px-2 py-1">Tiên Hiệp</span>
+                                                                <span class="px-2 py-1">Trùng Sinh</span>
+                                                                <span class="px-2 py-1">Trùng Sinh</span>
+                                                                <span class="px-2 py-1">Xuyên Không</span>
+                                                                <span class="px-2 py-1">Xuyên Không</span>
+                                                                <span class="px-2 py-1">Xuyên Không</span>
+                                                                <span class="px-2 py-1">Xuyên Không</span>
+                                                                <span class="px-2 py-1">Xuyên Không</span>
+                                                                <span class="px-2 py-1">Xuyên Không</span>
+                                                                <span class="px-2 py-1">Xuyên Không</span>
+                                                                <span class="px-2 py-1">Xuyên Không</span>
+                                                                <span class="px-2 py-1">Xuyên Không</span>
+                                                                <span class="px-2 py-1">Xuyên Không</span>
+                                                                <span class="px-2 py-1">Xuyên Không</span>
+                                                                <span class="px-2 py-1">Xuyên Không</span>
+                                                                <span class="px-2 py-1">Xuyên Không</span>
+                                                                <span class="px-2 py-1">Xuyên Không</span>
+                                                                <span class="px-2 py-1">Xuyên Không</span>
+                                                                <span class="px-2 py-1">Trùng Sinh</span>
+                                                            </div>
+                                                            <span class="fw-bold">Chương: </span><span class="px-2 py-1">2333</span><small class="px-2 py-1">1 giờ trước</small>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </a><hr>
+                                        </div>
+                                        <div class="col-12 BookMark">
+                                            <a href="./ThongTinTruyen.html">
+                                                <div class="container-fluid Novel">
+                                                    <div class="row">
+                                                        <div class="col-6 col-sm-2 mx-auto">
+                                                            <div class="Poster position-relative" style="padding-bottom: 133.33%;">
+                                                                <img src="./Content/assets/img/truyen1.jpg" class="rounded-start position-absolute w-100 h-100" alt="" style="object-fit: cover;">
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-12 col-sm-10 InformationNovel">
+                                                            <div class="d-flex flex-column flex-sm-row align-items-center align-items-sm-start">
+                                                                <h4 class="mt-2 mb-0">Cổ Chân Nhân</h4>
+                                                                <small class="px-2 py-1">Đang ra</small>
+
+                                                            </div>
+                                                            <span class="fw-bold">Tác giả: </span><span class="px-2 py-1">Tài chủ bất lương</span><br>
+                                                            <span class="fw-bold">Lượt xem: </span><span class="px-2 py-1">2000000</span><br>
+                                                            <span class="fw-bold">Thể loại: </span>
+                                                            <div class="CategoryList my-1">
+                                                                <span class="px-2 py-1">Huyền Huyễn</span>
+                                                                <span class="px-2 py-1">Tiên Hiệp</span>
+                                                                <span class="px-2 py-1">Trùng Sinh</span>
+                                                                <span class="px-2 py-1">Trùng Sinh</span>
+                                                                <span class="px-2 py-1">Xuyên Không</span>
+                                                                <span class="px-2 py-1">Xuyên Không</span>
+                                                                <span class="px-2 py-1">Xuyên Không</span>
+                                                                <span class="px-2 py-1">Xuyên Không</span>
+                                                                <span class="px-2 py-1">Xuyên Không</span>
+                                                                <span class="px-2 py-1">Xuyên Không</span>
+                                                                <span class="px-2 py-1">Xuyên Không</span>
+                                                                <span class="px-2 py-1">Xuyên Không</span>
+                                                                <span class="px-2 py-1">Xuyên Không</span>
+                                                                <span class="px-2 py-1">Xuyên Không</span>
+                                                                <span class="px-2 py-1">Xuyên Không</span>
+                                                                <span class="px-2 py-1">Xuyên Không</span>
+                                                                <span class="px-2 py-1">Xuyên Không</span>
+                                                                <span class="px-2 py-1">Xuyên Không</span>
+                                                                <span class="px-2 py-1">Xuyên Không</span>
+                                                                <span class="px-2 py-1">Trùng Sinh</span>
+                                                            </div>
+                                                            <span class="fw-bold">Chương: </span><span class="px-2 py-1">2333</span><small class="px-2 py-1">1 giờ trước</small>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </a><hr>
+                                        </div>
+                                        <div class="col-12 BookMark">
+                                            <a href="./ThongTinTruyen.html">
+                                                <div class="container-fluid Novel">
+                                                    <div class="row">
+                                                        <div class="col-6 col-sm-2 mx-auto">
+                                                            <div class="Poster position-relative" style="padding-bottom: 133.33%;">
+                                                                <img src="./Content/assets/img/truyen1.jpg" class="rounded-start position-absolute w-100 h-100" alt="" style="object-fit: cover;">
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-12 col-sm-10 InformationNovel">
+                                                            <div class="d-flex flex-column flex-sm-row align-items-center align-items-sm-start">
+                                                                <h4 class="mt-2 mb-0">Cổ Chân Nhân</h4>
+                                                                <small class="px-2 py-1">Đang ra</small>
+
+                                                            </div>
+                                                            <span class="fw-bold">Tác giả: </span><span class="px-2 py-1">Tài chủ bất lương</span><br>
+                                                            <span class="fw-bold">Lượt xem: </span><span class="px-2 py-1">2000000</span><br>
+                                                            <span class="fw-bold">Thể loại: </span>
+                                                            <div class="CategoryList my-1">
+                                                                <span class="px-2 py-1">Huyền Huyễn</span>
+                                                                <span class="px-2 py-1">Tiên Hiệp</span>
+                                                                <span class="px-2 py-1">Trùng Sinh</span>
+                                                                <span class="px-2 py-1">Trùng Sinh</span>
+                                                                <span class="px-2 py-1">Xuyên Không</span>
+                                                                <span class="px-2 py-1">Xuyên Không</span>
+                                                                <span class="px-2 py-1">Xuyên Không</span>
+                                                                <span class="px-2 py-1">Xuyên Không</span>
+                                                                <span class="px-2 py-1">Xuyên Không</span>
+                                                                <span class="px-2 py-1">Xuyên Không</span>
+                                                                <span class="px-2 py-1">Xuyên Không</span>
+                                                                <span class="px-2 py-1">Xuyên Không</span>
+                                                                <span class="px-2 py-1">Xuyên Không</span>
+                                                                <span class="px-2 py-1">Xuyên Không</span>
+                                                                <span class="px-2 py-1">Xuyên Không</span>
+                                                                <span class="px-2 py-1">Xuyên Không</span>
+                                                                <span class="px-2 py-1">Xuyên Không</span>
+                                                                <span class="px-2 py-1">Xuyên Không</span>
+                                                                <span class="px-2 py-1">Xuyên Không</span>
+                                                                <span class="px-2 py-1">Trùng Sinh</span>
+                                                            </div>
+                                                            <span class="fw-bold">Chương: </span><span class="px-2 py-1">2333</span><small class="px-2 py-1">1 giờ trước</small>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </a><hr>
+                                        </div>
+                                        <div class="col-12 BookMark">
+                                            <a href="./ThongTinTruyen.html">
+                                                <div class="container-fluid Novel">
+                                                    <div class="row">
+                                                        <div class="col-6 col-sm-2 mx-auto">
+                                                            <div class="Poster position-relative" style="padding-bottom: 133.33%;">
+                                                                <img src="./Content/assets/img/truyen1.jpg" class="rounded-start position-absolute w-100 h-100" alt="" style="object-fit: cover;">
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-12 col-sm-10 InformationNovel">
+                                                            <div class="d-flex flex-column flex-sm-row align-items-center align-items-sm-start">
+                                                                <h4 class="mt-2 mb-0">Cổ Chân Nhân</h4>
+                                                                <small class="px-2 py-1">Đang ra</small>
+
+                                                            </div>
+                                                            <span class="fw-bold">Tác giả: </span><span class="px-2 py-1">Tài chủ bất lương</span><br>
+                                                            <span class="fw-bold">Lượt xem: </span><span class="px-2 py-1">2000000</span><br>
+                                                            <span class="fw-bold">Thể loại: </span>
+                                                            <div class="CategoryList my-1">
+                                                                <span class="px-2 py-1">Huyền Huyễn</span>
+                                                                <span class="px-2 py-1">Tiên Hiệp</span>
+                                                                <span class="px-2 py-1">Trùng Sinh</span>
+                                                                <span class="px-2 py-1">Trùng Sinh</span>
+                                                                <span class="px-2 py-1">Xuyên Không</span>
+                                                                <span class="px-2 py-1">Xuyên Không</span>
+                                                                <span class="px-2 py-1">Xuyên Không</span>
+                                                                <span class="px-2 py-1">Xuyên Không</span>
+                                                                <span class="px-2 py-1">Xuyên Không</span>
+                                                                <span class="px-2 py-1">Xuyên Không</span>
+                                                                <span class="px-2 py-1">Xuyên Không</span>
+                                                                <span class="px-2 py-1">Xuyên Không</span>
+                                                                <span class="px-2 py-1">Xuyên Không</span>
+                                                                <span class="px-2 py-1">Xuyên Không</span>
+                                                                <span class="px-2 py-1">Xuyên Không</span>
+                                                                <span class="px-2 py-1">Xuyên Không</span>
+                                                                <span class="px-2 py-1">Xuyên Không</span>
+                                                                <span class="px-2 py-1">Xuyên Không</span>
+                                                                <span class="px-2 py-1">Xuyên Không</span>
+                                                                <span class="px-2 py-1">Trùng Sinh</span>
+                                                            </div>
+                                                            <span class="fw-bold">Chương: </span><span class="px-2 py-1">2333</span><small class="px-2 py-1">1 giờ trước</small>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </a><hr>
+                                        </div>
+                                    </div>
+                                    <div class="row Pagination">
+                                        <div>
+                                            <nav aria-label="Page navigation example">
+                                                <ul class="pagination justify-content-end">
+                                                    <li class="page-item disabled">
+                                                        <a class="page-link" href="#" tabindex="-1"><i class="fa-solid fa-angle-left"></i></a>
+                                                    </li>
+                                                    <li class="page-item"><a class="page-link" href="#">1</a></li>
+                                                    <li class="page-item"><a class="page-link disabled" href="#">...</a></li>
+                                                    <li class="page-item"><a class="page-link" href="#">4</a></li>
+                                                    <li class="page-item"><a class="page-link active" href="#">5</a></li>
+                                                    <li class="page-item"><a class="page-link" href="#">6</a></li>
+                                                    <li class="page-item"><a class="page-link disabled" href="#">...</a></li>
+                                                    <li class="page-item"><a class="page-link" href="#">200</a></li>
+                                                    <li class="page-item">
+                                                        <a class="page-link" href="#"><i class="fa-solid fa-angle-right"></i></a>
+                                                    </li>
+                                                </ul>
+                                            </nav>
+                                            <div class="InputPage d-flex justify-content-end">
+                                                <input type="number" id="inputPage" min="1" max="200" placeholder="Page"/>
+                                                <button class="ms-1">Go</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="author-tab-pane" role="tabpanel" aria-labelledby="author-tab" tabindex="0">
+                                <div class="container my-3">
+                                    <div class="row g-3">
+                                        <div class="col-12 col-sm-6">
+                                            <a href="./TrangCaNhan.html">
+                                                <div class="container-fluid">
+                                                    <div class="row align-items-center">
+                                                        <div class="col-3 col-lg-2">
+                                                            <div class="position-relative rounded-circle" style="padding-bottom: 100%;">
+                                                                <img src="./Content/assets/img/CoverImgae/solo-leveling-dau-la-linh-bong-toi-manh-nhat.jpg" alt="" class="position-absolute w-100 h-100 rounded-circle" style="object-fit: cover;">
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-9 col-lg-10 p-0">Giang Hồ Tái Kiến</div>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <div class="col-12 col-sm-6">
+                                            <a href="./TrangCaNhan.html">
+                                                <div class="container-fluid">
+                                                    <div class="row align-items-center">
+                                                        <div class="col-3 col-lg-2">
+                                                            <div class="position-relative rounded-circle" style="padding-bottom: 100%;">
+                                                                <img src="./Content/assets/img/CoverImgae/solo-leveling-dau-la-linh-bong-toi-manh-nhat.jpg" alt="" class="position-absolute w-100 h-100 rounded-circle" style="object-fit: cover;">
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-9 col-lg-10 p-0">Giang Hồ Tái Kiến</div>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="Footer">
+        <div class="container p-5 my-5">
+            <ul class="nav justify-content-center">
+                <li class="nav-item">
+                    <a class="nav-link" href="https://www.facebook.com/ktrinh23/">
+                        <i class="fa-brands fa-facebook"></i>
+                        <span>Facebook</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="https://www.facebook.com/ktrinh23/">
+                        <i class="fa-brands fa-square-instagram"></i>
+                        <span>Instagram</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="https://www.facebook.com/ktrinh23/">
+                        <i class="fa-brands fa-discord"></i>
+                        <span>Discord</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+    </section>
+
+    <section id="Modal">
+        <section> <!-- Login/Register -->
+            <div class="modal fade" id="AccountModal" aria-hidden="true" aria-labelledby="AccountModalLabel"
+                tabindex="-1">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="AccountModalLabel">Đăng Nhập</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <form action="#" class="" method="post">
+                                <div class="form-group mb-3">
+                                    <label class="col-md-12 my-1 control-label" for="Email">Email</label>
+                                    <div class="col-md-12">
+                                        <input class="form-control" id="Email" name="Email" type="email" value="">
+                                        <span></span>
+                                    </div>
+                                </div>
+                                <div class="form-group mb-3">
+                                    <label class="col-md-12 my-1 control-label" for="Password">Password</label>
+                                    <div class="col-md-12">
+                                        <input class="form-control" id="Password" name="Password" type="password" value="">
+                                        <span></span>
+                                    </div>
+                                </div>
+                                <div class="form-group mb-3">
+                                    <div class="col-md-offset-2 col-md-12">
+                                        <div class="checkbox">
+                                            <input id="RememberMe" name="RememberMe" type="checkbox" value="true">
+                                            <label for="RememberMe">Remember me?</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group mb-3">
+                                    <div class="col-md-offset-2 col-md-12">
+                                        <input type="submit" value="Đăng Nhập" class="btn btn-success">
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <span>Bạn chưa có tài khoản?<a href="" data-bs-target="#AccountModal2" data-bs-toggle="modal"> Đăng ký tại đây</a></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal fade" id="AccountModal2" aria-hidden="true"
+                aria-labelledby="AccountModalLabel2" tabindex="-1">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="AccountModalLabel2">Đăng ký</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <form action="#" class="" method="post">
+                                <div class="form-group mb-3">
+                                    <label class="col-md-12 my-1 control-label" for="UserName">Tên đăng nhập</label>
+                                    <div class="col-md-12">
+                                        <input class="form-control" id="UserName" name="UserName" type="text" value="">
+                                        <span></span>
+                                    </div>
+                                </div>
+                                <div class="form-group mb-3">
+                                    <label class="col-md-12 my-1 control-label" for="Email">Email</label>
+                                    <div class="col-md-12">
+                                        <input class="form-control" id="Email" name="Email" type="email" value="">
+                                        <span></span>
+                                    </div>
+                                </div>
+                                <div class="form-group mb-3">
+                                    <label class="col-md-12 my-1 control-label" for="Password">Mật khẩu</label>
+                                    <div class="col-md-12">
+                                        <input class="form-control" id="Password" name="Password" type="password" value="">
+                                        <span></span>
+                                    </div>
+                                </div>
+                                <div class="form-group mb-3">
+                                    <label class="col-md-12 my-1 control-label" for="Re-Password">Nhập lại mật khẩu</label>
+                                    <div class="col-md-12">
+                                        <input class="form-control" id="Re-Password" name="Re-Password" type="password" value="">
+                                        <span></span>
+                                    </div>
+                                </div>
+                                <div class="form-group mb-3">
+                                    <div class="col-md-offset-2 col-md-12">
+                                        <input type="submit" value="Đăng ký" class="btn btn-success">
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <a href="#" data-bs-target="#AccountModal" data-bs-toggle="modal">Quay lại trang đăng nhập</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- <button class="btn btn-primary" data-bs-target="#AccountModal" data-bs-toggle="modal">Open first modal</button> -->
+        </section>
+    </section>
+
+    <!-- js -->
+    <script src="./Content/assets/js/bootstrap.bundle.min.js"></script>
+    <script src="./Content/assets/ckeditor/ckeditor.js"></script>
+    <script src="./Content/assets/js/jquery-3.6.0.min.js"></script>
+    <script src="./Content/assets/js/pagination.js"></script>
+    <script src="./Content/assets/js/app.js"></script>
+
+    <script> // js side bar
+        var linksSideBar = document.querySelectorAll('#Main .SideBar .nav-link');
+        function removeActive() {
+            linksSideBar.forEach(element => {
+                element.classList.remove('active');
+            })
+        }
+        function start() {
+            removeActive();
+            linksSideBar.forEach(element => {
+                if(element.textContent.includes('Theo dõi')) {
+                    element.classList.add('active')
+                }
+            })
+        }
+        start();
+    </script>
+
+</body>
+</html>
