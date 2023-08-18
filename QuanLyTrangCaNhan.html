@@ -22,6 +22,15 @@
             cursor: pointer;
         }
 
+        #Header {
+            position: fixed;
+            left: 0;
+            right: 0;
+            top: -100%;
+            transition: all ease-out .3s;
+            z-index: 999;
+        }
+
         #Main .SideBar .nav {
             
         }
@@ -77,7 +86,7 @@
 </head>
 <body>
 
-    <section id="Header">
+    <section id="Header" class="" style="box-shadow: 0px 10px 24px 0px rgba(0, 0, 0, 0.3);">
         <div class="container">
             <div class="row my-2">
                 <div class="col-4 d-flex">
@@ -214,18 +223,52 @@
             </div>
         </div>
     </section>
+    <section id="Navigation">
+        <input type="checkbox" hidden id="Bar">
+        <label for="Bar" class="cursorPointer fixed-top p-3" style="width: 50px;"><i class="fa-solid fa-bars-progress">Home</i></label>
+    </section>
+
+    <script> // js header
+        var chkBar = document.querySelector('#Navigation #Bar');
+        var labelChekBar = document.querySelector('#Navigation label');
+        var header = document.querySelector('#Header');
+        chkBar.addEventListener('change', function() {
+            if (this.checked) {
+                header.classList.add('bg-white')
+                header.style.top = '0';
+            } else {
+                header.style.top = '-100%';
+            }
+        })
+
+        document.addEventListener('click', function (event) {
+            if (!header.contains(event.target) && !chkBar.contains(event.target) && !labelChekBar.contains(event.target)) {
+                header.style.top = '-100%';
+                chkBar.checked = false;
+            }
+        });
+        
+        var Links = document.querySelectorAll('#Header a');
+        Links.forEach(link => {
+            link.addEventListener('click', function () {
+                chkBar.checked = false;
+            });
+        });
+
+
+    </script>
     
     <section id="Main" class="my-5">
         <div class="container">
             <div class="row g-1">
-                <div class="col-md-4 col-lg-3 SideBar position-relative">
-                    <div class="cursorPointer d-md-none d-block barBtn">
+                <div class="col-lg-3 SideBar position-relative">
+                    <div class="cursorPointer d-lg-none d-block barBtn">
                         <input type="checkbox" hidden id="checkNavBar">
                         <label for="checkNavBar" class="p-2 checkNavBarLabel">
-                            <i class="fa-solid fa-bars-progress"></i>
+                            <i class="fa-solid fa-bars">Action</i>
                         </label>
                     </div>
-                    <ul class="nav flex-column d-none d-md-block Navigation w-100">
+                    <ul class="nav flex-column d-none d-lg-block Navigation w-100">
                         <li class="nav-item">
                             <a href="./QuanLyTrangCaNhan.html" class="nav-link"><i class="fa-solid fa-user"></i> Cá nhân</a>
                         </li>
@@ -246,9 +289,6 @@
                         </li>
                         <li class="nav-item">
                             <a href="./QuanLyTheLoai.html" class="nav-link"><i class="fa-solid fa-earth-americas"></i> Quản lý thể loại (23)</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="./ThongKe.html" class="nav-link"><i class="fa-solid fa-chart-simple"></i> Thống kê</a>
                         </li>
                     </ul>
                 </div>
@@ -276,7 +316,7 @@
                         }
                     })
                 </script>
-                <div class="col-12 col-md-8 col-lg-9">
+                <div class="col-12 col-lg-9">
                     <div class="container position-relative User">
                         <div class="Card row g-0">
                             <div class="Card-img col-12 position-relative Background-User">

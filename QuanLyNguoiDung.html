@@ -3,13 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mario Baby - Theo dõi</title>
+    <title>Mario Baby - QL người dùng</title>
 
     <!-- css -->
     <link rel="stylesheet" href="./Content/assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="./Content/assets/font/fontawesome-free-6.4.0-web/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
     <link rel="stylesheet" href="./Content/assets/css/style.css">
+    
+    <script src="./Content/assets/ckeditor/ckeditor.js"></script>
 
     <style>
         :root {
@@ -20,6 +22,76 @@
 
         .cursorPointer {
             cursor: pointer;
+        }
+
+        /* start pagination */
+
+        .paginationjs {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .paginationjs .paginationjs-pages ul {
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            padding-left: 0;
+            margin-bottom: 0;
+        }
+
+        .paginationjs .paginationjs-pages ul li {
+        }
+
+        .paginationjs .paginationjs-pages li>a {
+            display: block;
+            padding: 4px 24px;
+            border: solid 1px #33333340;
+            cursor: pointer;
+        }
+
+        .paginationjs .paginationjs-pages li>a:hover {
+            background-color: var(--primaty-color);
+        }
+
+        .paginationjs .paginationjs-pages li.active a {
+            background-color: var(--primaty-color);
+            border: solid 1px var(--primaty-color);
+            color: #fff;
+        }
+
+        .paginationjs .paginationjs-go-input {
+            margin: 0 8px;
+            min-width: 59px;
+            max-width: 60px;
+        }
+
+        .paginationjs .paginationjs-go-input input {
+            height: 100%;
+            width: 100%;
+        }
+
+        .paginationjs .paginationjs-go-button input {
+            height: 100%;
+            padding: 0 16px;
+        }
+
+        /* end pagination */
+
+        #Header {
+            position: fixed;
+            left: 0;
+            right: 0;
+            top: -100%;
+            transition: all ease-out .3s;
+            z-index: 999;
+        }
+
+        table tbody tr td a {
+            border-bottom: solid 1px transparent;
+        }
+
+        table tbody tr td a:hover {
+            border-color: blue;
         }
 
         #Main .SideBar .nav {
@@ -77,7 +149,7 @@
 </head>
 <body>
 
-    <section id="Header">
+    <section id="Header" class="" style="box-shadow: 0px 10px 24px 0px rgba(0, 0, 0, 0.3);">
         <div class="container">
             <div class="row my-2">
                 <div class="col-4 d-flex">
@@ -214,18 +286,52 @@
             </div>
         </div>
     </section>
+    <section id="Navigation">
+        <input type="checkbox" hidden id="Bar">
+        <label for="Bar" class="cursorPointer fixed-top p-3" style="width: 50px;"><i class="fa-solid fa-bars-progress">home</i></label>
+    </section>
+
+    <script> // js header
+        var chkBar = document.querySelector('#Navigation #Bar');
+        var labelChekBar = document.querySelector('#Navigation label');
+        var header = document.querySelector('#Header');
+        chkBar.addEventListener('change', function() {
+            if (this.checked) {
+                header.classList.add('bg-white')
+                header.style.top = '0';
+            } else {
+                header.style.top = '-100%';
+            }
+        })
+
+        document.addEventListener('click', function (event) {
+            if (!header.contains(event.target) && !chkBar.contains(event.target) && !labelChekBar.contains(event.target)) {
+                header.style.top = '-100%';
+                chkBar.checked = false;
+            }
+        });
+        
+        var Links = document.querySelectorAll('#Header a');
+        Links.forEach(link => {
+            link.addEventListener('click', function () {
+                chkBar.checked = false;
+            });
+        });
+
+
+    </script>
     
-    <section id="Main">
+    <section id="Main" class="my-5">
         <div class="container">
-            <div class="row g-1">
-                <div class="col-md-4 col-lg-3 SideBar position-relative">
-                    <div class="cursorPointer d-md-none d-block barBtn">
+            <div class="row">
+                <div class="col-lg-3 SideBar position-relative">
+                    <div class="cursorPointer d-lg-none d-block barBtn">
                         <input type="checkbox" hidden id="checkNavBar">
                         <label for="checkNavBar" class="p-2 checkNavBarLabel">
-                            <i class="fa-solid fa-bars-progress"></i>
+                            <i class="fa-solid fa-bars">Action</i>
                         </label>
                     </div>
-                    <ul class="nav flex-column d-none d-md-block Navigation w-100">
+                    <ul class="nav flex-column d-none d-lg-block Navigation w-100">
                         <li class="nav-item">
                             <a href="./QuanLyTrangCaNhan.html" class="nav-link"><i class="fa-solid fa-user"></i> Cá nhân</a>
                         </li>
@@ -246,9 +352,6 @@
                         </li>
                         <li class="nav-item">
                             <a href="./QuanLyTheLoai.html" class="nav-link"><i class="fa-solid fa-earth-americas"></i> Quản lý thể loại (23)</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="./ThongKe.html" class="nav-link"><i class="fa-solid fa-chart-simple"></i> Thống kê</a>
                         </li>
                     </ul>
                 </div>
@@ -276,9 +379,27 @@
                         }
                     })
                 </script>
-                <div class="col-12 col-md-8 col-lg-9">
+                <div class="col-12 col-lg-9">
+                    <div class="row mb-3">
+                        <div class="col-6 ms-auto">
+                            <!-- search -->
+                            <form class="d-flex align-items-stretch rounded-pill m-2 w-100 custom-form bg-white" style="border: solid 2px #00dc82;">
+                                <input type="text" class="w-100 py-1 border-0 ps-3 rounded-pill flex-fill" placeholder="Search" style="outline: none;">
+                                <button type="submit" class="px-3 border-0 rounded-pill bg-body">
+                                    <i class="fa-solid fa-magnifying-glass"></i>
+                                </button>
+                            </form>
+                        </div>
+                    </div>
                     <div class="container">
-                        Quản lý người dùng
+                        <div class="d-flex justify-content-between my-3 flex-wrap">
+                            <h3 class="mb-3">Quản lý người dùng</h3>
+                            <button class="btn btn-primary mb-3" data-bs-target="#AccountModal2" data-bs-toggle="modal">Thêm người dùng mới</button>
+                        </div>
+                        <div id="wrapperPages" class="my-3">
+                            <div class="data-container"></div>
+                            <div id="pagination-ForUsers" class="my-5"></div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -411,11 +532,11 @@
             </div>
             <!-- <button class="btn btn-primary" data-bs-target="#AccountModal" data-bs-toggle="modal">Open first modal</button> -->
         </section>
+        
     </section>
 
     <!-- js -->
     <script src="./Content/assets/js/bootstrap.bundle.min.js"></script>
-    <script src="./Content/assets/ckeditor/ckeditor.js"></script>
     <script src="./Content/assets/js/jquery-3.6.0.min.js"></script>
     <script src="./Content/assets/js/pagination.js"></script>
     <script src="./Content/assets/js/app.js"></script>
@@ -436,6 +557,88 @@
             })
         }
         start();
+    </script>
+
+    <script> // js danh sách truyện
+        (function (name) {
+            var container = $('#pagination-' + name);
+            if (!container.length) return;
+            var sources = function () {
+                var result = [];
+
+                for (var i = 1; i < 200; i++) {
+                    result.push(i);
+                }
+
+                return result;
+            }();
+
+            var options = {
+                dataSource: sources,
+                pageSize: 10,
+                showSizeChanger: false,
+                showGoInput: true,
+                showGoButton: true,
+                autoHidePrevious: true,
+                autoHideNext: true,
+                callback: function (response, pagination) {
+                    window.console && console.log(response, pagination);
+
+                    var dataHtml = `
+                    <div class="table-responsive">
+                        <table class="table table-hover">
+                            <thead>
+                                <tr>
+                                    <th>STT</th>
+                                    <th>Id</th>
+                                    <th class="d-none d-lg-table-cell">Họ Tên</th>
+                                    <th>Email</th>
+                                    <th class="d-none d-md-table-cell">Ngày tạo</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody class="table-group-divider">
+                    `;
+
+                    $.each(response, function (index, item) {
+                        dataHtml += `
+                                <tr>
+                                    <td>${item}</td>
+                                    <td><a href="./TrangCaNhan">${item}</a></td>
+                                    <td class="d-none d-lg-table-cell"><a href="./TrangCaNhan">Mario Baby</a></td>
+                                    <td>mariobaby@gmail.com</td>
+                                    <td class="d-none d-md-table-cell">21/01/2022</td>
+                                    <td>
+                                        <a href="#">Khóa</a> |
+                                        <a href="#">Cấp quyền</a>
+                                    </td>
+                                </tr>
+                        `;
+                    });
+
+                    dataHtml += `
+                            </tbody>
+                        </table>
+                    </div>
+                    `;
+
+                    container.prev().html(dataHtml);
+                }
+            };
+
+            //$.pagination(container, options);
+
+            container.addHook('beforeInit', function () {
+                window.console && console.log('beforeInit...');
+            });
+            container.pagination(options);
+
+            container.addHook('beforePageOnClick', function () {
+                window.console && console.log('beforePageOnClick...');
+                //return false
+            });
+        })('ForUsers');
+
     </script>
 
 </body>
